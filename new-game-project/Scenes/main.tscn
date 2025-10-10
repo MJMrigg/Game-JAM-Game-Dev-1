@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=8 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/ghost.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc.tscn" id="3_8gbba"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8gbba"]
 vertices = PackedVector3Array(-49.5, 0.25, -49.5, -49.5, 0.25, 49.5, 49.5, 0.25, 49.5, 49.5, 0.25, -49.5)
@@ -22,6 +23,7 @@ size = Vector3(100, 0.1, 100)
 
 [node name="Ghost" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33323574, 1.0511578, 6.4805803)
+speed = null
 
 [node name="PlayerCam" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67084545, 0, 0.7316422)
@@ -34,9 +36,14 @@ z_distance = 3.0
 navigation_mesh = SubResource("NavigationMesh_8gbba")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+collision_layer = 32
+collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 mesh = SubResource("PlaneMesh_bo1nx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_8gbba")
+
+[node name="NPC" parent="." instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0161638, 1.000001, 3.1370375)
