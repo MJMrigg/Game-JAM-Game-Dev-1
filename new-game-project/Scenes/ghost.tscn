@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6rrimmh2yx4h"]
+
+[ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_3mxmt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3r4w"]
+albedo_color = Color(0, 1, 1, 0.24900001)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_108wt"]
+material = SubResource("StandardMaterial3D_e3r4w")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
+
+[node name="Ghost" type="CharacterBody3D"]
+script = ExtResource("1_3mxmt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_108wt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3btnm")
