@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="3_8gbba"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8gbba"]
-vertices = PackedVector3Array(-49.5, 0.25, -49.5, -49.5, 0.25, 49.5, 49.5, 0.25, 49.5, 49.5, 0.25, -49.5)
+vertices = PackedVector3Array(-49.5, 0.15, -49.5, -49.5, 0.15, 49.5, 49.5, 0.15, 49.5, 49.5, 0.15, -49.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
 albedo_color = Color(0, 1, 0.27395758, 1)
@@ -44,4 +45,4 @@ mesh = SubResource("PlaneMesh_bo1nx")
 shape = SubResource("BoxShape3D_8gbba")
 
 [node name="NPC1" parent="." instance=ExtResource("3_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.247102, 0)
