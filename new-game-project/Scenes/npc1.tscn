@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv3dnijdbylgv"]
+[gd_scene load_steps=4 format=3 uid="uid://cv3dnijdbylgv"]
 
 [ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_c4f1t"]
+[ext_resource type="PackedScene" uid="uid://dbnylfb07a7xp" path="res://Models/person.tscn" id="2_qry20"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oc1k0"]
+radius = 1.5
+height = 6.5
 
 [node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator") groups=["NPCs"]]
 collision_layer = 2
@@ -14,3 +19,9 @@ path_desired_distance = 100.0
 target_desired_distance = 3.0
 path_height_offset = 1.0
 path_max_distance = 100.01
+
+[node name="Person" parent="." instance=ExtResource("2_qry20")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
+shape = SubResource("CapsuleShape3D_oc1k0")
