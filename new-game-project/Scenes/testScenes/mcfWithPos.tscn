@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5if1fnftx540"]
+
+[ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="1_78m31"]
+[ext_resource type="Script" uid="uid://1kb153extf3c" path="res://Scripts/mouse_cam_follow_test.gd" id="1_elk3a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3mxmt"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elk3a"]
+albedo_color = Color(0.59607846, 0, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6t5aa"]
+material = SubResource("StandardMaterial3D_elk3a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gio52"]
+albedo_color = Color(0.94195384, 0.73337764, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fkybt"]
+material = SubResource("StandardMaterial3D_gio52")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8be47"]
+albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
+material = SubResource("StandardMaterial3D_8be47")
+
+[node name="Ghost" type="CharacterBody3D"]
+collision_mask = 0
+script = ExtResource("1_elk3a")
+speed = 20.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape3D_3btnm")
+
+[node name="PossessionArea" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_3mxmt")
+target_position = Vector3(0, 0, 0)
+collision_mask = 6
+
+[node name="Ghost" parent="." instance=ExtResource("1_78m31")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
+
+[node name="NPC1" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_6t5aa")
+
+[node name="NPC2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_fkybt")
+skeleton = NodePath("../NPC1")
+
+[node name="NPC3" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_vgqql")
+skeleton = NodePath("../NPC2")
+
+[node name="don\'t_ask_why" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47160596, 1.5680263)
+
+[node name="Head" type="Node3D" parent="don\'t_ask_why"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6618576, 0)
+
+[node name="Camera3D" type="Camera3D" parent="don\'t_ask_why/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004639864, -0.12841368, 0)
