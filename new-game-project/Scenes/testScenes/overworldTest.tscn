@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bf4bh80llm36h"]
+
+[ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="1_bjcvd"]
+[ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="3_a1gud"]
+[ext_resource type="PackedScene" uid="uid://b5if1fnftx540" path="res://Scenes/testScenes/mcfWithPos.tscn" id="3_hw20y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(0, 1, 0.27395758, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_joko6"]
+material = SubResource("StandardMaterial3D_bo1nx")
+size = Vector2(500, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1084m"]
+size = Vector3(100, 0.1, 100)
+
+[node name="Overworld" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="blankFloor" type="StaticBody3D" parent="Map"]
+collision_layer = 32
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/blankFloor"]
+mesh = SubResource("PlaneMesh_joko6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/blankFloor"]
+shape = SubResource("BoxShape3D_1084m")
+
+[node name="Node3D" type="Node3D" parent="Map"]
+
+[node name="House1" parent="Map/Node3D" instance=ExtResource("1_bjcvd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.091316, 0.12159014, -3.4950452)
+
+[node name="House2" parent="Map/Node3D" instance=ExtResource("1_bjcvd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.091316, 0.12159014, 36.504955)
+
+[node name="House3" parent="Map/Node3D" instance=ExtResource("1_bjcvd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.091316, 0.12159014, -83.49505)
+
+[node name="House4" parent="Map/Node3D" instance=ExtResource("1_bjcvd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.091316, 0.12159014, 116.50496)
+
+[node name="House5" parent="Map/Node3D" instance=ExtResource("1_bjcvd")]
+transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.5, 0, -4.371139e-08, 0, -0.5, 20.908684, 0.12159014, -2.5282078)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94629997, 0.32328987, 0, -0.32328987, 0.94629997, 0, 2.2137718, 0)
+
+[node name="PlayerCam" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67084545, 0, 38.496407)
+fov = 45.0
+script = ExtResource("3_a1gud")
+target = NodePath("../Ghost")
+y_distance = 1.0
+z_distance = 3.0
+
+[node name="Ghost" parent="." instance=ExtResource("3_hw20y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95193434, 0)
