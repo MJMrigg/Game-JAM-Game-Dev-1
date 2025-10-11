@@ -51,3 +51,5 @@ debug_shape_thickness = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0042577, 0)
 shape = SubResource("SphereShape3D_oc1k0")
 collision_mask = 2
+
+[connection signal="body_discovered" from="." to="." method="_on_body_discovered"]
