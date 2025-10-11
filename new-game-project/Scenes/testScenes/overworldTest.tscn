@@ -1,12 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://l5gg71w422p1"]
+[gd_scene load_steps=7 format=3 uid="uid://bf4bh80llm36h"]
 
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="1_bjcvd"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="3_a1gud"]
-[ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="3_hw20y"]
-[ext_resource type="Script" uid="uid://1kb153extf3c" path="res://Scripts/mouse_cam_follow_test.gd" id="4_a1gud"]
-[ext_resource type="PackedScene" uid="uid://c4u06pu6g1eha" path="res://Scenes/door_menu.tscn" id="5_mvhjf"]
-[ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="5_xc777"]
-[ext_resource type="PackedScene" uid="uid://u8palytuax12" path="res://Models/knife.tscn" id="7_g8h07"]
+[ext_resource type="PackedScene" uid="uid://b5if1fnftx540" path="res://Scenes/testScenes/mcfWithPos.tscn" id="3_hw20y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
 albedo_color = Color(0, 1, 0.27395758, 1)
@@ -61,15 +57,4 @@ y_distance = 1.0
 z_distance = 3.0
 
 [node name="Ghost" parent="." instance=ExtResource("3_hw20y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9914892, 0)
-script = ExtResource("4_a1gud")
-
-[node name="DoorMenu" parent="." instance=ExtResource("5_mvhjf")]
-
-[node name="NPC4" parent="." instance=ExtResource("5_xc777")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6128654, 0.9914901, -8.957485)
-
-[node name="Person2" parent="NPC4" instance=ExtResource("7_g8h07")]
-transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 1.9851198, 2.100999, 4.8119726)
-
-[connection signal="wrong_door" from="Ghost" to="DoorMenu" method="appear"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95193434, 0)

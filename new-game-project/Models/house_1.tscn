@@ -1,6 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bopcd5rtyokfc"]
-
-[ext_resource type="Script" uid="uid://blta8u6ltwj5m" path="res://Scripts/door.gd" id="1_kgf6e"]
+[gd_scene load_steps=38 format=4 uid="uid://bopcd5rtyokfc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d38lg"]
 resource_name = "Material.003"
@@ -469,7 +467,6 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4787807, 1.9603691, 0.3277558)
 mesh = SubResource("ArrayMesh_pu3d8")
 skeleton = NodePath("")
-script = ExtResource("1_kgf6e")
 
 [node name="doorKnob" type="MeshInstance3D" parent="door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04983139, -0.08544731, -0.56465757)
