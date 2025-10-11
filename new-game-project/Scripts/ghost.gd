@@ -4,10 +4,12 @@ extends CharacterBody3D
 @export var possesed:Node3D # Target that is possesed
 var possessor:ShapeCast3D # Detector for possession area
 var collider:CollisionShape3D # Collision detector
+var sound_area:Area3D # Sound Area
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
 	collider = get_node("CollisionShape3D")
+	sound_area = get_node("SoundArea3D")
 
 func _process(delta: float) -> void:
 	# Get translation and rotation
@@ -29,6 +31,9 @@ func _process(delta: float) -> void:
 			posses()
 		elif(possesed != null):
 			unposses()
+			
+	if(Input.is_action_just_pressed("p_sound")):
+		print("Sound")
 
 # Posses an NPC
 func posses() -> void:
@@ -99,3 +104,13 @@ func unposses() -> void:
 	
 	# Player no longer references possesed object
 	possesed = null
+
+func earshot_entered(body: Node3D) -> void:
+	if(body.is_in_group("NPCs")):
+		body.earshot = true
+		print("Entered")
+	
+func earshot_exited(body: Node3D) -> void:
+	if(body.is_in_group("NPCs")):
+		body.earshot = false
+		print("Exited")

@@ -21,12 +21,7 @@ albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
 material = SubResource("StandardMaterial3D_6t5aa")
 
-<<<<<<< HEAD
-[sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
-size = Vector3(1, 1.5, 2)
-=======
 [sub_resource type="SphereShape3D" id="SphereShape3D_6t5aa"]
->>>>>>> 314d5d1abe5cadb04164e4e29bc7fb048af9929b
 
 [node name="Ghost" type="CharacterBody3D"]
 collision_mask = 0
@@ -58,17 +53,7 @@ skeleton = NodePath("../NPC2")
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5005257, 0)
 visible = false
 
-<<<<<<< HEAD
-[node name="Interactor" type="ShapeCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.75)
-shape = SubResource("BoxShape3D_6t5aa")
-collision_mask = 56
-
-[editable path="NPC1"]
-=======
 [node name="SoundArea3D" type="Area3D" parent="."]
-collision_layer = 2
-collision_mask = 62
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SoundArea3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -76,4 +61,3 @@ shape = SubResource("SphereShape3D_6t5aa")
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
->>>>>>> 314d5d1abe5cadb04164e4e29bc7fb048af9929b
