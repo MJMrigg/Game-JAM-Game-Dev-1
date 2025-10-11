@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq85taomsbt24"]
+
+[ext_resource type="Script" uid="uid://e1fdcqwu8y5p" path="res://Scripts/NPC.gd" id="1_oyrmw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8vx4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyrmw"]
+albedo_color = Color(0.9411765, 0.73333335, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yf78a"]
+material = SubResource("StandardMaterial3D_oyrmw")
+
+[node name="NPC2" type="CharacterBody3D" node_paths=PackedStringArray("navigator")]
+script = ExtResource("1_oyrmw")
+type = 2
+navigator = NodePath("NavigationAgent3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_8vx4k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_yf78a")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

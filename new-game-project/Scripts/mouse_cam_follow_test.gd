@@ -1,9 +1,5 @@
 extends CharacterBody3D
 
-@onready var head: Node3D = $"don't_ask_why/Head" # Refrence to node3D the camera is attached to
-# I have the camera rotating off of its x and y axis. To prevent rotation issues I needed an additional node3D - David T
-
-
 @export var speed:float = 5.0 # Movement speed
 @export var possesed:Node3D # Target that is possesed
 var possessor:ShapeCast3D # Detector for possession area
@@ -23,8 +19,6 @@ func _input(event: InputEvent) -> void:
 	# For each Input it checks if it was a mouse movement. If yes..
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens)) # rotate cam along its Y (left to right)
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens)) # rotate cam along its X (up and down)
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-30), deg_to_rad(30)) # lock x axis to a range
 
 func _physics_process(delta: float) -> void:
 	

@@ -56,12 +56,3 @@ skeleton = NodePath("../NPC1")
 visible = false
 mesh = SubResource("CylinderMesh_vgqql")
 skeleton = NodePath("../NPC2")
-
-[node name="don\'t_ask_why" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47160596, 1.5680263)
-
-[node name="Head" type="Node3D" parent="don\'t_ask_why"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6618576, 0)
-
-[node name="Camera3D" type="Camera3D" parent="don\'t_ask_why/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004639864, -0.12841368, 0)
