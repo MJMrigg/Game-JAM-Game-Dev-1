@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://dbnylfb07a7xp" path="res://Models/person.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_jjvhh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8gbba"]
 vertices = PackedVector3Array(-49.5, 0.15, -49.5, -49.5, 0.15, 49.5, 49.5, 0.15, 49.5, 49.5, 0.15, -49.5)
@@ -48,5 +48,5 @@ shape = SubResource("BoxShape3D_8gbba")
 [node name="House1" parent="NavigationRegion3D" instance=ExtResource("3_jjvhh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.988657, 0, 5.443239)
 
-[node name="Person" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.46, 0)
+[node name="NPC1" parent="." instance=ExtResource("4_jjvhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)

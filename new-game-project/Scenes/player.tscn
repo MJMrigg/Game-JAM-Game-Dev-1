@@ -1,18 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=10 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dbnylfb07a7xp" path="res://Models/person.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3mxmt"]
 radius = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvnsp"]
-albedo_color = Color(0.59607846, 0, 1, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_6t5aa"]
-material = SubResource("StandardMaterial3D_cvnsp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
 albedo_color = Color(0.94195384, 0.73337764, 0, 1)
@@ -42,16 +37,15 @@ collision_mask = 6
 [node name="Ghost" parent="." instance=ExtResource("2_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
 
-[node name="NPC1" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CylinderMesh_6t5aa")
-
 [node name="NPC2" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CylinderMesh_fkybt")
-skeleton = NodePath("../NPC1")
+skeleton = NodePath("")
 
 [node name="NPC3" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CylinderMesh_vgqql")
 skeleton = NodePath("../NPC2")
+
+[node name="NPC1" parent="." instance=ExtResource("3_6t5aa")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5005257, 0)
