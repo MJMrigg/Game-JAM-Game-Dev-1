@@ -21,6 +21,7 @@ project/assembly_name="New Game Project"
 [global_group]
 
 NPCs=""
+player=""
 
 [input]
 

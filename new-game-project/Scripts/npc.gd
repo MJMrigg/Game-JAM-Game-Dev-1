@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		for human in shapeCast.get_collision_count():
 			if(shapeCast.get_collider(human).is_in_group("NPCs")):
 				#print("Found human in area")
-				rayCast.target_position = shapeCast.get_collider(human).position
+				rayCast.target_position = rayCast.to_local(shapeCast.get_collision_point(human))
 				rayCast.force_raycast_update()
 				#print(shapeCast.get_collider(human).position)
 				print("Raycast Target: ", rayCast.target_position)

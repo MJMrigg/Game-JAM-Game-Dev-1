@@ -10,7 +10,7 @@ height = 6.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_qry20"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oc1k0"]
-radius = 15.0
+radius = 10.0
 
 [node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "deadArea", "rayCast", "shapeCast") groups=["NPCs"]]
 collision_layer = 2
@@ -35,6 +35,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
 shape = SubResource("CapsuleShape3D_oc1k0")
 
 [node name="deadArea3d" type="Area3D" parent="."]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deadArea3d"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0.8763068, 0)

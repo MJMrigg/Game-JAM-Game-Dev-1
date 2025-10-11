@@ -26,7 +26,7 @@ albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
 material = SubResource("StandardMaterial3D_8be47")
 
-[node name="Ghost" type="CharacterBody3D"]
+[node name="Ghost" type="CharacterBody3D" groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_elk3a")
 speed = 20.0

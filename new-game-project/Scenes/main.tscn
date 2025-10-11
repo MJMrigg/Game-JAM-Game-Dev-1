@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=9 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://wykvwpjkl1nq" path="res://Scenes/npc2.tscn" id="5_kry3j"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8gbba"]
 vertices = PackedVector3Array(-49.5, 0.15, -49.5, -49.5, 0.15, 49.5, 49.5, 0.15, 49.5, 49.5, 0.15, -49.5)
@@ -57,6 +56,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.091707, 0.510542, 0.6351070
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.85305935, 0.52181387, 0, -0.52181387, 0.85305935, 0, 3.6919775, 0)
-
-[node name="NPC3" parent="." instance=ExtResource("5_kry3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9809322, 1.0499997, 6.8509736)

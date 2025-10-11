@@ -31,6 +31,9 @@ data = PackedVector3Array(10, 0, 30, -10, 0, 30, 10, 0, -30, -10, 0, 30, -10, 0,
 
 [node name="Overworld" type="Node3D"]
 
+[node name="Ghost" parent="." instance=ExtResource("3_hw20y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95193434, 0)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_a1gud")
 
@@ -91,9 +94,6 @@ script = ExtResource("3_a1gud")
 target = NodePath("../Ghost")
 y_distance = 1.0
 z_distance = 3.0
-
-[node name="Ghost" parent="." instance=ExtResource("3_hw20y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95193434, 0)
 
 [node name="NPC1" parent="." instance=ExtResource("4_a1gud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0141373, 0.47054178, -6.422068)
