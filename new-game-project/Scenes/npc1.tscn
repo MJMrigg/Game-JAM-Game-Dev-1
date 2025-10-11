@@ -12,7 +12,7 @@ radius = 10.0
 
 [node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "debugRay") groups=["NPCs"]]
 collision_layer = 2
-collision_mask = 62
+collision_mask = 63
 script = ExtResource("1_c4f1t")
 type = 1
 navigator = NodePath("NavigationAgent3D")
@@ -22,10 +22,10 @@ model = NodePath("Person1")
 debugRay = NodePath("RayCast3D2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 100.0
+path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_height_offset = 1.0
-path_max_distance = 100.01
+path_max_distance = 2.01
 debug_enabled = true
 
 [node name="Person1" parent="." instance=ExtResource("2_qry20")]
