@@ -62,6 +62,6 @@ p_sound={
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Target"
 3d_physics/layer_3="NPC"
-3d_physics/layer_4="Building"
+3d_physics/layer_4="Door"
 3d_physics/layer_5="Knife"
 3d_physics/layer_6="World"
