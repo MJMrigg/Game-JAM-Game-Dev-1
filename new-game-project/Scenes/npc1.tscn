@@ -25,6 +25,7 @@ path_desired_distance = 100.0
 target_desired_distance = 3.0
 path_height_offset = 1.0
 path_max_distance = 100.01
+debug_enabled = true
 
 [node name="Person1" parent="." instance=ExtResource("2_qry20")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)

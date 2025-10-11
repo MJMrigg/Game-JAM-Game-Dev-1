@@ -19,6 +19,7 @@ var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
 
 var animations:AnimationPlayer
+var direction = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -84,10 +85,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = newVel
 	
+	
+	animations.play("Walk_001")
+	var look_target = Vector3(nextPos.x, model.global_position.y, nextPos.z)
+	var target_dir = (look_target - model.global_position).normalized()
+	var current_dir = model.transform.basis.z.normalized()
+	var new_dir = current_dir.slerp(target_dir, delta * 0.5) 
+	model.look_at(model.global_position + new_dir, Vector3.UP)
+
+	
 	# MOOOOOOOOOOOOOOOOOOVVEEEEEEE
 	move_and_slide()
-	animations.play("Walk_001")
-	model.look_at(navigator.target_position)
+	
+	
+	
+
+
 
 
 func pick_new_target() -> void:
