@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 class_name NPC
 
+signal body_discovered(human)
 @export var speed = 3
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
@@ -10,9 +11,10 @@ class_name NPC
 @export var shapeCast:ShapeCast3D
 var unconcious = false # If the NPC is unconcious
 var earshot:bool # If NPC is within earshot of player noise
-var deadBodySight:bool # test bool to see if line of sight is working
+var deadBodySight:bool = false# test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
+var staring:bool = false # If curious sees body
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,7 +24,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#print(self, ":", self.position)
-	
+	#print(staring, deadBodySight)
 	# If the NPC is unconcious, do nothing
 	if(unconcious):
 		if(!deadBodySight):
@@ -32,7 +34,7 @@ func _physics_process(delta: float) -> void:
 					rayCast.target_position = rayCast.to_local(shapeCast.get_collision_point(human))
 					rayCast.force_raycast_update()
 					#print(shapeCast.get_collider(human).position)
-					print("Raycast Target: ", rayCast.target_position)
+					#print("Raycast Target: ", rayCast.target_position)
 					#print(shapeCast.get_collider(human))
 					#print(rayCast.get_collider())
 					#print(rayCast.is_colliding())
@@ -40,8 +42,12 @@ func _physics_process(delta: float) -> void:
 						print("Human can see me!")
 						emit_signal("points")
 						deadBodySight = true
+						emit_signal("body_discovered", shapeCast.get_collider(human))
 		return
 	
+	#Does nothing if it is looking at body
+	if(staring):
+		return
 	# Check if nav map exists
 	if(NavigationServer3D.map_get_iteration_id(navigator.get_navigation_map()) == 0):
 		print("Error: No Navigation Mesh")
@@ -56,12 +62,7 @@ func _physics_process(delta: float) -> void:
 		if(type == 1):
 			navigator.target_position = ghost.position
 		elif(type == 3):
-			if(navigator.target_position == start):
-				print("Scared Random")
-				pick_new_target()
-			else:
-				print("Scared Home")
-				navigator.target_position = start
+			scared()
 		
 	# Check if the target was reached or if it's not reachable
 	if(navigator.is_target_reached() || !navigator.is_target_reachable()):
@@ -86,3 +87,15 @@ func pick_new_target() -> void:
 	var randz:float = randf()*50 - 25
 	var new_target = Vector3(randx, position.y, randz)
 	navigator.target_position = new_target
+
+func scared() -> void:
+	if(navigator.target_position == start):
+		pick_new_target()
+	else:
+		navigator.target_position = start
+
+func _on_body_discovered(human: Variant) -> void:
+	if(type == 1):
+		human.staring = true;
+	elif(type == 3):
+		human.scared()
