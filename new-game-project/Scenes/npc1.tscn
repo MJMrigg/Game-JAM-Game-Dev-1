@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv3dnijdbylgv"]
+[gd_scene load_steps=6 format=3 uid="uid://cv3dnijdbylgv"]
 
 [ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_c4f1t"]
 [ext_resource type="PackedScene" uid="uid://dbnylfb07a7xp" path="res://Models/person.tscn" id="2_qry20"]
@@ -9,7 +9,10 @@ height = 6.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qry20"]
 
-[node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "deadArea", "rayCast") groups=["NPCs"]]
+[sub_resource type="SphereShape3D" id="SphereShape3D_oc1k0"]
+radius = 15.0
+
+[node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "deadArea", "rayCast", "shapeCast") groups=["NPCs"]]
 collision_layer = 2
 collision_mask = 62
 script = ExtResource("1_c4f1t")
@@ -17,6 +20,7 @@ type = 1
 navigator = NodePath("NavigationAgent3D")
 deadArea = NodePath("deadArea3d")
 rayCast = NodePath("RayCast3D")
+shapeCast = NodePath("ShapeCast3D")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 100.0
@@ -39,3 +43,8 @@ shape = SubResource("SphereShape3D_qry20")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.551221, 0)
 collision_mask = 3
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0042577, 0)
+shape = SubResource("SphereShape3D_oc1k0")
+collision_mask = 2

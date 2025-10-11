@@ -7,6 +7,7 @@ class_name NPC
 @export var navigator:NavigationAgent3D # Navigation agent
 @export var deadArea:Area3D # Observable Dead Area
 @export var rayCast:RayCast3D
+@export var shapeCast:ShapeCast3D
 var unconcious = false # If the NPC is unconcious
 var earshot:bool # If NPC is within earshot of player noise
 var deadBodySight:bool # test bool to see if line of sight is working
@@ -24,8 +25,17 @@ func _physics_process(delta: float) -> void:
 		
 	if(unconcious):
 		deadBodySight = false
-		var area = deadArea.get_overlapping_bodies() 
-		#print(area)
+		#var area = deadArea.get_overlapping_bodies() 
+		for human in shapeCast.get_collision_count():
+			if(shapeCast.get_collider(human).is_in_group("NPCs")):
+				#print("Found human in area")
+				rayCast.target_position = to_local(shapeCast.get_collider(human).global_position)
+				rayCast.force_raycast_update()
+				if(rayCast.is_colliding() && rayCast.get_collider() == shapeCast.get_collider(human)):
+					print("Human can see me!")
+					shapeCast.get_collider(human).deadBodySight = true
+		
+		'''
 		for human in area:
 			if(human.is_in_group("NPCs")):
 				print("Found human in area")
@@ -33,6 +43,7 @@ func _physics_process(delta: float) -> void:
 				rayCast.force_raycast_update()
 				if(rayCast.is_colliding() && rayCast.get_collider() == human):
 					human.deadBodySight = true
+		'''
 		return
 	
 	# Check if nav map exists
