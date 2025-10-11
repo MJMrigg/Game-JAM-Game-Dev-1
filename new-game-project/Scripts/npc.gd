@@ -12,14 +12,16 @@ var unconcious = false # If the NPC is unconcious
 var earshot:bool # If NPC is within earshot of player noise
 var deadBodySight:bool # test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
+var start:Vector3 # Starting coordinates of NPC
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ghost = get_tree().get_nodes_in_group("player")[0]
+	start = position
 	pick_new_target()
 
 func _physics_process(delta: float) -> void:
-	print(self, ":", self.position)
+	#print(self, ":", self.position)
 	
 	# If the NPC is unconcious, do nothing
 	if(deadBodySight):
@@ -34,7 +36,7 @@ func _physics_process(delta: float) -> void:
 				rayCast.target_position = rayCast.to_local(shapeCast.get_collision_point(human))
 				rayCast.force_raycast_update()
 				#print(shapeCast.get_collider(human).position)
-				print("Raycast Target: ", rayCast.target_position)
+				#print("Raycast Target: ", rayCast.target_position)
 				#print(shapeCast.get_collider(human))
 				#print(rayCast.get_collider())
 				#print(rayCast.is_colliding())
@@ -66,6 +68,13 @@ func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("p_sound") && earshot):
 		if(type == 1):
 			navigator.target_position = ghost.position
+		elif(type == 3):
+			if(navigator.target_position == start):
+				print("Scared Random")
+				pick_new_target()
+			else:
+				print("Scared Home")
+				navigator.target_position = start
 		
 	# Check if the target was reached or if it's not reachable
 	if(navigator.is_target_reached() || !navigator.is_target_reachable()):
