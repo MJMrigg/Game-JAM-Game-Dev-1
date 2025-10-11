@@ -1,6 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cureus1a6l8ys"]
-
-[ext_resource type="Script" uid="uid://1kb153extf3c" path="res://Scripts/mouse_cam_follow_test.gd" id="1_5bnv1"]
+[gd_scene load_steps=12 format=4 uid="uid://cureus1a6l8ys"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd8tc"]
 resource_name = "Material.001"
@@ -131,8 +129,6 @@ radius = 1.2
 height = 4.5
 
 [node name="Ghost" type="CharacterBody3D"]
-script = ExtResource("1_5bnv1")
-speed = 20.0
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1475687, 0)
