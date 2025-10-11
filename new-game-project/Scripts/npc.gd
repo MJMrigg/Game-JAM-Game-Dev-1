@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 	#print(model.global_position)
 	#print(model.global_position + new_dir)
 	model.look_at(look_target, Vector3.UP)
-	model.rotate(basis.y, 90.0)
+	model.rotate(basis.y.normalized(), 90.0)
 	debugRay.target_position = debugRay.to_local(look_target)
 	debugRay.force_raycast_update()
 	
