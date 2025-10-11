@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://r62r25ylpbo8"]
+[gd_scene load_steps=38 format=4 uid="uid://byl8exxqps1io"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmfd0"]
 resource_name = "Material.002"
@@ -528,3 +528,7 @@ shape = SubResource("BoxShape3D_yxupc")
 [node name="bush12" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.961233, 0.7310245, 4.4256325)
 shape = SubResource("BoxShape3D_hukdl")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+transform = Transform3D(8.451052, 0, 0, 0, 0.9999993, 0, 0, 0, 8.689401, -3.5109503, 0.34176874, 0)
+start_position = Vector3(2.635, 0, 0.009)
