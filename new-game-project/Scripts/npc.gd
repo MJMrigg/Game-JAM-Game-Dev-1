@@ -2,14 +2,15 @@ extends CharacterBody3D
 
 class_name NPC
 
+
 signal body_discovered(human)
 signal points
 @export var speed = 3
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
-@export var deadArea:Area3D # Observable Dead Area
 @export var rayCast:RayCast3D
 @export var shapeCast:ShapeCast3D
+@export var model:CharacterBody3D # The NPC's model for animation purposes
 var unconcious = false # If the NPC is unconcious
 var earshot:bool # If NPC is within earshot of player noise
 var deadBodySight:bool = false# test bool to see if line of sight is working
@@ -17,11 +18,14 @@ var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
 
+var animations:AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ghost = get_tree().get_nodes_in_group("player")[0]
 	start = position
 	pick_new_target()
+	animations = get_node("Person1/AnimationPlayer")
 
 func _physics_process(delta: float) -> void:
 	#print(self, ":", self.position)
@@ -82,6 +86,9 @@ func _physics_process(delta: float) -> void:
 	
 	# MOOOOOOOOOOOOOOOOOOVVEEEEEEE
 	move_and_slide()
+	animations.play("Walk_001")
+	model.look_at(navigator.target_position)
+
 
 func pick_new_target() -> void:
 	# Randomly generate a new target
