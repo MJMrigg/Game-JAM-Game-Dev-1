@@ -19,6 +19,8 @@ func _ready() -> void:
 	pick_new_target()
 
 func _physics_process(delta: float) -> void:
+	print(self, ":", self.position)
+	
 	# If the NPC is unconcious, do nothing
 	if(deadBodySight):
 		print("SCREAM! A dead body.")
@@ -29,8 +31,13 @@ func _physics_process(delta: float) -> void:
 		for human in shapeCast.get_collision_count():
 			if(shapeCast.get_collider(human).is_in_group("NPCs")):
 				#print("Found human in area")
-				rayCast.target_position = to_local(shapeCast.get_collider(human).global_position)
+				rayCast.target_position = shapeCast.get_collider(human).position
 				rayCast.force_raycast_update()
+				#print(shapeCast.get_collider(human).position)
+				print("Raycast Target: ", rayCast.target_position)
+				#print(shapeCast.get_collider(human))
+				#print(rayCast.get_collider())
+				#print(rayCast.is_colliding())
 				if(rayCast.is_colliding() && rayCast.get_collider() == shapeCast.get_collider(human)):
 					print("Human can see me!")
 					shapeCast.get_collider(human).deadBodySight = true

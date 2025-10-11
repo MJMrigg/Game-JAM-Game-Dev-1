@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 project/assembly_name="New Game Project"
 
+[global_group]
+
+NPCs=""
+
 [input]
 
 p_forward={

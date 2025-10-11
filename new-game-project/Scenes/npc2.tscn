@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq85taomsbt24"]
+[gd_scene load_steps=6 format=3 uid="uid://wykvwpjkl1nq"]
 
-[ext_resource type="Script" uid="uid://e1fdcqwu8y5p" path="res://Scripts/NPC.gd" id="1_oyrmw"]
+[ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_oyrmw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8vx4k"]
 
@@ -10,10 +10,14 @@ albedo_color = Color(0.9411765, 0.73333335, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_yf78a"]
 material = SubResource("StandardMaterial3D_oyrmw")
 
-[node name="NPC2" type="CharacterBody3D" node_paths=PackedStringArray("navigator")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_oyrmw"]
+radius = 15.0
+
+[node name="NPC2" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast") groups=["NPCs"]]
 script = ExtResource("1_oyrmw")
-type = 2
 navigator = NodePath("NavigationAgent3D")
+rayCast = NodePath("RayCast3D")
+shapeCast = NodePath("ShapeCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_8vx4k")
@@ -22,3 +26,14 @@ shape = SubResource("CylinderShape3D_8vx4k")
 mesh = SubResource("CylinderMesh_yf78a")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.8097254, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(0.72621274, 0, 0.2528976, 1)
+debug_shape_thickness = 5
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0042577, 0)
+shape = SubResource("SphereShape3D_oyrmw")
+collision_mask = 2

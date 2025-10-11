@@ -91,7 +91,7 @@ func unposses() -> void:
 	# Teleport possesed object to player and make visible
 	possesed.position = self.position
 	possesed.show()
-	possesed.rotation.x = 90
+	#possesed.rotation.x = 90
 	possesed.unconcious = true
 	
 	# Move player to spot near possesed
