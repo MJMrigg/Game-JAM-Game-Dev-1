@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 class_name NPC
 
-
 signal body_discovered(human)
 signal points
 @export var speed = 3
@@ -17,6 +16,7 @@ var deadBodySight:bool = false# test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
+@export var my_house:door # NPC's house
 
 var animations:AnimationPlayer
 var direction = Vector3.ZERO
@@ -100,16 +100,9 @@ func _physics_process(delta: float) -> void:
 	model.rotate(basis.y, 90.0)
 	debugRay.target_position = debugRay.to_local(look_target)
 	debugRay.force_raycast_update()
-
 	
 	# MOOOOOOOOOOOOOOOOOOVVEEEEEEE
 	move_and_slide()
-	
-	
-	
-
-
-
 
 func pick_new_target() -> void:
 	# Randomly generate a new target

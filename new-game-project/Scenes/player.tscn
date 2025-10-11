@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://dbnylfb07a7xp" path="res://Models/person.tscn" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://8cbc8hhlgjcx" path="res://Models/person1.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
 
@@ -52,13 +52,6 @@ visible = false
 mesh = SubResource("CylinderMesh_vgqql")
 skeleton = NodePath("../NPC2")
 
-[node name="NPC1" parent="." instance=ExtResource("3_6t5aa")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5005257, 0)
-visible = false
-
-[node name="blade" parent="NPC1" index="7"]
-visible = false
-
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 62
@@ -71,6 +64,10 @@ shape = SubResource("SphereShape3D_6t5aa")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.25)
 shape = SubResource("BoxShape3D_6t5aa")
 collision_mask = 24
+
+[node name="NPC1" parent="." instance=ExtResource("3_6t5aa")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5971966, 0)
+visible = false
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
