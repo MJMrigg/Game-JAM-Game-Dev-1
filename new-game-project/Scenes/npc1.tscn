@@ -10,16 +10,20 @@ albedo_color = Color(0.59695137, 0, 1, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_xxsvc"]
 material = SubResource("StandardMaterial3D_acqhf")
 
-[node name="NPC1" type="CharacterBody3D" groups=["NPCs"]]
+[node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator") groups=["NPCs"]]
 collision_layer = 2
 collision_mask = 62
 script = ExtResource("1_c4f1t")
 type = 1
+navigator = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_b0k6i")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 100.0
+path_height_offset = 1.0
+path_max_distance = 100.01
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_xxsvc")
