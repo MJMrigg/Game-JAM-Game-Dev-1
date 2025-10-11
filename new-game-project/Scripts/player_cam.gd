@@ -18,3 +18,9 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("p_perspective") && z_distance != null):
 		z_distance *= -1
+		
+	if(event.is_action_pressed("p_zoom_in")):
+		z_distance = clamp(z_distance, 0.5, 3) - 0.25
+		
+	if(event.is_action_pressed("p_zoom_out")):
+		z_distance = clamp(z_distance, 0.5, 3) + 0.25

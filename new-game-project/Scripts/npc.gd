@@ -88,7 +88,7 @@ func _physics_process(delta: float) -> void:
 		velocity = newVel
 	
 	
-	animations.play("Walk_001")
+	animations.play("Walk")
 	var look_target = Vector3(nextPos.x, model.global_position.y, nextPos.z)
 	#var target_dir = (look_target - model.global_position).normalized()
 	#var current_dir = model.transform.basis.z.normalized() #*-1
