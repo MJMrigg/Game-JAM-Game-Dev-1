@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+class_name NPC
+
+@export var type:int # Type of NPC it is
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -3,11 +3,11 @@ extends CharacterBody3D
 @export var speed:float = 5.0 # Movement speed
 @export var possesed:Node3D # Target that is possesed
 var possessor:ShapeCast3D # Detector for possession area
-var mesh:MeshInstance3D # Player's mesh
+var collider:CollisionShape3D # Collision detector
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
-	mesh = get_node("MeshInstance3D")
+	collider = get_node("CollisionShape3D")
 
 func _process(delta: float) -> void:
 	# Get translation and rotation
@@ -26,13 +26,11 @@ func _process(delta: float) -> void:
 	# If the player tries to posses someone
 	if(Input.is_action_just_pressed("p_interact")):
 		if(possesed == null):
-			print("TEST")
 			posses()
-	
-	# If the player was possessing anyone, move them the player position
-	if(possesed != null):
-		possesed.position = self.position
+		elif(possesed != null):
+			unposses()
 
+# Posses an NPC
 func posses() -> void:
 	# If the player is already possesing someone, return
 	if(possesed != null):
@@ -40,8 +38,59 @@ func posses() -> void:
 	
 	# Get closest NPC to player
 	possessor.force_shapecast_update()
-	possesed = possessor.get_collider(0) # No checks needed, since possessor only looks for NPCs
-		
-	# Make the NPC invisible and the player's mesh the npc's mesh so that it looks like the player possessed them
+	if(!possessor.is_colliding()):
+		return
+	var found = possessor.get_collider(0)
+	if(found == null): # If there was no NPC, return
+		return
+	possesed = found as NPC
+	
+	# Make the player's NPC mesh visible
+	if(possesed.type == 1):
+		get_node("NPC1").show()
+	elif(possesed.type == 2):
+		get_node("NPC2").show()
+	elif(possesed.type == 3):
+		get_node("NPC3").show()
+	else:
+		return
+	# Make the NPC invisible
 	possesed.hide()
-	mesh.mesh = possesed.
+	# Make the player's ghost mesh invisible
+	get_node("Ghost").hide()
+	
+	# Set collision masks
+	for i in range(1,7):
+		self.set_collision_mask_value(i,1)
+
+# Unposses an NPC
+func unposses() -> void:
+	# If the player is not possesing anyone, return
+	if(possesed == null):
+		return
+	
+	# Set collision masks
+	for i in range(1,7):
+		self.set_collision_mask_value(i,0)
+	
+	# Teleport possesed object to player and make visible
+	possesed.position = self.position
+	possesed.show()
+	possesed.rotation.x += 90
+	
+	# Move player to spot near possesed
+	self.position.z += 2
+	
+	# Make the player's ghost mesh visible
+	get_node("Ghost").show()
+	if(possesed.type == 1):
+		get_node("NPC1").hide()
+	elif(possesed.type == 2):
+		get_node("NPC2").hide()
+	elif(possesed.type == 3):
+		get_node("NPC3").hide()
+	else:
+		return
+	
+	# Player no longer references possesed object
+	possesed = null

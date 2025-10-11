@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6rrimmh2yx4h"]
+
+[ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3mxmt"]
+radius = 1.0
+
+[node name="Ghost" type="CharacterBody3D"]
+collision_mask = 0
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3btnm")
+
+[node name="PossessionArea" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_3mxmt")
+target_position = Vector3(0, 0, 0)
+collision_mask = 0
+
+[node name="Ghost" parent="." instance=ExtResource("2_6t5aa")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
