@@ -31,9 +31,6 @@ func _process(delta: float) -> void:
 			posses()
 		elif(possesed != null):
 			unposses()
-			
-	if(Input.is_action_just_pressed("p_sound")):
-		print("Sound")
 
 # Posses an NPC
 func posses() -> void:
@@ -108,9 +105,7 @@ func unposses() -> void:
 func earshot_entered(body: Node3D) -> void:
 	if(body.is_in_group("NPCs")):
 		body.earshot = true
-		print("Entered")
 	
 func earshot_exited(body: Node3D) -> void:
 	if(body.is_in_group("NPCs")):
 		body.earshot = false
-		print("Exited")

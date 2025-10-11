@@ -26,7 +26,7 @@ material = SubResource("StandardMaterial3D_6t5aa")
 [sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
 size = Vector3(1, 0.7, 2)
 
-[node name="Ghost" type="CharacterBody3D"]
+[node name="Ghost" type="CharacterBody3D" groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_cvnsp")
 
@@ -61,7 +61,7 @@ collision_layer = 2
 collision_mask = 62
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SoundArea3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("SphereShape3D_6t5aa")
 
 [node name="Interactor" type="ShapeCast3D" parent="."]
