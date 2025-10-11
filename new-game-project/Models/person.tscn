@@ -1,4 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://b2t1qqqa34jep"]
+[gd_scene load_steps=30 format=4 uid="uid://dbnylfb07a7xp"]
+
+[ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_f6gt8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6fs2"]
 resource_name = "Material.002"
@@ -347,7 +349,12 @@ shadow_mesh = SubResource("ArrayMesh_r16sv")
 radius = 2.0
 height = 7.0
 
-[node name="Person" type="CharacterBody3D"]
+[node name="Person" type="CharacterBody3D" node_paths=PackedStringArray("navigator")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+collision_layer = 2
+collision_mask = 62
+script = ExtResource("1_f6gt8")
+navigator = NodePath("NavigationAgent3D")
 
 [node name="head" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12269, 0)
@@ -386,14 +393,18 @@ skeleton = NodePath("")
 
 [node name="blade" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.24619383, -5.0871538e-08, -5.0871552e-08, 5.0871535e-08, 8.804577e-08, -0.24619383, 5.0871556e-08, -0.24619383, -8.804576e-08, 1.0227734, 1.52094, 1.1407835)
+visible = false
 mesh = SubResource("ArrayMesh_w6vul")
 skeleton = NodePath("")
 
 [node name="handle" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.24619383, -5.0871538e-08, -5.0871552e-08, 5.0871535e-08, 8.804577e-08, -0.24619383, 5.0871556e-08, -0.24619383, -8.804576e-08, 0.24281861, 1.5678542, 1.1407835)
+visible = false
 mesh = SubResource("ArrayMesh_36e34")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9067087, 0)
 shape = SubResource("CapsuleShape3D_sxfnn")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

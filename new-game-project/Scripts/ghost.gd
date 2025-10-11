@@ -44,6 +44,10 @@ func posses() -> void:
 	if(found == null): # If there was no NPC, return
 		return
 	possesed = found as NPC
+	# If the NPC is unconcious, do not posses them
+	if(possesed.unconcious):
+		possesed = null
+		return
 	
 	# Make the player's NPC mesh visible
 	if(possesed.type == 1):
@@ -77,6 +81,7 @@ func unposses() -> void:
 	possesed.position = self.position
 	possesed.show()
 	possesed.rotation.x = 90
+	possesed.unconcious = true
 	
 	# Move player to spot near possesed
 	self.position.z += 2
