@@ -3,7 +3,8 @@ extends CharacterBody3D
 @export var speed:float = 5.0 # Movement speed
 @export var possesed:Node3D # Target that is possesed
 var possessor:ShapeCast3D # Detector for possession area
-var mesh:MeshInstance3D # Player's mesh
+var interactor:ShapeCast3D # Detector for interaction area
+signal wrong_door
 
 const mouse_sens = 0.1 # Mouse sensative speed
 
@@ -12,7 +13,7 @@ var lerp_speed = 10.0 # Speed of the lerp
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
-	mesh = get_node("MeshInstance3D")
+	interactor = get_node("Interactor")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Locks mouse in window
 
 func _input(event: InputEvent) -> void:
@@ -40,12 +41,16 @@ func _physics_process(delta: float) -> void:
 	# MOVE
 	move_and_slide()
 	
-	if(Input.is_action_just_pressed("p_interact")):
+	# If the player tries to posses/unposses
+	if(Input.is_action_just_pressed("p_posses")):
 		if(possesed == null):
 			posses()
 		elif(possesed != null):
 			unposses()
-			
+	
+	# If the player tries to interact with an object
+	if(Input.is_action_just_pressed("p_interact")):
+		interact()
 
 func posses() -> void:
 	# If the player is already possesing someone, return
@@ -59,8 +64,8 @@ func posses() -> void:
 	var found = possessor.get_collider(0)
 	if(found == null): # If there was no NPC, return
 		return
-	possesed = found as NPC
-	
+	possesed = found
+		
 	# Make the player's NPC mesh visible
 	if(possesed.type == 1):
 		get_node("NPC1").show()
@@ -110,3 +115,27 @@ func unposses() -> void:
 	
 	# Player no longer references possesed object
 	possesed = null
+
+func interact() -> void:
+	# If the player isn't possesing anyone, do nothing
+	if(possesed == null):
+		return
+	
+	# Get closest object for the player to interact with
+	var found = interactor.get_collider(0)
+	if(found == null):
+		return
+	elif(found is door):
+		print("DOOR")
+		print(found)
+		print(possesed.my_door)
+		if(possesed.my_door == found):
+			print("MYDOOR")
+			found.queue_free()
+		else:
+			wrong_door.emit()
+			pass
+	#elif(found is knife): # If it's the knife, make the knife show on all the models
+	#	found.queue_free()
+	#	get_node("NPC1/blade").show()
+	
