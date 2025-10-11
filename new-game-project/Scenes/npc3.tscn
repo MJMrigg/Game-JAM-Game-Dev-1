@@ -1,25 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://5g056341n2oi"]
+[gd_scene load_steps=5 format=3 uid="uid://bvwdlhxmecwle"]
 
-[ext_resource type="Script" uid="uid://e1fdcqwu8y5p" path="res://Scripts/NPC.gd" id="1_ooy1u"]
+[ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_wdv0w"]
+[ext_resource type="PackedScene" path="res://Models/person_3.tscn" id="2_myd0b"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tf6bg"]
-albedo_color = Color(0.5647059, 0.2, 0.29803923, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ytody"]
+radius = 1.5
+height = 6.5
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_ooy1u"]
-material = SubResource("StandardMaterial3D_tf6bg")
+[sub_resource type="SphereShape3D" id="SphereShape3D_eghqu"]
+radius = 10.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wdv0w"]
-
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("navigator")]
-script = ExtResource("1_ooy1u")
-type = 3
+[node name="NPC3" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "debugRay")]
+script = ExtResource("1_wdv0w")
 navigator = NodePath("NavigationAgent3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_ooy1u")
-skeleton = NodePath("../NavigationAgent3D")
+rayCast = NodePath("RayCast3D")
+shapeCast = NodePath("ShapeCast3D")
+model = NodePath("Person1")
+debugRay = NodePath("RayCast3D2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="Person1" parent="." instance=ExtResource("2_myd0b")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_wdv0w")
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
+shape = SubResource("CapsuleShape3D_ytody")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.551221, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(0.72621274, 0, 0.2528976, 1)
+debug_shape_thickness = 5
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0042577, 0)
+shape = SubResource("SphereShape3D_eghqu")
+collision_mask = 2
+
+[node name="RayCast3D2" type="RayCast3D" parent="."]
+transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
+debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
+debug_shape_thickness = 5
