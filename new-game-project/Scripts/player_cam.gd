@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 	# Set position at each distance from the target and look at the target
 	position = target.position + target.basis.z*z_distance + target.basis.y*y_distance + target.basis.x*x_distance
 	look_at(target.position)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if(event.is_action_pressed("p_perspective") && z_distance != null):
+		z_distance *= -1

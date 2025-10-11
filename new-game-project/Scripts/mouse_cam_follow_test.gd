@@ -5,6 +5,7 @@ extends CharacterBody3D
 var possessor:ShapeCast3D # Detector for possession area
 var interactor:ShapeCast3D # Detector for interaction area
 signal wrong_door
+var knife = false # If the player has the knife
 
 const mouse_sens = 0.1 # Mouse sensative speed
 
@@ -126,16 +127,13 @@ func interact() -> void:
 	if(found == null):
 		return
 	elif(found is door):
-		print("DOOR")
-		print(found)
-		print(possesed.my_door)
 		if(possesed.my_door == found):
-			print("MYDOOR")
 			found.queue_free()
 		else:
 			wrong_door.emit()
 			pass
-	#elif(found is knife): # If it's the knife, make the knife show on all the models
-	#	found.queue_free()
-	#	get_node("NPC1/blade").show()
+	elif(found is knife): # If it's the knife, make the knife show on all the models
+		found.queue_free()
+		get_node("NPC1/blade").show()
+		knife = true # The player now has the knife
 	

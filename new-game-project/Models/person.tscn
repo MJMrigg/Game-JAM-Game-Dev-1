@@ -384,8 +384,7 @@ mesh = SubResource("ArrayMesh_ibpw1")
 skeleton = NodePath("")
 
 [node name="blade" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.24619383, -5.0871538e-08, -5.0871552e-08, 5.0871535e-08, 8.804577e-08, -0.24619383, 5.0871556e-08, -0.24619383, -8.804576e-08, 1.0227734, 1.52094, 1.1407835)
-visible = false
+transform = Transform3D(-0.24619368, -7.185797e-09, 1.6249397e-15, 0, -2.080198e-09, -0.24619418, 3.7174214e-08, -0.047589388, 1.07614895e-08, 1.0227734, 1.52094, 1.1407835)
 mesh = SubResource("ArrayMesh_w6vul")
 skeleton = NodePath("")
 

@@ -24,7 +24,7 @@ material = SubResource("StandardMaterial3D_6t5aa")
 [sub_resource type="SphereShape3D" id="SphereShape3D_6t5aa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
-size = Vector3(1, 0.7, 2)
+size = Vector3(1, 1.5, 2)
 
 [node name="Ghost" type="CharacterBody3D" groups=["player"]]
 collision_mask = 0
@@ -56,6 +56,9 @@ skeleton = NodePath("../NPC2")
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5005257, 0)
 visible = false
 
+[node name="blade" parent="NPC1" index="7"]
+visible = false
+
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 62
@@ -65,9 +68,11 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("SphereShape3D_6t5aa")
 
 [node name="Interactor" type="ShapeCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.65)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.25)
 shape = SubResource("BoxShape3D_6t5aa")
 collision_mask = 24
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
+
+[editable path="NPC1"]
