@@ -6,6 +6,7 @@ class_name NPC
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
 var unconcious = false # If the NPC is unconcious
+var earshot:bool # If NPC is within earshot of player noise
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +25,12 @@ func _physics_process(delta: float) -> void:
 		print("Error: No Selected Navigation Agent")
 		return
 	
+	# Reacts if close enough to sound
+	if(Input.is_action_just_pressed("p_sound") && earshot):
+		print("Heard")
+		if(type == 1):
+			print("Traveling to Player")
+		
 	# Check if the target was reached or if it's not reachable
 	if(navigator.is_target_reached() || !navigator.is_target_reachable()):
 		pick_new_target()
