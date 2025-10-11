@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=4 uid="uid://bopcd5rtyokfc"]
 
-[ext_resource type="Script" uid="uid://cc0c4a6msk7tk" path="res://Scripts/door.gd" id="1_kgf6e"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_kgf6e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d38lg"]
 resource_name = "Material.003"
@@ -529,3 +529,8 @@ skeleton = NodePath("")
 [node name="doorCollision" type="CollisionShape3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4891543, 1.8847337, 0.31832933)
 shape = SubResource("BoxShape3D_nvmrr")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+transform = Transform3D(5.331142, 0, 0, 0, 1.0850179, 0, 0, 0, 5.45337, 0.47470498, 0.41815186, 1.070138)
+start_position = Vector3(2.208711, 0.023457348, -0.007403016)
+end_position = Vector3(-0.019237757, -0.0054602623, -0.023047924)
