@@ -31,6 +31,15 @@ func _process(delta: float) -> void:
 			posses()
 		elif(possesed != null):
 			unposses()
+			
+	'''
+	# Alternet sound check - David T
+	if(Input.is_action_just_pressed("p_sound")):
+		var area = sound_area.get_overlapping_bodies()
+		for human in area:
+			if(human.is_in_group("NPCs")):
+				human.earshot = true
+	'''
 
 # Posses an NPC
 func posses() -> void:
@@ -103,9 +112,11 @@ func unposses() -> void:
 	possesed = null
 
 func earshot_entered(body: Node3D) -> void:
+	#return
 	if(body.is_in_group("NPCs")):
 		body.earshot = true
 	
 func earshot_exited(body: Node3D) -> void:
+	#return
 	if(body.is_in_group("NPCs")):
 		body.earshot = false

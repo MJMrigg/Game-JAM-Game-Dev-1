@@ -5,8 +5,11 @@ class_name NPC
 @export var speed = 3
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
+@export var deadArea:Area3D # Observable Dead Area
+@export var rayCast:RayCast3D
 var unconcious = false # If the NPC is unconcious
 var earshot:bool # If NPC is within earshot of player noise
+var deadBodySight:bool # test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
 
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +19,22 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# If the NPC is unconcious, do nothing
+	if(deadBodySight):
+		print("SCREAM! A dead body.")
+		
 	if(unconcious):
+		deadBodySight = false
+		var area = deadArea.get_overlapping_bodies() 
+		#print(area)
+		for human in area:
+			if(human.is_in_group("NPCs")):
+				print("Found human in area")
+				rayCast.target_position = to_local(human.global_position)
+				rayCast.force_raycast_update()
+				if(rayCast.is_colliding() && rayCast.get_collider() == human):
+					human.deadBodySight = true
 		return
+	
 	# Check if nav map exists
 	if(NavigationServer3D.map_get_iteration_id(navigator.get_navigation_map()) == 0):
 		print("Error: No Navigation Mesh")
