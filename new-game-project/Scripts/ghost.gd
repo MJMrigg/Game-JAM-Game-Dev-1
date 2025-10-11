@@ -9,6 +9,8 @@ var sound_area:Area3D # Sound Area
 var interactor:ShapeCast3D # Detector for objects to interact with
 var knife:bool = false # If the player has the knife
 signal wrong_door
+signal menu
+@export var target:NPC # The target
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
@@ -16,6 +18,11 @@ func _ready() -> void:
 	sound_area = get_node("SoundArea3D")
 	interactor = get_node("Interactor")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Locks mouse in window
+
+# Player key input
+func _unhandled_input(event: InputEvent) -> void:
+	if(event.is_action_pressed("p_menu")):
+		menu.emit()
 
 # Have mouse rotate camera
 func _input(event: InputEvent) -> void:
@@ -67,7 +74,6 @@ func posses() -> void:
 	if(found == null): # If there was no NPC, return
 		return
 	possesed = found as NPC
-	print(found)
 	# If the NPC is unconcious, do not posses them
 	if(possesed.unconcious):
 		possesed = null
@@ -145,11 +151,11 @@ func interact():
 	if(found == null):
 		return
 	elif(found is door):
+		# If it was the correct door, open it. Else, tell the player it's the wrong door
 		if(possesed.my_door == found):
 			found.queue_free()
 		else:
 			wrong_door.emit()
-			pass
 	elif(found is knife): # If it's the knife, make the knife show on all the models
 		found.queue_free()
 		get_node("NPC1/blade").show()

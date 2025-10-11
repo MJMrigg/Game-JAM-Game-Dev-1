@@ -13,7 +13,7 @@ func close() -> void:
 
 # If the player presses a key
 func _unhandled_input(event: InputEvent) -> void:
-	if(event.is_action_pressed("close")):
+	if(event.is_action_pressed("close")): # Close the menu
 		close()
-	if(event.is_action_pressed("quit") && self.visible):
-		print("Quit")
+	if(event.is_action_pressed("quit") && self.visible): # Quit the game if menu is open
+		get_tree().quit()
