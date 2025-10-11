@@ -1,18 +1,25 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvdmuo0n7o4qy"]
 
-[ext_resource type="Script" uid="uid://c6yt17qt5x48b" path="res://Scenes/Counter.gd" id="1_vporn"]
+[ext_resource type="Script" uid="uid://c6yt17qt5x48b" path="res://Scripts/Counter.gd" id="1_vporn"]
 
 [node name="HUD_score" type="CanvasLayer"]
+script = ExtResource("1_vporn")
 
 [node name="Score" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.042000003
+anchor_bottom = 0.035
+offset_right = -8.384003
+offset_bottom = 0.3199997
 text = "Score:"
 
 [node name="Number" type="Label" parent="."]
-offset_left = 54.0
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_right = 0.082
+anchor_bottom = 0.037
+offset_left = -0.144001
 offset_top = 1.0
-offset_right = 94.0
-offset_bottom = 24.0
-text = "0"
-script = ExtResource("1_vporn")
+offset_right = -0.46400452
+offset_bottom = 0.024000168
+text = "5"
