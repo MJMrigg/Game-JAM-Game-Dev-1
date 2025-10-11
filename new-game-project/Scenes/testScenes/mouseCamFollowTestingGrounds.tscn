@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://e64wefyqpbiv"]
+
+[ext_resource type="PackedScene" uid="uid://cureus1a6l8ys" path="res://Scenes/testScenes/mouseCamFollowTest.tscn" id="1_ibyqy"]
+[ext_resource type="PackedScene" uid="uid://cy6f1magjjlh7" path="res://Models/street_lamp.tscn" id="2_pvhrp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(0, 1, 0.27395758, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_juj7c"]
+material = SubResource("StandardMaterial3D_bo1nx")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvebp"]
+size = Vector3(100, 0.1, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_juj7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_vvebp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94629997, 0.32328987, 0, -0.32328987, 0.94629997, 0, 2.2137718, 0)
+
+[node name="Ghost" parent="." instance=ExtResource("1_ibyqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.060599, 0.8396919, 0.37610626)
+
+[node name="StreetLamp" parent="." instance=ExtResource("2_pvhrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.89017, 2.098546, 26.8773)
+
+[node name="StreetLamp2" parent="." instance=ExtResource("2_pvhrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.521545, 2.098545, -30.62741)
