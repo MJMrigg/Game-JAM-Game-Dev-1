@@ -409,7 +409,7 @@ _data = {
 &"Walk_001": SubResource("Animation_u27eb")
 }
 
-[node name="Person" type="Node3D"]
+[node name="Person" type="CharacterBody3D"]
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(0.7667879, 0, 0, 0, 0.7667879, 0, 0, 0, 0.7667879, 0, 1.863668, 0)
