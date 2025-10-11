@@ -782,8 +782,9 @@ transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.0
 transform = Transform3D(1, 0, 0, 0, 0.85264015, -0.52249855, 0, 0.52249855, 0.85264015, 0, 3.692, 0)
 light_angular_distance = 88.14
 
-[node name="NPC1" parent="." instance=ExtResource("4_agxrm")]
+[node name="NPC1" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -30.695034, 0.44233212, 11.56313)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8bufs")
@@ -794,3 +795,5 @@ environment = SubResource("Environment_8bufs")
 
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
+
+[editable path="NavigationRegion3D/Houses/House24"]

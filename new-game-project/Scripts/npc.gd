@@ -16,7 +16,7 @@ var deadBodySight:bool = false# test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
-@export var my_house:door # NPC's house
+@export var my_door:door # NPC's house
 
 var animations:AnimationPlayer
 var direction = Vector3.ZERO
