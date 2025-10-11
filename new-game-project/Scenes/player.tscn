@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=11 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
@@ -20,6 +20,9 @@ albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
 material = SubResource("StandardMaterial3D_6t5aa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t5aa"]
+size = Vector3(1, 1.5, 2)
 
 [node name="Ghost" type="CharacterBody3D"]
 collision_mask = 0
@@ -49,3 +52,11 @@ skeleton = NodePath("../NPC2")
 
 [node name="NPC1" parent="." instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5005257, 0)
+visible = false
+
+[node name="Interactor" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.75)
+shape = SubResource("BoxShape3D_6t5aa")
+collision_mask = 56
+
+[editable path="NPC1"]

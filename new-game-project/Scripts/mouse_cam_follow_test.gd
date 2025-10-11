@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var possesed:Node3D # Target that is possesed
 var possessor:ShapeCast3D # Detector for possession area
 var mesh:MeshInstance3D # Player's mesh
+var interactor:ShapeCast3D # Detector for objects to interact with
+signal wrong_door # If the player tried to open the wrong door
+
 
 const mouse_sens = 0.1 # Mouse sensative speed
 
@@ -12,7 +15,7 @@ var lerp_speed = 10.0 # Speed of the lerp
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
-	mesh = get_node("MeshInstance3D")
+	interactor = get_node("Interactor")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Locks mouse in window
 
 func _input(event: InputEvent) -> void:
@@ -40,12 +43,17 @@ func _physics_process(delta: float) -> void:
 	# MOVE
 	move_and_slide()
 	
-	if(Input.is_action_just_pressed("p_interact")):
+	# If the player tries to posses someone
+	if(Input.is_action_just_pressed("p_posses")):
 		if(possesed == null):
 			posses()
 		elif(possesed != null):
 			unposses()
-			
+	# If the player tries to interact with an object
+	if(Input.is_action_just_pressed("p_interact")):
+		if(possesed != null):
+			interact()
+	
 
 func posses() -> void:
 	# If the player is already possesing someone, return
@@ -110,3 +118,22 @@ func unposses() -> void:
 	
 	# Player no longer references possesed object
 	possesed = null
+
+# Interact with objects
+func interact() -> void:
+	# Get closest interactable object
+	var object = interactor.get_collider(0)
+	if(object == null): # If there was nothing, return
+		return
+	
+	# If the object is the knife
+	#if(object is knife):
+	#	object.queue_free()
+	#	get_node("NPC1/blade").show()
+	#	return
+	# If the object is the door
+	if(object is door):
+		if(possesed.house == object):
+			object.hide()
+		else:
+			self.wrong_door.emit()

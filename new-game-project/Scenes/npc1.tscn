@@ -7,12 +7,13 @@
 radius = 1.5
 height = 6.5
 
-[node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator") groups=["NPCs"]]
+[node name="NPC1" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "mesh") groups=["NPCs"]]
 collision_layer = 2
 collision_mask = 62
 script = ExtResource("1_c4f1t")
 type = 1
 navigator = NodePath("NavigationAgent3D")
+mesh = NodePath("Person")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 100.0
@@ -21,7 +22,10 @@ path_height_offset = 1.0
 path_max_distance = 100.01
 
 [node name="Person" parent="." instance=ExtResource("2_qry20")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 0, 0.010263801, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
 shape = SubResource("CapsuleShape3D_oc1k0")
+
+[editable path="Person"]
