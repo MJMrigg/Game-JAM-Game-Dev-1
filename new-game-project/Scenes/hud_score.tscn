@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvdmuo0n7o4qy"]
+
+[ext_resource type="Script" uid="uid://c6yt17qt5x48b" path="res://Scenes/Counter.gd" id="1_vporn"]
+
+[node name="HUD_score" type="CanvasLayer"]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score:"
+
+[node name="Number" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 24.0
+text = "0"
+script = ExtResource("1_vporn")
