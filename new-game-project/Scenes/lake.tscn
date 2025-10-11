@@ -1,0 +1,632 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm8nv7osb672r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bufs"]
+albedo_color = Color(0.036449034, 0.6050048, 0.8202866, 1)
+metallic = 0.51
+roughness = 0.33
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qvphp"]
+material = SubResource("StandardMaterial3D_8bufs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5uet"]
+albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vmkck"]
+material = SubResource("StandardMaterial3D_t5uet")
+
+[node name="Lake" type="Node3D"]
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.877321, 0, 0, 0, 0.030637253, 0, 0, 0, 17.870918, -0.20348549, 0.08321214, 3.4406948)
+layers = 3
+mesh = SubResource("CylinderMesh_qvphp")
+skeleton = NodePath("../..")
+
+[node name="Water2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.711195, 0, -9.23795, 0, 0.030637255, 0, 16.62704, 0, -3.1731281, 3.6096907, 0.08321214, 3.4763088)
+layers = 3
+mesh = SubResource("CylinderMesh_qvphp")
+skeleton = NodePath("../..")
+
+[node name="Water3" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.75688, 0, 4.756068, 0, 0.030637251, 0, -3.483697, 0, 21.511856, -0.60194016, 0.08321214, -1.6913815)
+layers = 3
+mesh = SubResource("CylinderMesh_qvphp")
+skeleton = NodePath("../..")
+
+[node name="Rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1789134, 0, 0, 0, 0.67907345, 0, 0, 0, 0.75290966, -6.0477824, -0.019685134, -10.7242155)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.39650986, 0, -0.5922565, 0, 0.5809544, 0, 0.92736095, 0, 0.25322992, -6.4228644, -0.087660655, -10.253922)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2729898, 0, -0.5133708, 0, 0.7331779, 0, 0.6384711, 0, 0.21950091, -6.8611236, -0.087660655, -10.15382)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15677463, 0, -0.41992652, 0, 0.57451504, 0, 0.36666596, 0, 0.17954713, -6.8611236, -0.087660655, -9.74403)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.22833446, 0, -0.6116021, 0, 0.83675265, 0, 0.53403074, 0, 0.2615015, -7.2280025, -0.087660536, -9.534776)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3113517, 0, -0.70667815, 0, 0.6096798, 0, 0.7281922, 0, 0.30215296, -7.33422, -0.087660655, -9.028165)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1073015, 0, -0.25841147, 0, 0.67907345, 0, 0.40462324, 0, 0.7071749, -3.738452, -0.019685134, -12.321305)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.054138124, 0, -0.64319336, 0, 0.5809543, 0, 1.0071183, 0, 0.03457518, -4.252163, -0.087660655, -12.008314)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.037273094, 0, -0.5575231, 0, 0.73317784, 0, 0.69338256, 0, 0.029969886, -4.6981573, -0.087660655, -12.064711)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.021405488, 0, -0.45604217, 0, 0.574515, 0, 0.39820093, 0, 0.02451475, -4.8388042, -0.087660655, -11.679813)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.031176046, 0, -0.66420287, 0, 0.8367526, 0, 0.5799599, 0, 0.03570454, -5.255217, -0.087660536, -11.609189)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.042510897, 0, -0.7674557, 0, 0.6096798, 0, 0.7908202, 0, 0.041254938, -5.52886, -0.087660655, -11.169807)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock30" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9787647, 0, 0.41969168, 0, 0.67907345, 0, -0.65715736, 0, 0.6250854, -8.593826, -0.019685134, -5.936942)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock37" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8461284, 0, -0.35054994, 0, 0.58095425, 0, 0.5488944, 0, 0.5403776, -8.643075, -0.087660655, -5.337411)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock38" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.58254397, 0, -0.30385834, 0, 0.73317784, 0, 0.37790382, 0, 0.46840185, -8.886244, -0.087660655, -4.9962206)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock39" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3345477, 0, -0.24854974, 0, 0.574515, 0, 0.21702541, 0, 0.38314283, -8.722702, -0.087660655, -4.6697884)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock40" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.48725212, 0, -0.3620004, 0, 0.8367527, 0, 0.31608677, 0, 0.5580286, -8.91065, -0.087660536, -4.2915516)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock41" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6644059, 0, -0.41827476, 0, 0.6096798, 0, 0.43100873, 0, 0.6447764, -8.716436, -0.087660655, -3.8117409)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock42" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1448585, 0, 0.1796579, 0, 0.67907345, 0, -0.2813102, 0, 0.73116064, -7.566819, -0.019685134, -8.55017)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock43" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6063411, 0, -0.5147228, 0, 0.5809542, 0, 0.80595803, 0, 0.38723812, -7.818846, -0.087660655, -8.003961)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock44" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.41745484, 0, -0.44616434, 0, 0.73317784, 0, 0.5548875, 0, 0.3356599, -8.182342, -0.087660655, -7.7743254)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock45" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2397391, 0, -0.36495304, 0, 0.57451487, 0, 0.31866488, 0, 0.27456272, -8.122776, -0.087660655, -7.4042215)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock46" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34916815, 0, -0.53153604, 0, 0.8367524, 0, 0.46411967, 0, 0.39988708, -8.346098, -0.087660536, -7.077593)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock47" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.47611773, 0, -0.61416537, 0, 0.60967994, 0, 0.6328631, 0, 0.46205097, -8.411388, -0.087660655, -6.5961447)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock48" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65090877, 0, 0.62774634, 0, 0.6790735, 0, -0.98293144, 0, 0.41570112, -8.654721, -0.019685611, -0.48509598)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock49" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99212044, 0, -0.11586719, 0, 0.5809542, 0, 0.18142596, 0, 0.633615, -8.469702, -0.08766113, 0.087293625)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock50" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6830568, 0, -0.100434214, 0, 0.7331778, 0, 0.124908425, 0, 0.5492205, -8.546003, -0.08766113, 0.4748764)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock51" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.392271, 0, -0.0821531, 0, 0.5745149, 0, 0.07173334, 0, 0.4492508, -8.286549, -0.08766113, 0.7342186)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock52" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.57132316, 0, -0.11965193, 0, 0.83675253, 0, 0.104476064, 0, 0.6543114, -8.314644, -0.08766101, 1.1556454)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock53" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.77904344, 0, -0.13825227, 0, 0.6096798, 0, 0.14246126, 0, 0.7560271, -7.9508963, -0.08766113, 1.5239182)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock60" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.42826074, 0, 0.70147455, 0, 0.6790736, 0, -1.0983758, 0, 0.2735076, -7.9943986, -0.019685611, 2.2327385)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock61" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0080473, 0, 0.020782962, 0, 0.5809542, 0, -0.03254217, 0, 0.64378667, -7.6603155, -0.08766113, 2.6699867)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock62" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6940222, 0, 0.018014796, 0, 0.73317784, 0, -0.02240473, 0, 0.55803734, -7.632835, -0.08766113, 3.1228676)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock63" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.39856827, 0, 0.014735691, 0, 0.5745149, 0, -0.012866758, 0, 0.45646277, -7.3766365, -0.08766113, 3.3465824)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock64" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5804948, 0, 0.021461762, 0, 0.8367525, 0, -0.01873976, 0, 0.6648153, -7.314951, -0.08766101, 3.7644157)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock65" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7915496, 0, 0.02479817, 0, 0.60967976, 0, -0.025553107, 0, 0.76816386, -6.8815336, -0.08766113, 4.047413)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock54" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9487289, 0, 0.44693878, 0, 0.6790734, 0, -0.69982123, 0, 0.60590297, -8.71127, -0.019685611, -3.2923203)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock55" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8695863, 0, -0.32629633, 0, 0.580954, 0, 0.5109178, 0, 0.55535877, -8.733945, -0.08766113, -2.6912003)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock56" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.59869456, 0, -0.28283533, 0, 0.73317784, 0, 0.3517578, 0, 0.48138797, -9.02721, -0.08766113, -2.350483)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock57" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3438227, 0, -0.23135334, 0, 0.5745148, 0, 0.20201007, 0, 0.3937652, -8.783954, -0.08766113, -2.020708)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock58" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.50076085, 0, -0.33695474, 0, 0.83675253, 0, 0.29421768, 0, 0.57349956, -8.954981, -0.08766101, -1.6345215)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock59" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6828261, 0, -0.3893356, 0, 0.6096798, 0, 0.4011886, 0, 0.66265225, -8.690355, -0.08766113, -1.2144222)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75881475, 0, -0.57621276, 0, 0.6790733, 0, 0.9022395, 0, 0.4846149, -1.0170364, -0.019685134, -12.49509)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock14" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.45450693, 0, -0.5750102, 0, 0.5809543, 0, 0.9003565, 0, -0.2902696, -1.6183815, -0.087660655, -12.479439)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock15" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.31291974, 0, -0.49842158, 0, 0.73317784, 0, 0.619879, 0, -0.2516071, -1.9770803, -0.087660655, -12.750414)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock16" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.17970586, 0, -0.40769833, 0, 0.57451487, 0, 0.3559887, 0, -0.20580928, -2.290698, -0.087660655, -12.486649)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock17" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.26173276, 0, -0.5937927, 0, 0.8367527, 0, 0.51848, 0, -0.29975113, -2.6869879, -0.087660536, -12.632739)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.35689273, 0, -0.68609977, 0, 0.6096798, 0, 0.7069876, 0, -0.34634846, -3.1430721, -0.087660655, -12.387945)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock19" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.40305728, 0, -0.70753944, 0, 0.67907345, 0, 1.1078725, 0, 0.2574114, 1.6916561, -0.019685134, -11.755702)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock20" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.7359161, 0, -0.4404563, 0, 0.5809542, 0, 0.6896708, 0, -0.46999082, 1.1214647, -0.087660655, -11.947393)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock21" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5066648, 0, -0.38178957, 0, 0.73317766, 0, 0.47482556, 0, -0.40739027, 0.8775587, -0.087660655, -12.32502)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.29097125, 0, -0.31229588, 0, 0.5745149, 0, 0.27268645, 0, -0.33323675, 0.49246407, -0.087660655, -12.184917)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock23" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.42378518, 0, -0.4548435, 0, 0.8367524, 0, 0.3971543, 0, -0.4853427, 0.17038727, -0.087660536, -12.458147)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.577864, 0, -0.5255507, 0, 0.60967994, 0, 0.5415505, 0, -0.56079113, -0.3420105, -0.087660655, -12.384758)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock25" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.051567428, 0, -0.7521888, 0, 0.6790732, 0, 1.1777843, 0, 0.03293334, 3.4645367, -0.036062583, -10.410671)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock26" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.9091293, 0, -0.27889374, 0, 0.5809542, 0, 0.43669438, 0, -0.5806131, 2.9782877, -0.104038104, -10.764823)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock27" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.62591887, 0, -0.24174635, 0, 0.73317766, 0, 0.3006561, 0, -0.5032781, 2.8591118, -0.104038104, -11.198285)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock28" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.35945743, 0, -0.19774343, 0, 0.5745148, 0, 0.17266308, 0, -0.41167095, 2.4497137, -0.104038104, -11.180358)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock29" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.52353203, 0, -0.28800368, 0, 0.8367528, 0, 0.25147521, 0, -0.59957844, 2.2246113, -0.104037985, -11.537734)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock31" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.35580122, 0, -0.7178012, 0, 0.6790735, 0, 1.1239405, 0, -0.22723126, 5.161113, -0.036062583, -8.17341)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock32" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0037863, 0, -0.06267621, 0, 0.5809542, 0, 0.09813928, 0, -0.64106536, 4.8259497, -0.104038104, -8.672939)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock33" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.69108856, 0, -0.05432807, 0, 0.73317754, 0, 0.06756687, 0, -0.55567855, 4.8627834, -0.104038104, -9.120974)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock34" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.39688346, 0, -0.04443921, 0, 0.57451487, 0, 0.038802914, 0, -0.45453337, 4.472103, -0.104038104, -9.24465)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock35" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5780411, 0, -0.06472354, 0, 0.8367525, 0, 0.05651451, 0, -0.66200525, 4.383333, -0.104037985, -9.657575)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock36" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.7882038, 0, -0.07478514, 0, 0.6096798, 0, 0.07706176, 0, -0.7649166, 3.9324007, -0.104038104, -9.9117365)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock131" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.35580122, 0, -0.7178012, 0, 0.6790735, 0, 1.1239405, 0, -0.22723126, 6.5690155, -0.036062583, -5.9614162)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock132" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0037863, 0, -0.06267621, 0, 0.5809542, 0, 0.09813928, 0, -0.64106536, 6.2338524, -0.104038104, -6.460945)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock133" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.69108856, 0, -0.05432807, 0, 0.73317754, 0, 0.06756687, 0, -0.55567855, 6.270687, -0.104038104, -6.9089794)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock134" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.39688346, 0, -0.04443921, 0, 0.57451487, 0, 0.038802914, 0, -0.45453337, 5.880005, -0.104038104, -7.0326557)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock135" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5780411, 0, -0.06472354, 0, 0.8367525, 0, 0.05651451, 0, -0.66200525, 5.791237, -0.104037985, -7.4455805)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock136" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.7882038, 0, -0.07478514, 0, 0.6096798, 0, 0.07706176, 0, -0.7649166, 5.3403034, -0.104038104, -7.6997423)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock137" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.28799942, 0, 0.7300974, 0, 0.67907345, 0, -1.1431942, 0, 0.18392977, 6.7361584, -0.036062583, -5.246237)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock138" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99612755, 0, 0.10087385, 0, 0.5809542, 0, -0.15794943, 0, 0.63617426, 7.1005745, -0.104038104, -4.7676306)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock139" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6858157, 0, 0.08743794, 0, 0.7331775, 0, -0.1087451, 0, 0.5514388, 7.1811028, -0.104038104, -4.401758)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock140" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3938553, 0, 0.0715224, 0, 0.574515, 0, -0.06245105, 0, 0.45106542, 7.487953, -0.104038104, -4.218088)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock141" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.57363063, 0, 0.10416883, 0, 0.8367525, 0, -0.09095684, 0, 0.6569543, 7.662016, -0.104037985, -3.8756657)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock142" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7821898, 0, 0.12036234, 0, 0.6096797, 0, -0.124026515, 0, 0.7590803, 8.066557, -0.104038104, -3.584444)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock66" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0295908, 0, 0.3667519, 0, 0.67907345, 0, -0.57426393, 0, -0.6575453, 1.6701698, -0.019685134, 12.192209)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock67" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.105441965, 0, 0.6405922, 0, 0.58095425, 0, -1.0030454, 0, 0.067340195, 2.1498442, -0.087660655, 11.927584)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock68" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0725948, 0, 0.5552684, 0, 0.73317784, 0, -0.69057864, 0, 0.058370814, 2.5573244, -0.087660655, 11.944548)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock69" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.041690346, 0, 0.45419782, 0, 0.57451487, 0, -0.39659053, 0, 0.047746103, 2.857953, -0.087660655, 11.732363)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock70" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.060719866, 0, 0.6615167, 0, 0.83675265, 0, -0.5776146, 0, 0.06953968, 3.2802916, -0.087660536, 11.728327)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock71" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.08279615, 0, 0.7643521, 0, 0.6096798, 0, -0.78762203, 0, 0.080350034, 3.619833, -0.087660655, 11.3376255)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock72" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.76995236, 0, 0.5701547, 0, 0.6790734, 0, -0.89275396, 0, -0.4917278, -1.1246223, -0.019685134, 12.432852)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock73" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4432994, 0, 0.57856786, 0, 0.5809543, 0, -0.905927, 0, 0.28311193, -0.52351665, -0.087660655, 12.438993)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock74" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.30520353, 0, 0.5015053, 0, 0.7331778, 0, -0.62371427, 0, 0.24540275, -0.16148281, -0.087660655, 12.597754)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock75" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1752745, 0, 0.41022086, 0, 0.5745149, 0, -0.35819125, 0, 0.20073429, 0.148839, -0.087660655, 12.330118)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock76" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25527862, 0, 0.59746635, 0, 0.8367524, 0, -0.5216878, 0, 0.29235962, 0.54690933, -0.087660536, 12.471277)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock77" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3480923, 0, 0.6903448, 0, 0.60967976, 0, -0.7113617, 0, 0.33780792, 0.9999199, -0.087660655, 12.220842)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock78" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.1749032, 0, -0.06204597, 0, 0.67907345, 0, 0.0971523, 0, -0.7503487, 6.22567, -0.019685134, 9.251509)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock79" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.4715835, 0, 0.5693738, 0, 0.58095413, 0, -0.89153105, 0, -0.3011755, 6.411522, -0.087660655, 8.727573)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock80" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.32467654, 0, 0.49353588, 0, 0.7331777, 0, -0.6138028, 0, -0.26106033, 6.724037, -0.087660655, 8.443642)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock81" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.18645766, 0, 0.40370196, 0, 0.57451504, 0, -0.35249928, 0, -0.2135418, 6.836399, -0.087660655, 8.138956)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock82" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.2715663, 0, 0.5879719, 0, 0.8367524, 0, -0.5133976, 0, -0.31101298, 7.0968037, -0.087660536, 7.844324)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock83" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.37030163, 0, 0.67937446, 0, 0.6096798, 0, -0.7000574, 0, -0.35936138, 7.3679657, -0.087660655, 7.4552135)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock84" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.1368792, 0, 0.19925547, 0, 0.6790735, 0, -0.3119962, 0, -0.7260647, 4.055808, -0.019685134, 11.033474)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock85" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.13694878, 0, 0.6381562, 0, 0.580954, 0, -0.9992309, 0, -0.08746204, 4.54198, -0.087660655, 10.6792145)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock86" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.094286755, 0, 0.5531571, 0, 0.73317784, 0, -0.68795234, 0, -0.07581251, 4.9233522, -0.087660655, 10.616306)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock87" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0541478, 0, 0.45247066, 0, 0.5745148, 0, -0.39508244, 0, -0.062012997, 5.099554, -0.087660655, 10.30349)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock88" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.07886353, 0, 0.6590013, 0, 0.83675253, 0, -0.5754182, 0, -0.09031894, 5.4241257, -0.087660536, 10.092291)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock89" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.10753644, 0, 0.7614456, 0, 0.6096799, 0, -0.784627, 0, -0.104359254, 5.7452335, -0.087660655, 9.73835)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock90" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.0472625, 0, -0.34574208, 0, 0.6790737, 0, 0.5413665, 0, -0.66883147, 8.482227, -0.019685611, 4.415325)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock91" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.77808255, 0, 0.40983337, 0, 0.5809542, 0, -0.64172107, 0, -0.49692038, 8.442078, -0.08766113, 3.8429432)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock92" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5356956, 0, 0.3552454, 0, 0.7331778, 0, -0.44181314, 0, -0.43073285, 8.785423, -0.08766113, 3.5527687)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock93" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.3076434, 0, 0.29058337, 0, 0.5745149, 0, -0.25372776, 0, -0.35233036, 8.597246, -0.08766113, 3.1887436)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock94" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.44806713, 0, 0.4232202, 0, 0.83675253, 0, -0.36954188, 0, -0.51315165, 8.8270645, -0.08766101, 2.8343792)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock95" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.6109743, 0, 0.48901153, 0, 0.60967976, 0, -0.50389904, 0, -0.59292346, 8.688778, -0.08766113, 2.3355656)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock96" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.90905005, 0, -0.4793961, 0, 0.67907363, 0, 0.75064313, 0, -0.5805621, 9.072046, -0.019685611, 1.7377167)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock97" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8582618, 0, -0.33830512, 0, 0.5809542, 0, 0.5297215, 0, 0.5481266, 9.174171, -0.08766113, -0.39133453)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock98" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5908978, 0, -0.2932446, 0, 0.7331778, 0, 0.36470366, 0, 0.4751188, 8.87356, -0.08766113, -0.057081223)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock99" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33934516, 0, -0.23986787, 0, 0.5745149, 0, 0.20944472, 0, 0.38863713, 9.109585, -0.08766113, 0.27790833)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock143" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8582618, 0, -0.33830512, 0, 0.5809542, 0, 0.5297215, 0, 0.5481266, 8.997852, -0.08766113, -1.441267)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock144" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5908978, 0, -0.2932446, 0, 0.7331778, 0, 0.36470366, 0, 0.4751188, 8.697241, -0.08766113, -1.1070137)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock145" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33934516, 0, -0.23986787, 0, 0.5745149, 0, 0.20944472, 0, 0.38863713, 8.933266, -0.08766113, -0.77202415)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock100" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49423918, 0, -0.34935564, 0, 0.83675253, 0, 0.30504566, 0, 0.56603056, 8.930193, -0.08766101, 0.66028214)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock101" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.67393345, 0, -0.40366444, 0, 0.60967964, 0, 0.41595364, 0, 0.6540226, 9.135153, -0.08766113, 1.135601)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock146" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.90905005, 0, -0.4793961, 0, 0.67907363, 0, 0.75064313, 0, -0.5805621, 8.639597, -0.019685611, -1.888937)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock147" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.67393345, 0, -0.40366444, 0, 0.60967964, 0, 0.41595364, 0, 0.6540226, 8.702703, -0.08766113, -2.4910526)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock148" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.041657686, 0, 0.7524394, 0, 0.6790736, 0, -1.1781771, 0, -0.026604623, 8.260187, -0.019685611, -3.021078)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock102" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.169454, 0, -0.09518596, 0, 0.6790734, 0, 0.14904311, 0, -0.7468682, 7.6164703, -0.019685611, 6.9990654)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock103" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.510569, 0, 0.5554897, 0, 0.5809539, 0, -0.8697909, 0, -0.32607326, 7.7083416, -0.08766113, 6.4836464)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock104" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.35151756, 0, 0.48150146, 0, 0.73317796, 0, -0.59883565, 0, -0.28264222, 7.8988876, -0.08766113, 6.2258873)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock105" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.20187205, 0, 0.39385805, 0, 0.5745148, 0, -0.34390378, 0, -0.23119538, 7.8470745, -0.08766113, 5.8193855)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock106" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.29401672, 0, 0.5736348, 0, 0.83675253, 0, -0.50087863, 0, -0.33672458, 8.184557, -0.08766101, 5.565426)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock107" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.40091452, 0, 0.66280836, 0, 0.60967976, 0, -0.682987, 0, -0.38906965, 8.225876, -0.08766113, 5.0494537)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock108" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.22321007, 0, 0.7392912, 0, 0.6790733, 0, -1.1575893, 0, -0.1425525, -3.5859923, -0.019685134, 11.288246)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock109" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8355138, 0, 0.36078474, 0, 0.58095425, 0, -0.5649202, 0, 0.53359866, -3.0531902, -0.087660655, 11.567499)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock110" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.575236, 0, 0.31273, 0, 0.7331779, 0, -0.3889372, 0, 0.46252578, -2.8379898, -0.087660655, 11.865427)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock111" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3303508, 0, 0.2558065, 0, 0.57451475, 0, -0.22336179, 0, 0.37833637, -2.4695435, -0.087660655, 11.901289)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock112" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4811396, 0, 0.37256968, 0, 0.8367528, 0, -0.32531545, 0, 0.55102843, -2.1652184, -0.087660536, 12.147146)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock113" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65607107, 0, 0.43048692, 0, 0.6096798, 0, -0.44359288, 0, 0.6366877, -1.6770506, -0.087660655, 12.230288)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock114" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.18765336, 0, 0.7433102, 0, 0.6790734, 0, -1.1638824, 0, 0.11984418, -5.591434, -0.019685134, 9.323067)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock115" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9786516, 0, 0.15572907, 0, 0.5809542, 0, -0.24384218, 0, 0.62501323, -5.2033567, -0.087660655, 9.713829)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock116" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6737837, 0, 0.13498673, 0, 0.7331776, 0, -0.16788077, 0, 0.5417644, -5.0782948, -0.087660655, 10.10183)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock117" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.38694564, 0, 0.1104163, 0, 0.5745149, 0, -0.09641187, 0, 0.44315198, -4.753209, -0.087660655, 10.282061)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock118" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5635671, 0, 0.16081591, 0, 0.83675253, 0, -0.14041913, 0, 0.64542896, -4.554475, -0.087660536, 10.6341305)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock119" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7684673, 0, 0.1858154, 0, 0.6096799, 0, -0.19147223, 0, 0.7457633, -4.121775, -0.087660655, 10.863073)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock120" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.528678, 0, 0.67295784, 0, 0.67907304, 0, -1.053724, 0, 0.3376388, -6.484579, -0.036062583, 7.284807)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock121" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0066974, 0, -0.039255366, 0, 0.5809542, 0, 0.06146641, 0, 0.6429249, -6.196307, -0.104038104, 7.778885)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock122" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6930926, 0, -0.0340267, 0, 0.73317754, 0, 0.04231845, 0, 0.5572901, -6.1934156, -0.104038104, 8.195574)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock123" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3980346, 0, -0.027833115, 0, 0.5745147, 0, 0.024302963, 0, 0.45585167, -5.973219, -0.104038104, 8.451338)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock124" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.57971776, 0, -0.04053753, 0, 0.83675265, 0, 0.035396114, 0, 0.66392565, -5.8869967, -0.104037985, 8.801987)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock125" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8582209, 0, 0.5161965, 0, 0.67907345, 0, -0.8082655, 0, 0.54810005, -6.876466, -0.036062583, 4.5044956)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock126" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.92445064, 0, -0.25753355, 0, 0.58095413, 0, 0.40324837, 0, 0.59039783, -6.8586206, -0.104038104, 5.1217575)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock127" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.63646734, 0, -0.2232313, 0, 0.7331773, 0, 0.2776293, 0, 0.5117597, -7.0774927, -0.104038104, 5.47736)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock128" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3655152, 0, -0.18259858, 0, 0.574515, 0, 0.15943895, 0, 0.41860867, -6.850217, -0.104038104, 5.7643547)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock129" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.53235465, 0, -0.26594567, 0, 0.83675253, 0, 0.23221491, 0, 0.6096826, -6.9201574, -0.104037985, 6.1795406)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="Rock130" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7259067, 0, -0.30728793, 0, 0.6096797, 0, 0.31664312, 0, 0.70446014, -6.6501446, -0.104038104, 6.621168)
+mesh = SubResource("SphereMesh_vmkck")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.532146, 0, -20.645018)
+vertices = PackedVector3Array(8.120583, 0, 7.716428, 5.0431724, 0, 8.651535, 2.5621638, 0, 11.612127, 1.3111897, 0, 15.328453, 1.2080593, 0, 19.760342, 3.264594, 0, 24.65011, 3.3826885, 0, 27.410915, 4.766349, 0, 30.641937, 8.13108, 0, 33.196667, 10.777237, 0, 33.649242, 14.538322, 0, 32.381935, 17.510834, 0, 29.784725, 19.170015, 0, 26.107494, 19.842644, 0, 21.507664, 19.722496, 0, 18.461275, 17.491272, 0, 15.604477, 16.603891, 0, 12.973461, 13.796031, 0, 9.5943985, 10.885741, 0, 7.7615795)
+affect_navigation_mesh = true
