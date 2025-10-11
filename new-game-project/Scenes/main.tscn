@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=11 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="6_21xkr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8gbba"]
-vertices = PackedVector3Array(-49.5, 0.15, -49.5, -49.5, 0.15, 49.5, 49.5, 0.15, 49.5, 49.5, 0.15, -49.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(-49.5, 0.1404853, 4.25, -31.25, 0.1404853, 4.5, -31, 0.1404853, 2.75, -49.5, 0.1404853, -49.5, -24.75, 0.1404853, 2.75, -24.5, 0.1404853, 3.25, 49.5, 0.1404853, 3.25, 49.5, 0.1404853, -49.5, -25, 0.1404853, 6, -24.25, 0.1404853, 6.25, 49.5, 0.1404853, 9.25, -24.25, 0.1404853, 8.75, -24.75, 0.1404853, 9, -49.5, 0.1404853, 7.5, -31.25, 0.1404853, 7.25, -29.75, 0.1404853, 7.75, -26.75, 0.1404853, 7.75, -26.5, 0.1404853, 6.75, -26.5, 0.1404853, 4.25, -29.75, 0.1404853, 4.25, -30.5, 4.9904857, 5.5, -30.5, 4.9904857, 6.25, -26, 4.9904857, 6.25, -26, 4.9904857, 5.5, -31, 0.1404853, 9, -49.5, 0.1404853, 49.5, -26.5, 0.1404853, 49.5, -26.5, 0.1404853, 9, 49.5, 0.1404853, 49.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(4, 2, 3), PackedInt32Array(8, 5, 9), PackedInt32Array(9, 5, 6), PackedInt32Array(9, 6, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(11, 9, 10), PackedInt32Array(14, 13, 1), PackedInt32Array(1, 13, 0), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 15), PackedInt32Array(18, 15, 19), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(14, 24, 13), PackedInt32Array(13, 24, 25), PackedInt32Array(25, 24, 26), PackedInt32Array(24, 27, 26), PackedInt32Array(27, 12, 26), PackedInt32Array(26, 12, 10), PackedInt32Array(26, 10, 28)]
 cell_height = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
@@ -30,8 +31,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33323574, 1.0511578, 6.480
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67084545, 0, 0.7316422)
 script = ExtResource("2_bo1nx")
 target = NodePath("../Ghost")
-y_distance = 1.0
-z_distance = 3.0
+y_distance = 0.5
+z_distance = 4.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_8gbba")
@@ -59,3 +60,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.091707, 0.510542, 0.6351070
 transform = Transform3D(1, 0, 0, 0, 0.85305935, 0.52181387, 0, -0.52181387, 0.85305935, 0, 3.6919775, 0)
 
 [node name="HUD_score" parent="." instance=ExtResource("5_kry3j")]
+
+[node name="DoorMenu" parent="." instance=ExtResource("6_21xkr")]
+
+[connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
+
+[editable path="Ghost"]
+[editable path="Ghost/NPC1"]
+[editable path="NavigationRegion3D/House1"]
