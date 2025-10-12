@@ -22,6 +22,7 @@ var staring:bool = false # If curious sees body
 @export var animator:AnimationTree # Animation player
 
 var direction = Vector3.ZERO
+var losPoints = true
 
 @export var debugRay:RayCast3D
 
@@ -111,7 +112,8 @@ func _physics_process(delta: float) -> void:
 		if(sightToPlayer.is_colliding() && sightToPlayer.get_collider() == test):
 			#print("I see the player")
 			#points.connect(get_node("../../HUD_score").updateScore.bind())
-			emit_signal("points")
+			#emit_signal("points")
+			ghostSeen()
 		
 	# Set up velocity
 	#velocity = Vector3.ZERO
@@ -161,3 +163,10 @@ func _on_body_discovered(human: Variant) -> void:
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = safe_velocity
 	
+	
+func ghostSeen():
+	if losPoints:
+		emit_signal("points")
+		losPoints = false
+		await get_tree().create_timer(2.0).timeout
+		losPoints = true
