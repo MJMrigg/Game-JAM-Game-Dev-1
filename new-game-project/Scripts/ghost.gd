@@ -220,4 +220,4 @@ func kill():
 		found.animator.set("parameters/walker/request",1)
 	# If they were the target, win the game
 	if(found == target):
-		print("You win!")
+		get_node("../win_menu").show()

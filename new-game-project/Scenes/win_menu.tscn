@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh141vcagdhc7"]
+
+[ext_resource type="Script" uid="uid://0ts11ghrokrg" path="res://Scenes/win_menu.gd" id="1_k38nj"]
+
+[node name="win_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k38nj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21700001
+anchor_top = 0.307
+anchor_right = 0.78200006
+anchor_bottom = 0.71800005
+offset_left = 0.015991211
+offset_top = 0.06399536
+offset_right = 0.1359253
+offset_bottom = -0.2640381
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.20392157, 0.28627452, 0.38039216)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11100001
+anchor_top = 0.060000002
+anchor_right = 0.896
+anchor_bottom = 0.541
+offset_left = -0.26100922
+offset_top = 0.03999901
+offset_right = -0.2960205
+offset_bottom = 0.09399414
+theme_override_font_sizes/font_size = 40
+text = "You Killed Your Murderer! You Win!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credits" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22100002
+anchor_top = 0.63500005
+anchor_right = 0.41500002
+anchor_bottom = 0.86100006
+offset_left = 120.12898
+offset_top = -5.910019
+offset_right = 119.83499
+offset_bottom = -6.026016
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits (Enter)"
+
+[connection signal="pressed" from="ColorRect/Credits" to="." method="credits"]
