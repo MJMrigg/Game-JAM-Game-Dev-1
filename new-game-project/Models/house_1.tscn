@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=4 uid="uid://bopcd5rtyokfc"]
+[gd_scene load_steps=41 format=4 uid="uid://bopcd5rtyokfc"]
 
-[ext_resource type="Script" uid="uid://cc0c4a6msk7tk" path="res://Scripts/door.gd" id="1_kgf6e"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_kgf6e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d38lg"]
 resource_name = "Material.003"
@@ -432,6 +432,15 @@ shadow_mesh = SubResource("ArrayMesh_hlhg5")
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvmrr"]
 size = Vector3(0.2, 4.5, 2.1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbs4e"]
+albedo_color = Color(1, 0.02745098, 0.05490196, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_kgf6e"]
+material = SubResource("StandardMaterial3D_xbs4e")
+text = "|
+V"
+font_size = 27
+
 [node name="House1" type="StaticBody3D" groups=["Houses"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_layer = 32
@@ -534,3 +543,9 @@ shape = SubResource("BoxShape3D_nvmrr")
 transform = Transform3D(5.331142, 0, 0, 0, 1.0850179, 0, 0, 0, 5.45337, 0.47470498, 0.41815186, 1.070138)
 start_position = Vector3(2.208711, 0.023457348, -0.007403016)
 end_position = Vector3(-0.019237757, -0.0054602623, -0.023047924)
+
+[node name="arrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.7185316e-06, 0, 106.622856, 0, 29.055748, 0, -87.020485, 0, -4.7674885e-06, 0.47470498, 22.906685, 1.070138)
+visible = false
+mesh = SubResource("TextMesh_kgf6e")
+skeleton = NodePath("../NavigationLink3D")
