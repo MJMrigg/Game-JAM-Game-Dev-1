@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpb04xftbbxt2"]
+
+[ext_resource type="Script" uid="uid://df1pfo0g34vmy" path="res://Scripts/credits.gd" id="1_ccovl"]
+[ext_resource type="AudioStream" uid="uid://dck8e2w18tjpj" path="res://Music/ghost-in-the-foyer-scoopski-168612.mp3" id="1_gryuy"]
+[ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="1_r18jl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gryuy"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_ccovl"]
+font_size = 60
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccovl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_top = 0.70500004
+anchor_right = 1.0
+anchor_bottom = 1.705
+offset_top = 0.15997314
+offset_bottom = 0.1607666
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="Label" parent="ColorRect/Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.1930001
+offset_top = -0.2000122
+offset_right = 1.0
+offset_bottom = -0.06402588
+grow_horizontal = 2
+grow_vertical = 2
+text = "A game by Robert Grant, Matthew Rigg, Megan Ruiz, and David Thompson.
+
+Music:
+Song1: Dueling Box Horror by VirtualVisualViews
+Song2: Horror Playhouse by geoffharvey
+Credits Song: Ghost in the Foyer by ScoopskiMusic
+
+Sounds:
+"
+label_settings = SubResource("LabelSettings_gryuy")
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="ColorRect/Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.90700006
+offset_right = -2.0
+offset_bottom = 0.047973633
+text = "There's Something Strange in the Neighborhood"
+label_settings = SubResource("LabelSettings_ccovl")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credits Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gryuy")
+
+[node name="quit_menu" parent="." instance=ExtResource("1_r18jl")]
+layout_mode = 1
