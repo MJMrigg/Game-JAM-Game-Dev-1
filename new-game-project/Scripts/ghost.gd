@@ -105,7 +105,10 @@ func posses() -> void:
 	if(possesed.unconcious):
 		possesed = null
 		return
-	
+		
+	if(possesed == target):
+		possesed = null
+		return
 	# Make the player's NPC mesh visible
 	if(possesed.type == 1):
 		get_node("visuals/NPC1").show()
