@@ -69,6 +69,12 @@ func _process(delta: float) -> void:
 	
 	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
 		kill()
+		
+	if(Input.is_action_just_pressed("p_sound") && possesed != null):
+		#randomize()
+		#randi_range(0, len(houseSize) - 1)
+		get_node("spookNoise").play()
+		
 	
 	'''
 	# Alternet sound check - David T
