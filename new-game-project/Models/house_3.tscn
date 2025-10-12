@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://byl8exxqps1io"]
+[gd_scene load_steps=39 format=4 uid="uid://bs5b3o5owcnke"]
 
 [ext_resource type="Script" uid="uid://cc0c4a6msk7tk" path="res://Scripts/door.gd" id="1_xbs4e"]
 
@@ -401,7 +401,7 @@ shadow_mesh = SubResource("ArrayMesh_i2cb0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ywpp"]
 size = Vector3(0.5, 4.275, 2.385)
 
-[node name="House3" type="StaticBody3D"]
+[node name="House3" type="StaticBody3D" groups=["Houses"]]
 collision_layer = 32
 collision_mask = 0
 
