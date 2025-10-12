@@ -17,6 +17,7 @@ var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
 @export var my_door:door # NPC's house
+@export var animator:AnimationTree # Animation player
 
 var animations:AnimationPlayer
 var direction = Vector3.ZERO
@@ -88,7 +89,9 @@ func _physics_process(delta: float) -> void:
 		velocity = newVel
 	
 	
-	animations.play("Walk")
+	# If the walking animation isn't playing, play it
+	if(animator.get("parameters/walker/active") == false):
+		animator.set("parameters/walker/request",1)
 	var look_target = Vector3(nextPos.x, model.global_position.y, nextPos.z)
 	#var target_dir = (look_target - model.global_position).normalized()
 	#var current_dir = model.transform.basis.z.normalized() #*-1
