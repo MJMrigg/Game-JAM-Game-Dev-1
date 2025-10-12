@@ -26,6 +26,17 @@ var direction = Vector3.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ghost = get_tree().get_nodes_in_group("player")[0]
+	var houseSize = get_tree().get_nodes_in_group("Houses")
+	if (houseSize.empty()):
+		randomize()
+		var doorNumber = randi_range(0, len(houseSize) - 1)
+		var test = houseSize[doorNumber]
+		var test2 = houseSize[doorNumber].get_node("Door")
+		my_door = houseSize[doorNumber].get_node("Door")
+		print("I am, ", self, "and I belong to house: ", test, "; with door: ", test2)
+		houseSize[doorNumber].remove_from_group("Houses")
+	else:
+		print("House Group Empty. :(")
 	start = position
 	pick_new_target()
 
