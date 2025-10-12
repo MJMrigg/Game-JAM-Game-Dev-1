@@ -24,12 +24,6 @@ debugRay = NodePath("RayCast3D2")
 
 [node name="target" parent="." instance=ExtResource("2_r62bm")]
 
-[node name="Skeleton3D" parent="target/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.6350959, -0.031977143, 0.12544832, 0.76150733)
-bones/2/rotation = Quaternion(-0.6707237, 0.07282856, 0.014530716, 0.7379801)
-bones/3/rotation = Quaternion(0.6109938, -0.112145014, -0.025737219, 0.78322905)
-bones/4/rotation = Quaternion(0.66099894, -0.041660223, -0.27480882, 0.6970115)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
 shape = SubResource("CapsuleShape3D_pk7tc")
@@ -53,7 +47,6 @@ debug_shape_thickness = 5
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_postprocessing = 1
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="sightToPlayer" type="RayCast3D" parent="."]
 transform = Transform3D(0.010087871, -0.9999491, 0, 0.9999491, 0.010087871, 0, 0, 0, 1, 0, 1.4968365, 0)
