@@ -216,7 +216,7 @@ func kill():
 	if(found == null): # If there was no NPC, return
 		return
 	# If found was an NPC, kill them
-	if(found is NPC):
+	if(found is NPC && found.unconcious != true):
 		found.unconcious = true
 		found.animator.set("parameters/walk_or_die/blend_position",1)
 		found.animator.set("parameters/stand_or_death/blend_position",1)
