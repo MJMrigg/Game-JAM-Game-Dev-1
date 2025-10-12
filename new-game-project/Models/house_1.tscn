@@ -545,7 +545,7 @@ start_position = Vector3(2.208711, 0.023457348, -0.007403016)
 end_position = Vector3(-0.019237757, -0.0054602623, -0.023047924)
 
 [node name="arrow" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.7185316e-06, 0, 106.622856, 0, 29.055748, 0, -87.020485, 0, -4.7674885e-06, 0.47470498, 22.906685, 1.070138)
+transform = Transform3D(-3.7185316e-06, 0, 27.330893, 0, 29.055748, 0, -87.020485, 0, -1.2220618e-06, 0.47470498, 22.906685, 1.070138)
 visible = false
 mesh = SubResource("TextMesh_kgf6e")
 skeleton = NodePath("../NavigationLink3D")
