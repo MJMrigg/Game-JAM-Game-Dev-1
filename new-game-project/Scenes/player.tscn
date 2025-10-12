@@ -29,7 +29,7 @@ shape = SubResource("CapsuleShape3D_3btnm")
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_3mxmt")
 target_position = Vector3(0, 0, 0)
-collision_mask = 6
+collision_mask = 4
 
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -52,12 +52,6 @@ transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-
 [node name="NPC1" parent="visuals" instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5971966, 0)
 visible = false
-
-[node name="Skeleton3D" parent="visuals/NPC1/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.62181765, -0.03421384, 0.12481878, 0.772394)
-bones/2/rotation = Quaternion(-0.6726704, 0.07278214, 0.015036602, 0.7362005)
-bones/3/rotation = Quaternion(0.612828, -0.112093866, -0.025992583, 0.7817936)
-bones/4/rotation = Quaternion(0.6501276, -0.042672887, -0.27297, 0.707814)
 
 [node name="NPC3" parent="visuals" instance=ExtResource("5_fkybt")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.57906175, 0)
