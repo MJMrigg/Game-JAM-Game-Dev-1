@@ -827,20 +827,8 @@ light_angular_distance = 88.14
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -30.695034, 0.44233212, 67.43328)
 my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
 
-[node name="Skeleton3D" parent="NPC1/Person1/Armature" index="0"]
-bones/0/position = Vector3(0, -2.019391, 0)
-bones/0/rotation = Quaternion(0, 0, 0.67548615, 0.7373727)
-bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.12644804, 0.7421436)
-bones/2/rotation = Quaternion(-0.4867152, -0.047064822, -0.012307599, 0.87220514)
-bones/4/rotation = Quaternion(0.2695977, -0.64499223, -0.39090613, 0.5987442)
-bones/6/rotation = Quaternion(0.3398026, -0.1468351, -0.023366464, 0.9286698)
-bones/7/position = Vector3(0, -2.0193908, -1.4901161e-08)
-bones/8/rotation = Quaternion(-0.46741998, -0.49044168, -0.53410524, 0.50568485)
-bones/9/position = Vector3(-5.6631955e-14, -2.0193913, 7.4505624e-09)
-bones/10/rotation = Quaternion(0.028193988, -0.01854615, 0.43833452, 0.89817816)
-
 [node name="AnimationTree" parent="NPC1/Person1" index="2"]
-parameters/stand_or_death/blend_position = 2.0833333
+parameters/walk_or_die/blend_position = -1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8bufs")

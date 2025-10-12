@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://8cbc8hhlgjcx"]
+[gd_scene load_steps=34 format=4 uid="uid://8cbc8hhlgjcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sksk"]
 resource_name = "Material.003"
@@ -714,11 +714,16 @@ animation = &"Idle"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w1jsi"]
 animation = &"Dead"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qtpom"]
+animation = &"Dead"
+
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_kagm2"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_d0yyd")
 blend_point_0/pos = -1.0
 blend_point_1/node = SubResource("AnimationNodeAnimation_w1jsi")
-blend_point_1/pos = 1.0
+blend_point_1/pos = 3.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_qtpom")
+blend_point_2/pos = 1.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n4ejm"]
 animation = &"Walk"
@@ -735,7 +740,7 @@ blend_point_1/pos = 1.0
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ouc0a"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kagm2"]
-graph_offset = Vector2(-295.37714, 44.931732)
+graph_offset = Vector2(-156.97449, -27.728859)
 nodes/output/position = Vector2(1120, 160)
 nodes/attacker/node = SubResource("AnimationNodeOneShot_qtpom")
 nodes/attacker/position = Vector2(900, 80)

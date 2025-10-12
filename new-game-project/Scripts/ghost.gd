@@ -115,8 +115,6 @@ func unposses() -> void:
 	# Teleport possesed object to player and make visible
 	possesed.position = self.position
 	possesed.show()
-	#possesed.rotation.x = 90
-	possesed.unconcious = true
 	
 	# Move player to spot near possesed
 	self.position.z += 2
@@ -131,6 +129,12 @@ func unposses() -> void:
 		get_node("NPC3").hide()
 	else:
 		return
+	
+	# Knock NPC unconcious
+	possesed.unconcious = true
+	possesed.animator.set("parameters/walk_or_die/blend_position",1)
+	possesed.animator.set("parameters/stand_or_death/blend_position",1)
+	possesed.animator.set("parameters/walker/request",1)
 	
 	# Player no longer references possesed object
 	possesed = null
