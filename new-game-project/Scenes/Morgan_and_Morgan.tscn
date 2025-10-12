@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://c4vxrstuhxpfw"]
+[gd_scene load_steps=38 format=3 uid="uid://c4vxrstuhxpfw"]
 
+[ext_resource type="Script" uid="uid://cdt7uj13aqvq2" path="res://Scripts/pause.gd" id="1_4k1ej"]
 [ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="1_6r8h2"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="2_4k1ej"]
 [ext_resource type="PackedScene" uid="uid://bu2xhual06jp3" path="res://Models/table.tscn" id="3_mmddc"]
@@ -79,6 +80,7 @@ volumetric_fog_albedo = Color(0.5330367, 0.5330367, 0.5330367, 1)
 volumetric_fog_anisotropy = 0.18
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_4k1ej")
 
 [node name="HUD_score" parent="." instance=ExtResource("1_6r8h2")]
 
@@ -1400,7 +1402,6 @@ z_distance = 3.0
 
 [node name="Ghost" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_0b7bc")]
 transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.068660654, -28.551239, 0.90141976, 74.27136)
-visible = false
 collision_layer = 512
 speed = 15.0
 target = NodePath("../NPCs/Target")
@@ -1418,6 +1419,7 @@ environment = SubResource("Environment_8bufs")
 [node name="DoorMenu" parent="." instance=ExtResource("15_2c8v0")]
 
 [node name="quit_menu" parent="." instance=ExtResource("16_eqauq")]
+process_mode = 3
 
 [node name="NPCs" type="Node" parent="."]
 
@@ -1626,8 +1628,7 @@ bones/4/rotation = Quaternion(0.65195674, -0.042504236, -0.2732821, 0.70601887)
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="Target" parent="NPCs" instance=ExtResource("22_7seq5")]
-transform = Transform3D(-0.73, 0, -6.3818625e-08, 0, 0.73, 0, 6.3818625e-08, 0, -0.73, 49.443504, 0.442, 30.499586)
-script = null
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 49.443504, 0.442, 30.499586)
 
 [node name="Moon" parent="." instance=ExtResource("20_43jrg")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 1.7999864, 88.78409, 370.12817)
