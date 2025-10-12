@@ -703,51 +703,51 @@ _data = {
 &"Walk": SubResource("Animation_82fj4")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdv0w"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4s1d"]
 animation = &"Attack"
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_myd0b"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4s1d"]
-animation = &"Dead"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qtpom"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ytody"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_j4s1d")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_qtpom")
-blend_point_1/pos = -1.0
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_qtpom"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d0yyd"]
-animation = &"Walk_001"
+animation = &"Idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w1jsi"]
-animation = &"Die"
+animation = &"Dead"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1m10e"]
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_kagm2"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_d0yyd")
 blend_point_0/pos = -1.0
 blend_point_1/node = SubResource("AnimationNodeAnimation_w1jsi")
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eghqu"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n4ejm"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v8k68"]
+animation = &"Die"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_shxvx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_n4ejm")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_v8k68")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ouc0a"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kagm2"]
-graph_offset = Vector2(-169.51215, -26.929024)
+graph_offset = Vector2(-295.37714, 44.931732)
 nodes/output/position = Vector2(1120, 160)
-nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_ytody")
-nodes/stand_or_death/position = Vector2(440, 20)
-nodes/walker/node = SubResource("AnimationNodeOneShot_eghqu")
-nodes/walker/position = Vector2(680, 60)
-nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_1m10e")
-nodes/walk_or_die/position = Vector2(440, 240)
-nodes/attacker/node = SubResource("AnimationNodeOneShot_myd0b")
-nodes/attacker/position = Vector2(900, 100)
-nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
-nodes/attack/position = Vector2(680, 360)
-node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
+nodes/attacker/node = SubResource("AnimationNodeOneShot_qtpom")
+nodes/attacker/position = Vector2(900, 80)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_j4s1d")
+nodes/Animation/position = Vector2(580, 260)
+nodes/walker/node = SubResource("AnimationNodeOneShot_ouc0a")
+nodes/walker/position = Vector2(580, -60)
+nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_shxvx")
+nodes/walk_or_die/position = Vector2(340.07388, 202.05072)
+nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_kagm2")
+nodes/stand_or_death/position = Vector2(340, -60)
+node_connections = [&"output", 0, &"attacker", &"attacker", 0, &"walker", &"attacker", 1, &"Animation", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die"]
 
 [node name="Person1" type="CharacterBody3D"]
 
@@ -879,11 +879,11 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_kagm2")
 anim_player = NodePath("../AnimationPlayer")
-parameters/stand_or_death/blend_position = -1.0
+parameters/attacker/active = false
+parameters/attacker/internal_active = false
+parameters/attacker/request = 0
 parameters/walker/active = false
 parameters/walker/internal_active = false
 parameters/walker/request = 0
 parameters/walk_or_die/blend_position = -1.0
-parameters/attacker/active = false
-parameters/attacker/internal_active = false
-parameters/attacker/request = 0
+parameters/stand_or_death/blend_position = -1.0

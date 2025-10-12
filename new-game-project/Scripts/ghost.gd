@@ -11,6 +11,7 @@ var knife:bool = false # If the player has the knife
 signal wrong_door
 signal menu
 @export var target:NPC # The target
+@export var animations:Array[AnimationTree] = [] # Animation trees for models
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
@@ -40,6 +41,10 @@ func _process(delta: float) -> void:
 	
 	# MOVE
 	move_and_slide()
+	
+	# Play animations for models
+	if(velocity.x != 0 || velocity.z != 0):
+		move_animation()
 	
 	# If the player tries to posses someone
 	if(Input.is_action_just_pressed("p_posses")):
@@ -160,3 +165,14 @@ func interact():
 		found.queue_free()
 		get_node("NPC1/blade").show()
 		knife = true # The player now has the knife
+
+# Play aniations of possesed model
+func move_animation() -> void:
+	# If the player is not possessing someone, do nothing
+	if(possesed == null):
+		return
+	# Get proper animator
+	var animator:AnimationTree = animations[possesed.type - 1]
+	# Play animation
+	if(animator.get("parameters/walker/active") == false):
+		animator.set("parameters/walker/request",1)
