@@ -99,27 +99,14 @@ func _physics_process(delta: float) -> void:
 	
 	# Line of Sight to player ghost
 	var test = get_tree().get_nodes_in_group("player")[0]
-	#print(sightToPlayer.to_local(test.position))
-	var test2 = sightToPlayer.to_local(test.position)
-	'''
-	print("Player Position X: ", test.position.x)
-	print("My Position X: ", position.x)
-	print("ABS dif X: ", abs(test.position.x - position.x))
-	print("Player Position Z: ", test.position.z)
-	print("My Position Z: ", position.z)
-	print("ABS dif Z: ", abs(test.position.z - position.z))
-	#if(abs(test.position.x - position.x) > 10 || abs(test.position.z - position.z) > 10):
-		#print("In range")
-	'''
+
 	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5) && (test.possesed == null || test.knife)):
 		sightToPlayer.target_position = sightToPlayer.to_local(test.position)
 		sightToPlayer.force_raycast_update()
 		if(sightToPlayer.is_colliding() && sightToPlayer.get_collider() == test):
-			#print("I see the player")
-			#points.connect(get_node("../../HUD_score").updateScore.bind())
-			#emit_signal("points")
 			ghostSeen()
-		#(test.possesed == null || test.knife)
+
+
 	# Set up velocity
 	#velocity = Vector3.ZERO
 	var nextPos = navigator.get_next_path_position()
@@ -159,12 +146,12 @@ func scared() -> void:
 		navigator.target_position = start
 
 func _on_body_discovered(human: Variant) -> void:
-	if(type == 1):
+	if(human.type == 1):
 		human.staring = true;
-		get_node("Scream").play()
-	elif(type == 3):
+		human.get_node("Scream").play()
+	elif(human.type == 3):
 		human.scared()
-		get_node("Scream").play()
+		human.get_node("Scream").play()
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:

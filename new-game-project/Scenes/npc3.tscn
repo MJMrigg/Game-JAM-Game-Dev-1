@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_wdv0w"]
 [ext_resource type="PackedScene" uid="uid://bw6cyulus10px" path="res://Models/person_3.tscn" id="2_myd0b"]
-[ext_resource type="AudioStream" uid="uid://buhjqrshf83q1" path="res://noises/male-scream-in-fear-123079.mp3" id="3_myd0b"]
+[ext_resource type="AudioStream" uid="uid://duupvwe7vsnf2" path="res://noises/female-scream-1-86768.mp3" id="3_myd0b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ytody"]
 radius = 1.5
