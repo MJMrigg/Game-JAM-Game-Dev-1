@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bw6cyulus10px"]
+[gd_scene load_steps=34 format=4 uid="uid://bw6cyulus10px"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0mj6"]
 resource_name = "Material.005"
@@ -778,6 +778,52 @@ _data = {
 &"Walk_001": SubResource("Animation_8vge8")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdv0w"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_myd0b"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6l5r2"]
+animation = &"Dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_244qn"]
+animation = &"Stand"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ytody"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_6l5r2")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_244qn")
+blend_point_1/pos = -1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t7u6h"]
+animation = &"Walk_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wen2"]
+animation = &"Die"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1m10e"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_t7u6h")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_6wen2")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eghqu"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xeqsm"]
+graph_offset = Vector2(-169.51215, -26.929024)
+nodes/output/position = Vector2(1120, 160)
+nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_ytody")
+nodes/stand_or_death/position = Vector2(440, 20)
+nodes/walker/node = SubResource("AnimationNodeOneShot_eghqu")
+nodes/walker/position = Vector2(680, 60)
+nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_1m10e")
+nodes/walk_or_die/position = Vector2(440, 240)
+nodes/attacker/node = SubResource("AnimationNodeOneShot_myd0b")
+nodes/attacker/position = Vector2(900, 100)
+nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
+nodes/attack/position = Vector2(680, 360)
+node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
+
 [node name="Person3" type="CharacterBody3D"]
 
 [node name="Armature" type="Node3D" parent="."]
@@ -803,7 +849,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.97712344, 0.2126701, -0.0011022, -0.21249394, 0.97650045, 0.035961352, 0.008724204, -0.034904473, 0.9993525, 6.7055225e-08, 0.9802412, 5.7742e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(6.7055225e-08, 0.9802412, 5.7742e-07)
-bones/2/rotation = Quaternion(-0.5744235, 0.074409224, -0.009203458, 0.8151173)
+bones/2/rotation = Quaternion(-0.5737876, 0.079773225, -0.006364598, 0.815085)
 bones/2/scale = Vector3(1, 1, 0.99999994)
 bones/3/name = "Bone.003"
 bones/3/parent = 0
@@ -817,7 +863,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(0.98037696, 0.18404093, -0.07064147, -0.19311066, 0.9686121, -0.15652108, 0.0396179, 0.16709124, 0.98514515, -4.4703484e-08, 0.8730717, -3.3900142e-07)
 bones/4/enabled = true
 bones/4/position = Vector3(-4.4703484e-08, 0.8730717, -3.3900142e-07)
-bones/4/rotation = Quaternion(0.5800706, -0.048658036, -0.2602659, 0.7703326)
+bones/4/rotation = Quaternion(0.5799102, -0.04764057, -0.2607587, 0.77035016)
 bones/4/scale = Vector3(1.0000001, 0.99999994, 1)
 bones/5/name = "Bone.005"
 bones/5/parent = 0
@@ -845,7 +891,7 @@ bones/8/parent = 7
 bones/8/rest = Transform3D(1, -3.552714e-15, -2.3841866e-07, 2.3768244e-07, 0.07852382, 0.99691236, 1.8721536e-08, -0.99691236, 0.07852382, 1.6543612e-24, 0.37476748, -4.656613e-08)
 bones/8/enabled = true
 bones/8/position = Vector3(1.6543612e-24, 0.37476748, -4.656613e-08)
-bones/8/rotation = Quaternion(-0.6787228, -0.008541877, -0.00930218, 0.73428595)
+bones/8/rotation = Quaternion(-0.6786797, -0.011447716, -0.012466722, 0.7342394)
 bones/8/scale = Vector3(1, 1.0000001, 1.0000001)
 bones/9/name = "Bone.009"
 bones/9/parent = -1
@@ -859,7 +905,7 @@ bones/10/parent = 9
 bones/10/rest = Transform3D(1, 3.8827946e-07, 3.596685e-07, -3.882767e-07, 0.07638587, 0.99707836, 3.5967136e-07, -0.9970786, 0.076385856, 3.9263633e-14, 0.39654055, 3.1478703e-07)
 bones/10/enabled = true
 bones/10/position = Vector3(3.9263633e-14, 0.39654055, 3.1478703e-07)
-bones/10/rotation = Quaternion(-0.6795573, 0.0029992205, 0.0032155046, 0.73360926)
+bones/10/rotation = Quaternion(-0.6795638, -0.00036014713, -0.0003864098, 0.7336163)
 bones/10/scale = Vector3(1, 1.0000002, 1)
 
 [node name="armR_001" type="MeshInstance3D" parent="Armature/Skeleton3D"]
@@ -900,3 +946,15 @@ skin = SubResource("Skin_hii86")
 libraries = {
 &"": SubResource("AnimationLibrary_dpvyf")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_xeqsm")
+anim_player = NodePath("../AnimationPlayer")
+parameters/stand_or_death/blend_position = -1.0
+parameters/walker/active = false
+parameters/walker/internal_active = false
+parameters/walker/request = 0
+parameters/walk_or_die/blend_position = -1.0
+parameters/attacker/active = false
+parameters/attacker/internal_active = false
+parameters/attacker/request = 0

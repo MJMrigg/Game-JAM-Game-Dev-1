@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://8cbc8hhlgjcx"]
+[gd_scene load_steps=33 format=4 uid="uid://8cbc8hhlgjcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sksk"]
 resource_name = "Material.003"
@@ -703,6 +703,52 @@ _data = {
 &"Walk": SubResource("Animation_82fj4")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdv0w"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_myd0b"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4s1d"]
+animation = &"Dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qtpom"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ytody"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_j4s1d")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_qtpom")
+blend_point_1/pos = -1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d0yyd"]
+animation = &"Walk_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w1jsi"]
+animation = &"Die"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1m10e"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_d0yyd")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_w1jsi")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eghqu"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kagm2"]
+graph_offset = Vector2(-169.51215, -26.929024)
+nodes/output/position = Vector2(1120, 160)
+nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_ytody")
+nodes/stand_or_death/position = Vector2(440, 20)
+nodes/walker/node = SubResource("AnimationNodeOneShot_eghqu")
+nodes/walker/position = Vector2(680, 60)
+nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_1m10e")
+nodes/walk_or_die/position = Vector2(440, 240)
+nodes/attacker/node = SubResource("AnimationNodeOneShot_myd0b")
+nodes/attacker/position = Vector2(900, 100)
+nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
+nodes/attack/position = Vector2(680, 360)
+node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
+
 [node name="Person1" type="CharacterBody3D"]
 
 [node name="Armature" type="Node3D" parent="."]
@@ -713,36 +759,36 @@ bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3885095, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, -0.3885095, 0)
-bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/position = Vector3(0, -0.38850927, 0)
+bones/0/rotation = Quaternion(0, 0, 0.0025748645, 0.99999666)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = 0
 bones/1/rest = Transform3D(0.9664441, -0.15074486, -0.20799494, 0.22462544, 0.10313207, 0.9689724, -0.12461662, -0.98317844, 0.13353252, 0, 1.5667362, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1.5667362, 0)
-bones/1/rotation = Quaternion(-0.65760547, -0.028086979, 0.126448, 0.74214363)
+bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.126448, 0.7421436)
 bones/1/scale = Vector3(1, 1, 1.0000001)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.97712344, 0.2126701, -0.0011022, -0.21249394, 0.97650045, 0.035961352, 0.008724204, -0.034904473, 0.9993525, 6.7055225e-08, 0.9802412, 5.7742e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(6.7055225e-08, 0.9802412, 5.7742e-07)
-bones/2/rotation = Quaternion(-0.01782152, -0.0024711697, -0.10692135, 0.9941047)
+bones/2/rotation = Quaternion(-0.6666871, 0.07292281, 0.013485561, 0.74163926)
 bones/2/scale = Vector3(1, 1, 0.99999994)
 bones/3/name = "Bone.003"
 bones/3/parent = 0
 bones/3/rest = Transform3D(0.9734871, -0.096966535, -0.20717238, -0.18417431, 0.20486367, -0.9613067, 0.13565668, 0.97397554, 0.18157339, 0, 1.5667362, 0)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 1.5667362, 0)
-bones/3/rotation = Quaternion(0.62989086, -0.111583166, -0.028384175, 0.7681022)
+bones/3/rotation = Quaternion(0.62989086, -0.11158317, -0.028384166, 0.7681022)
 bones/3/scale = Vector3(1, 1, 0.9999999)
 bones/4/name = "Bone.004"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.98037696, 0.18404093, -0.07064147, -0.19311066, 0.9686121, -0.15652108, 0.0396179, 0.16709124, 0.98514515, -4.4703484e-08, 0.8730717, -3.3900142e-07)
 bones/4/enabled = true
 bones/4/position = Vector3(-4.4703484e-08, 0.8730717, -3.3900142e-07)
-bones/4/rotation = Quaternion(0.08157752, -0.027794631, -0.095073916, 0.9917326)
+bones/4/rotation = Quaternion(0.65195674, -0.042504236, -0.2732821, 0.70601887)
 bones/4/scale = Vector3(1.0000001, 0.99999994, 1)
 bones/5/name = "Bone.005"
 bones/5/parent = 0
@@ -756,13 +802,13 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(1, 6.4022337e-19, -9.100568e-22, -6.402233e-19, 0.9999959, -0.0028833048, -9.359061e-22, 0.002883305, 0.9999958, -1.533386e-22, 0.48317537, 3.259629e-09)
 bones/6/enabled = true
 bones/6/position = Vector3(-1.533386e-22, 0.48317537, 3.259629e-09)
-bones/6/rotation = Quaternion(0.001441654, 6.462305e-24, -3.20112e-19, 0.999999)
+bones/6/rotation = Quaternion(0.0014416542, -7.4168384e-13, -1.1642326e-10, 0.999999)
 bones/6/scale = Vector3(1, 1, 0.99999994)
 bones/7/name = "Bone.008"
 bones/7/parent = -1
 bones/7/rest = Transform3D(1, -2.1696126e-16, -8.888883e-18, -8.888883e-18, -0.08180261, 0.9966486, -2.1696126e-16, -0.9966486, -0.08180261, 0, -0.3885095, 0)
 bones/7/enabled = true
-bones/7/position = Vector3(0, -0.3885095, 0)
+bones/7/position = Vector3(6.2038546e-25, -0.38850927, -1.34599e-40)
 bones/7/rotation = Quaternion(-0.73546, 7.677174e-17, 7.677175e-17, 0.6775682)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "Bone.010"
@@ -770,13 +816,13 @@ bones/8/parent = 7
 bones/8/rest = Transform3D(1, -3.552714e-15, -2.3841866e-07, 2.3768244e-07, 0.07852382, 0.99691236, 1.8721536e-08, -0.99691236, 0.07852382, 1.6543612e-24, 0.37476748, -4.656613e-08)
 bones/8/enabled = true
 bones/8/position = Vector3(1.6543612e-24, 0.37476748, -4.656613e-08)
-bones/8/rotation = Quaternion(-0.6787769, -8.754071e-08, 8.091653e-08, 0.73434454)
+bones/8/rotation = Quaternion(-0.6787228, -0.008541877, -0.00930218, 0.73428595)
 bones/8/scale = Vector3(1, 1.0000001, 1.0000001)
 bones/9/name = "Bone.009"
 bones/9/parent = -1
 bones/9/rest = Transform3D(-1, 6.572521e-14, -3.8941712e-07, -3.8837553e-07, -0.072993405, 0.9973396, -2.8424608e-08, 0.99733245, 0.07299393, 0, -0.3885095, 0)
 bones/9/enabled = true
-bones/9/position = Vector3(0, -0.3885095, 0)
+bones/9/position = Vector3(1.4210855e-14, -0.38850927, 1.8576765e-09)
 bones/9/rotation = Quaternion(-1.4261505e-07, 0.68081075, 0.73245937, -1.3255875e-07)
 bones/9/scale = Vector3(1, 1, 1.0000072)
 bones/10/name = "Bone.011"
@@ -784,7 +830,7 @@ bones/10/parent = 9
 bones/10/rest = Transform3D(1, 3.8827946e-07, 3.596685e-07, -3.882767e-07, 0.07638587, 0.99707836, 3.5967136e-07, -0.9970786, 0.076385856, 3.9263633e-14, 0.39654055, 3.1478703e-07)
 bones/10/enabled = true
 bones/10/position = Vector3(3.9263633e-14, 0.39654055, 3.1478703e-07)
-bones/10/rotation = Quaternion(-0.6795639, -9.782336e-13, -2.646329e-07, 0.73361635)
+bones/10/rotation = Quaternion(-0.6795573, 0.0029992205, 0.0032155046, 0.73360926)
 bones/10/scale = Vector3(1, 1.0000002, 1)
 
 [node name="armR_001" type="MeshInstance3D" parent="Armature/Skeleton3D"]
@@ -796,6 +842,7 @@ mesh = SubResource("ArrayMesh_tiwrm")
 skin = SubResource("Skin_xnsuh")
 
 [node name="blade" type="MeshInstance3D" parent="Armature/Skeleton3D"]
+visible = false
 mesh = SubResource("ArrayMesh_8nesr")
 skin = SubResource("Skin_xnsuh")
 
@@ -828,3 +875,15 @@ skin = SubResource("Skin_xnsuh")
 libraries = {
 &"": SubResource("AnimationLibrary_3ib4g")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_kagm2")
+anim_player = NodePath("../AnimationPlayer")
+parameters/stand_or_death/blend_position = -1.0
+parameters/walker/active = false
+parameters/walker/internal_active = false
+parameters/walker/request = 0
+parameters/walk_or_die/blend_position = -1.0
+parameters/attacker/active = false
+parameters/attacker/internal_active = false
+parameters/attacker/request = 0

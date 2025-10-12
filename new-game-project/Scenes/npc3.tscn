@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvwdlhxmecwle"]
+[gd_scene load_steps=5 format=3 uid="uid://bvwdlhxmecwle"]
 
 [ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_wdv0w"]
 [ext_resource type="PackedScene" uid="uid://bw6cyulus10px" path="res://Models/person_3.tscn" id="2_myd0b"]
@@ -10,70 +10,19 @@ height = 6.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_eghqu"]
 radius = 10.0
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdv0w"]
-animation = &"Attack"
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_myd0b"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1m10e"]
-animation = &"Dead"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhhpb"]
-animation = &"Stand"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ytody"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_1m10e")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_mhhpb")
-blend_point_1/pos = -1.0
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytody"]
-animation = &"Walk_001"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eghqu"]
-animation = &"Die"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1m10e"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ytody")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_eghqu")
-blend_point_1/pos = 1.0
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eghqu"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1m10e"]
-graph_offset = Vector2(-169.51215, -26.929024)
-nodes/output/position = Vector2(1120, 160)
-nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_ytody")
-nodes/stand_or_death/position = Vector2(440, 20)
-nodes/walker/node = SubResource("AnimationNodeOneShot_eghqu")
-nodes/walker/position = Vector2(680, 60)
-nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_1m10e")
-nodes/walk_or_die/position = Vector2(440, 240)
-nodes/attacker/node = SubResource("AnimationNodeOneShot_myd0b")
-nodes/attacker/position = Vector2(900, 100)
-nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
-nodes/attack/position = Vector2(680, 360)
-node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
-
-[node name="NPC3" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "debugRay")]
+[node name="NPC3" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "animator", "debugRay")]
 script = ExtResource("1_wdv0w")
 navigator = NodePath("NavigationAgent3D")
 rayCast = NodePath("RayCast3D")
 shapeCast = NodePath("ShapeCast3D")
 model = NodePath("Person1")
+animator = NodePath("Person1/AnimationTree")
 debugRay = NodePath("RayCast3D2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Person1" parent="." instance=ExtResource("2_myd0b")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-
-[node name="Skeleton3D" parent="Person1/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.126448, 0.7421436)
-bones/2/rotation = Quaternion(-0.5737876, 0.079773225, -0.006364598, 0.815085)
-bones/3/rotation = Quaternion(0.62989086, -0.11158317, -0.028384166, 0.7681022)
-bones/4/rotation = Quaternion(0.5799102, -0.04764057, -0.2607587, 0.77035016)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
@@ -94,18 +43,5 @@ collision_mask = 2
 transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
 debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
 debug_shape_thickness = 5
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../Person1")
-tree_root = SubResource("AnimationNodeBlendTree_1m10e")
-anim_player = NodePath("../Person1/AnimationPlayer")
-parameters/stand_or_death/blend_position = -1.0
-parameters/walker/active = false
-parameters/walker/internal_active = false
-parameters/walker/request = 0
-parameters/walk_or_die/blend_position = -1.0
-parameters/attacker/active = false
-parameters/attacker/internal_active = false
-parameters/attacker/request = 0
 
 [editable path="Person1"]
