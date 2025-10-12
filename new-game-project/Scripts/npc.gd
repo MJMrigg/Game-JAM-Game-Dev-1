@@ -104,8 +104,8 @@ func _physics_process(delta: float) -> void:
 
 func pick_new_target() -> void:
 	# Randomly generate a new target
-	var randx:float = randf()*50 - 25
-	var randz:float = randf()*50 - 25
+	var randx:float = randf()*160 - 80
+	var randz:float = randf()*160 - 80
 	var new_target = Vector3(randx, position.y, randz)
 	navigator.target_position = new_target
 
