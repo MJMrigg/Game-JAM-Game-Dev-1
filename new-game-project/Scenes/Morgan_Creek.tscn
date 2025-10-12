@@ -303,6 +303,18 @@ transform = Transform3D(-2.1855676e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0
 [node name="Knife" parent="NavigationRegion3D/Houses/House22/Table15" instance=ExtResource("6_oyw14")]
 transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
+[node name="Table16" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("5_uqowl")]
+transform = Transform3D(-2.1855676e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0, -2.1855676e-08, 86.97073, 0.80808693, 1.4368019)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table16" instance=ExtResource("6_oyw14")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table17" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("5_uqowl")]
+transform = Transform3D(-2.1855696e-08, 0, -0.50000006, 0, 0.5, 0, 0.50000006, 0, -2.1855696e-08, 117.17875, 0.80808693, 15.875586)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table17" instance=ExtResource("6_oyw14")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
 [node name="Roads" type="Node" parent="NavigationRegion3D"]
 
 [node name="Road" type="MeshInstance3D" parent="NavigationRegion3D/Roads"]
