@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="2_4k1ej"]
 [ext_resource type="PackedScene" uid="uid://bu2xhual06jp3" path="res://Models/table.tscn" id="3_mmddc"]
 [ext_resource type="PackedScene" uid="uid://d0f6vgyce40m8" path="res://Models/knife.tscn" id="4_0rko4"]
-[ext_resource type="PackedScene" uid="uid://b45xmv5wmccsa" path="res://Models/house_2.tscn" id="5_iiccd"]
-[ext_resource type="PackedScene" uid="uid://byl8exxqps1io" path="res://Models/house_3.tscn" id="6_pya7f"]
+[ext_resource type="PackedScene" uid="uid://bo4qlw2wby1yq" path="res://Models/house_2.tscn" id="5_iiccd"]
+[ext_resource type="PackedScene" uid="uid://bs5b3o5owcnke" path="res://Models/house_3.tscn" id="6_pya7f"]
 [ext_resource type="PackedScene" uid="uid://cy6f1magjjlh7" path="res://Models/street_lamp.tscn" id="7_jcywl"]
 [ext_resource type="PackedScene" uid="uid://bm8nv7osb672r" path="res://Scenes/lake.tscn" id="8_ggp4i"]
 [ext_resource type="PackedScene" uid="uid://bsgl1w4wr0ogk" path="res://Models/dead_tree.tscn" id="9_oh0px"]
@@ -102,44 +102,20 @@ shape = SubResource("BoxShape3D_agxrm")
 [node name="House3" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, -35.282, 0, -68)
 
-[node name="Table12" parent="NavigationRegion3D/Houses/House3" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -7.628756e-08, 0, 0.8, 0, 7.628756e-08, 0, -0.80000013, -3.8572845, 1.2929372, 1.2401123)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House3/Table12" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House5" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -27.869, 0, -51)
 
 [node name="House7" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -44.74396, 0, -44)
 
-[node name="Table13" parent="NavigationRegion3D/Houses/House7" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -1.2079666e-07, 0, 0.8, 0, 1.2079666e-07, 0, -0.80000013, -3.5707397, 1.2929372, 1.1213303)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House7/Table13" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House9" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 0, -52)
-
-[node name="Table7" parent="NavigationRegion3D/Houses/House9" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -1.2079663e-07, 0, 0.8, 0, 1.2079663e-07, 0, -0.80000013, -2.843834, 1.2929362, 0.0063934326)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House9/Table7" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House10" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 0, -44)
 
 [node name="House12" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 0, -28)
-
-[node name="Table10" parent="NavigationRegion3D/Houses/House12" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -1.2079663e-07, 0, 0.8, 0, 1.2079663e-07, 0, -0.80000013, -3.8375244, 1.2929372, 0.8269844)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House12/Table10" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House13" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 4.696, 0, -68)
@@ -150,12 +126,6 @@ transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09
 [node name="House17" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 36.201, 0, -68)
 
-[node name="Table5" parent="NavigationRegion3D/Houses/House17" instance=ExtResource("3_mmddc")]
-transform = Transform3D(1.1125674e-07, 0, -0.80000013, 0, 0.8, 0, 0.80000013, 0, 1.1125674e-07, -0.6876526, 1.2929362, -2.3237152)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House17/Table5" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House19" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 52, 0, -60)
 
@@ -165,12 +135,6 @@ transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5
 [node name="House23" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 52, 0, -28)
 
-[node name="Table2" parent="NavigationRegion3D/Houses/House23" instance=ExtResource("3_mmddc")]
-transform = Transform3D(0.8, 0, 5.0858418e-08, 0, 0.8, 0, -5.0858418e-08, 0, 0.8, -2.8819046, 1.2929362, 1.2817345)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House23/Table2" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House24" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -35, 0, 11)
 
@@ -179,12 +143,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -35, 0, 27)
 
 [node name="House29" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -11, 0, 28)
-
-[node name="Table16" parent="NavigationRegion3D/Houses/House29" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-8.5827516e-08, 0, 0.80000013, 0, 0.8, 0, -0.80000013, 0, -8.5827516e-08, -0.37761688, 1.2929391, -2.5833015)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House29/Table16" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House30" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -11, 0, 20)
@@ -201,20 +159,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 29, 0, -37)
 [node name="House37" parent="NavigationRegion3D/Houses" instance=ExtResource("2_4k1ej")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 29, 0, -29)
 
-[node name="Table9" parent="NavigationRegion3D/Houses/House37" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -1.2079663e-07, 0, 0.8, 0, 1.2079663e-07, 0, -0.80000013, -3.6617546, 1.2929372, 0.9800911)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House37/Table9" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House1" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, -52, 0, -68)
-
-[node name="Table14" parent="NavigationRegion3D/Houses/House1" instance=ExtResource("3_mmddc")]
-transform = Transform3D(0.80000013, 0, 1.4622584e-07, 0, 0.8, 0, -1.4622584e-07, 0, 0.80000013, 5.8477783, 1.2929372, -1.6313705)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House1/Table14" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House4" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, -27.869, 0, -59.395897)
@@ -225,23 +171,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.237464, 0, -36)
 [node name="House14" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 12.374, 0, -68.33803)
 
-[node name="Table6" parent="NavigationRegion3D/Houses/House14" instance=ExtResource("3_mmddc")]
-transform = Transform3D(1.5576575e-07, 0, -0.80000013, 0, 0.8, 0, 0.80000013, 0, 1.5576575e-07, -2.6961365, 1.2929362, 1.2246532)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House14/Table6" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House15" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 20.051, 0, -68.338)
 
 [node name="House20" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 54.149456, 0, -52)
-
-[node name="Table3" parent="NavigationRegion3D/Houses/House20" instance=ExtResource("3_mmddc")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.8932495, 1.2929362, -1.4620514)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House20/Table3" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House35" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28.496222, 0, -45)
@@ -249,20 +183,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28.496222, 0, -45)
 [node name="House33" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 21.135468, 0, -36)
 
-[node name="Table8" parent="NavigationRegion3D/Houses/House33" instance=ExtResource("3_mmddc")]
-transform = Transform3D(0.80000013, 0, -2.842171e-14, 0, 0.8, 0, 2.842171e-14, 0, 0.80000013, -2.5176315, 1.2929367, 3.6433868)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House33/Table8" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House25" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -35.610092, 0, 19)
-
-[node name="Table17" parent="NavigationRegion3D/Houses/House25" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-8.582754e-08, 0, 0.80000013, 0, 0.8, 0, -0.80000013, 0, -8.582754e-08, 1.2649765, 1.2929391, -2.5187492)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House25/Table17" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House28" parent="NavigationRegion3D/Houses" instance=ExtResource("5_iiccd")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -19, 0, 35.79188)
@@ -273,20 +195,8 @@ transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09
 [node name="House6" parent="NavigationRegion3D/Houses" instance=ExtResource("6_pya7f")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -35.938637, 0, -44)
 
-[node name="Table11" parent="NavigationRegion3D/Houses/House6" instance=ExtResource("3_mmddc")]
-transform = Transform3D(0.80000013, 0, 5.085842e-08, 0, 0.8, 0, -5.085842e-08, 0, 0.80000013, 7.0813293, 1.2929372, 6.750252)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House6/Table11" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
-
 [node name="House27" parent="NavigationRegion3D/Houses" instance=ExtResource("6_pya7f")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -27, 0, 36.338417)
-
-[node name="Table15" parent="NavigationRegion3D/Houses/House27" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.80000013, 0, -1.2079663e-07, 0, 0.8, 0, 1.2079663e-07, 0, -0.80000013, -10.596001, 1.2929391, 0.09790802)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House27/Table15" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House31" parent="NavigationRegion3D/Houses" instance=ExtResource("6_pya7f")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -9.572788, 0, 11.277502)
@@ -296,12 +206,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.831952, 0, -60.56672
 
 [node name="House18" parent="NavigationRegion3D/Houses" instance=ExtResource("6_pya7f")]
 transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 44.409, 0, -69.24382)
-
-[node name="Table4" parent="NavigationRegion3D/Houses/House18" instance=ExtResource("3_mmddc")]
-transform = Transform3D(-0.5210541, 0, 0.60704434, 0, 0.8, 0, -0.60704434, 0, -0.5210541, -10.797638, 1.2929362, -5.6627045)
-
-[node name="Knife" parent="NavigationRegion3D/Houses/House18/Table4" instance=ExtResource("4_0rko4")]
-transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="House38" parent="NavigationRegion3D/Houses" instance=ExtResource("6_pya7f")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 54.369286, 0, -36.255756)
@@ -313,6 +217,102 @@ transform = Transform3D(-0.8, 0, -1.2079664e-07, 0, 0.8, 0, 1.2079664e-07, 0, -0
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.689644, 0.80808514, -0.11042023)
 
 [node name="Knife" parent="NavigationRegion3D/Houses/House22/Table" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table2" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.655548, 0.80808514, 73.85243)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table2" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table3" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.453194, 0.80808514, 102.137566)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table3" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table4" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-0.37940276, 0, -0.3256587, 0, 0.5, 0, 0.3256587, 0, -0.37940276, 14.406288, 0.80808514, 131.35464)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table4" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table5" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -7.1054274e-15, 0, 0.5, 0, 7.1054274e-15, 0, 0.50000006, 26.753159, 0.80808514, 123.48113)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table5" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table6" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -2.1316282e-14, 0, 0.5, 0, 2.1316282e-14, 0, 0.50000006, 58.75464, 0.80808514, 125.15897)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table6" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table7" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -2.1316282e-14, 0, 0.5, 0, 2.1316282e-14, 0, 0.50000006, 78.98413, 0.80808514, 103.04736)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table7" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table8" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -2.1316282e-14, 0, 0.5, 0, 2.1316282e-14, 0, 0.50000006, 45.463882, 0.80808544, 85.328476)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table8" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table9" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -2.1316282e-14, 0, 0.5, 0, 2.1316282e-14, 0, 0.50000006, 39.495335, 0.80808574, 73.6888)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table9" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table10" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(0.50000006, 0, -2.1316282e-14, 0, 0.5, 0, 2.1316282e-14, 0, 0.50000006, 79.605194, 0.80808574, 72.5345)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table10" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table11" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855696e-08, 0, -0.50000006, 0, 0.5, 0, 0.50000006, 0, -2.1855696e-08, 114.16112, 0.80808574, 97.477196)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table11" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table12" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.185574e-08, 0, -0.50000006, 0, 0.5, 0, 0.50000006, 0, -2.185574e-08, 118.334305, 0.80808574, 125.462166)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table12" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table13" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855696e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0, -2.1855696e-08, 128.68585, 0.80808574, 90.81966)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table13" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table14" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855683e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0, -2.1855683e-08, 137.43712, 0.80808574, 119.3965)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table14" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table15" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855676e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0, -2.1855676e-08, 107.14555, 0.80808693, -13.994156)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table15" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table16" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855676e-08, 0, 0.50000006, 0, 0.5, 0, -0.50000006, 0, -2.1855676e-08, 86.97073, 0.80808693, 1.4368019)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table16" instance=ExtResource("4_0rko4")]
+transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
+
+[node name="Table17" parent="NavigationRegion3D/Houses/House22" instance=ExtResource("3_mmddc")]
+transform = Transform3D(-2.1855696e-08, 0, -0.50000006, 0, 0.5, 0, 0.50000006, 0, -2.1855696e-08, 117.17875, 0.80808693, 15.875586)
+
+[node name="Knife" parent="NavigationRegion3D/Houses/House22/Table17" instance=ExtResource("4_0rko4")]
 transform = Transform3D(-1.07284414e-07, 0, -1, 0, 1, 0, 1, 0, -1.07284414e-07, 0.0033569336, 1.0645036, -0.06878662)
 
 [node name="Roads" type="Node" parent="NavigationRegion3D"]
@@ -1412,7 +1412,6 @@ z_distance = 3.0
 
 [node name="Ghost" parent="." node_paths=PackedStringArray("target") instance=ExtResource("14_0b7bc")]
 transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.068660654, -28.551239, 0.90141976, 74.27136)
-visible = false
 collision_layer = 0
 speed = 15.0
 target = NodePath("../Target")
@@ -1436,11 +1435,13 @@ environment = SubResource("Environment_8bufs")
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="NPC2" parent="NPCs" instance=ExtResource("17_ev1m1")]
+[node name="NPC2" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("17_ev1m1")]
 transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -40.051872, 0.442, 61.534294)
+my_door = NodePath("../../NavigationRegion3D/Houses/House25/Door")
 
-[node name="NPC30" parent="NPCs" instance=ExtResource("17_ev1m1")]
+[node name="NPC30" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("17_ev1m1")]
 transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -5.6916428, 0.442, 65.89597)
+my_door = NodePath("../../NavigationRegion3D/Houses/House26/Door")
 
 [node name="NPC31" parent="NPCs" instance=ExtResource("17_ev1m1")]
 transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 33.16444, 0.442, 65.334435)
@@ -1584,30 +1585,47 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 1.7999864, 88.78409, 370.1
 [node name="Target" parent="." instance=ExtResource("22_7seq5")]
 transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 49.443504, 0.442, 30.499586)
 
-[node name="Skeleton3D" parent="Target/target/Armature" index="0"]
-bones/0/position = Vector3(0.020041853, -2.5577326, 0.029852614)
-bones/0/rotation = Quaternion(0, 0, 0.67548615, 0.7373727)
-bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.12644804, 0.7421436)
-bones/2/rotation = Quaternion(-0.4867152, -0.047064822, -0.012307599, 0.87220514)
-bones/3/rotation = Quaternion(0.62989086, -0.11158317, -0.028384166, 0.7681022)
-bones/4/rotation = Quaternion(0.2695977, -0.64499223, -0.39090613, 0.5987442)
-bones/6/rotation = Quaternion(0.3398026, -0.1468351, -0.023366459, 0.9286698)
-bones/7/position = Vector3(0.020041851, -2.5577326, 0.029852629)
-bones/8/rotation = Quaternion(-0.46741998, -0.49044168, -0.53410524, 0.50568485)
-bones/9/position = Vector3(0.020041853, -2.5577328, 0.02985257)
-bones/10/rotation = Quaternion(0.028194133, -0.018546177, 0.43833452, 0.8981781)
-
-[node name="AnimationTree" parent="Target/target" index="2"]
-parameters/stand_or_death/blend_position = 1.0
-parameters/walk_or_die/blend_position = 1.0
-
-[node name="NavigationAgent3D" parent="Target" index="5"]
-debug_enabled = false
-
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
 
+[editable path="NavigationRegion3D/Houses/House3"]
+[editable path="NavigationRegion3D/Houses/House5"]
+[editable path="NavigationRegion3D/Houses/House7"]
+[editable path="NavigationRegion3D/Houses/House9"]
+[editable path="NavigationRegion3D/Houses/House10"]
+[editable path="NavigationRegion3D/Houses/House12"]
+[editable path="NavigationRegion3D/Houses/House13"]
+[editable path="NavigationRegion3D/Houses/House16"]
+[editable path="NavigationRegion3D/Houses/House17"]
+[editable path="NavigationRegion3D/Houses/House19"]
+[editable path="NavigationRegion3D/Houses/House21"]
+[editable path="NavigationRegion3D/Houses/House23"]
 [editable path="NavigationRegion3D/Houses/House24"]
+[editable path="NavigationRegion3D/Houses/House26"]
+[editable path="NavigationRegion3D/Houses/House29"]
+[editable path="NavigationRegion3D/Houses/House30"]
+[editable path="NavigationRegion3D/Houses/House32"]
+[editable path="NavigationRegion3D/Houses/House34"]
+[editable path="NavigationRegion3D/Houses/House36"]
+[editable path="NavigationRegion3D/Houses/House37"]
+[editable path="NavigationRegion3D/Houses/House1"]
+[editable path="NavigationRegion3D/Houses/House4"]
+[editable path="NavigationRegion3D/Houses/House11"]
+[editable path="NavigationRegion3D/Houses/House14"]
+[editable path="NavigationRegion3D/Houses/House15"]
+[editable path="NavigationRegion3D/Houses/House20"]
+[editable path="NavigationRegion3D/Houses/House35"]
+[editable path="NavigationRegion3D/Houses/House33"]
+[editable path="NavigationRegion3D/Houses/House25"]
+[editable path="NavigationRegion3D/Houses/House28"]
+[editable path="NavigationRegion3D/Houses/House2"]
+[editable path="NavigationRegion3D/Houses/House6"]
+[editable path="NavigationRegion3D/Houses/House27"]
+[editable path="NavigationRegion3D/Houses/House31"]
+[editable path="NavigationRegion3D/Houses/House8"]
+[editable path="NavigationRegion3D/Houses/House18"]
+[editable path="NavigationRegion3D/Houses/House38"]
+[editable path="NavigationRegion3D/Houses/House22"]
 [editable path="Ghost"]
 [editable path="Ghost/visuals/NPC1"]
 [editable path="Ghost/visuals/NPC3"]
@@ -1680,5 +1698,3 @@ debug_enabled = false
 [editable path="NPCs/NPC11/Person1"]
 [editable path="NPCs/NPC12"]
 [editable path="NPCs/NPC12/Person1"]
-[editable path="Target"]
-[editable path="Target/target"]
