@@ -8,6 +8,7 @@ signal points
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
 @export var rayCast:RayCast3D
+@export var sightToPlayer:RayCast3D
 @export var shapeCast:ShapeCast3D
 @export var model:CharacterBody3D # The NPC's model for animation purposes
 var unconcious = false # If the NPC is unconcious
@@ -38,6 +39,7 @@ func _ready() -> void:
 	else:
 		print("House Group Empty. :(")
 	start = position
+	points.connect(get_node("../../HUD_score").updateScore.bind())
 	pick_new_target()
 
 func _physics_process(delta: float) -> void:
@@ -57,8 +59,8 @@ func _physics_process(delta: float) -> void:
 					#print(rayCast.get_collider())
 					#print(rayCast.is_colliding())
 					if(rayCast.is_colliding() && rayCast.get_collider() == shapeCast.get_collider(human)):
-						print("Human can see me!")
-						points.connect(get_node("../../HUD_score").updateScore.bind())
+						#print("Human can see me!")
+						#points.connect(get_node("../../HUD_score").updateScore.bind())
 						emit_signal("points")
 						deadBodySight = true
 						emit_signal("body_discovered", shapeCast.get_collider(human))
@@ -88,6 +90,29 @@ func _physics_process(delta: float) -> void:
 		pick_new_target()
 		return
 	
+	
+	# Line of Sight to player ghost
+	var test = get_tree().get_nodes_in_group("player")[0]
+	#print(sightToPlayer.to_local(test.position))
+	var test2 = sightToPlayer.to_local(test.position)
+	'''
+	print("Player Position X: ", test.position.x)
+	print("My Position X: ", position.x)
+	print("ABS dif X: ", abs(test.position.x - position.x))
+	print("Player Position Z: ", test.position.z)
+	print("My Position Z: ", position.z)
+	print("ABS dif Z: ", abs(test.position.z - position.z))
+	#if(abs(test.position.x - position.x) > 10 || abs(test.position.z - position.z) > 10):
+		#print("In range")
+	'''
+	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5)):
+		sightToPlayer.target_position = sightToPlayer.to_local(test.position)
+		sightToPlayer.force_raycast_update()
+		if(sightToPlayer.is_colliding() && sightToPlayer.get_collider() == test):
+			#print("I see the player")
+			#points.connect(get_node("../../HUD_score").updateScore.bind())
+			emit_signal("points")
+		
 	# Set up velocity
 	#velocity = Vector3.ZERO
 	var nextPos = navigator.get_next_path_position()

@@ -91,6 +91,7 @@ height = 30.0
 radius = 1.0
 
 [node name="StreetLamp" type="StaticBody3D"]
+collision_layer = 32
 
 [node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.95994, 0.018386297)

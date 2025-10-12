@@ -44,6 +44,7 @@ height = 10.4375
 radius = 3.7436523
 
 [node name="naked_tree" type="StaticBody3D"]
+collision_layer = 32
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5.0695944, 0, 0, 0, 1, 0, 4.908041, 0)

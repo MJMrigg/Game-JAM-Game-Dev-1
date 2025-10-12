@@ -10,13 +10,14 @@ height = 6.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_eghqu"]
 radius = 10.0
 
-[node name="NPC3" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "animator", "debugRay") groups=["NPCs"]]
+[node name="NPC3" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "sightToPlayer", "shapeCast", "model", "animator", "debugRay") groups=["NPCs"]]
 collision_layer = 4
 collision_mask = 62
 script = ExtResource("1_wdv0w")
 type = 3
 navigator = NodePath("NavigationAgent3D")
 rayCast = NodePath("RayCast3D")
+sightToPlayer = NodePath("sightToPlayer")
 shapeCast = NodePath("ShapeCast3D")
 model = NodePath("Person1")
 animator = NodePath("Person1/AnimationTree")
@@ -47,6 +48,12 @@ collision_mask = 2
 [node name="RayCast3D2" type="RayCast3D" parent="."]
 transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
 debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
+debug_shape_thickness = 5
+
+[node name="sightToPlayer" type="RayCast3D" parent="."]
+transform = Transform3D(0.010087871, -0.9999491, 0, 0.9999491, 0.010087871, 0, 0, 0, 1, 0, 1.4968365, 0)
+collision_mask = 551
+debug_shape_custom_color = Color(0, 0.52027535, 0.41603208, 1)
 debug_shape_thickness = 5
 
 [connection signal="body_discovered" from="." to="." method="_on_body_discovered"]

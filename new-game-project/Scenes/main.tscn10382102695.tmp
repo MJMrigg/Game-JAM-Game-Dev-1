@@ -63,9 +63,6 @@ shape = SubResource("BoxShape3D_8gbba")
 [node name="House1" parent="NavigationRegion3D" instance=ExtResource("3_jjvhh")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.988657, 0, 5.443239)
 
-[node name="arrow" parent="NavigationRegion3D/House1" index="18"]
-transform = Transform3D(-3.7185316e-06, 0, 27.330893, 0, 29.055748, 0, -87.020485, 0, -1.2220618e-06, 0.47470498, 22.906685, 1.070138)
-
 [node name="NPC1" parent="." instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, -37.844643)
 
@@ -83,9 +80,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.3167357, 0.70781505, 
 
 [node name="Knife" parent="." instance=ExtResource("9_hptm8")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 2.308625, 1.068801, -1.0739467)
-
-[node name="NPC2" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.701351, 0.049999237, -17.014214)
 
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]

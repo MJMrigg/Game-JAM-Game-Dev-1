@@ -6,10 +6,10 @@ var score = 0
 func _ready() -> void:
 	pass
 	self.get_node("Number").set_text(str(score))
-	print("Current Score ", score)
+	#print("Current Score ", score)
 
 
 func updateScore():
 	score = score + 1
-	print(score)
+	#print(score)
 	_ready()

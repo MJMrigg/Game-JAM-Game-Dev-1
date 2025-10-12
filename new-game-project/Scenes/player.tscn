@@ -17,6 +17,7 @@ radius = 1.0
 size = Vector3(1, 1.5, 2)
 
 [node name="Ghost" type="CharacterBody3D" node_paths=PackedStringArray("animations") groups=["player"]]
+collision_layer = 513
 collision_mask = 128
 script = ExtResource("1_cvnsp")
 speed = 20.0
