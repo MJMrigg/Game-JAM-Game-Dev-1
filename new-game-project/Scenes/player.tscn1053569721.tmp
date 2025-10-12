@@ -1,15 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=12 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://8cbc8hhlgjcx" path="res://Models/person1.tscn" id="3_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://qy0o4d2sfaqo" path="res://Models/person_2.tscn" id="4_vgqql"]
-[ext_resource type="PackedScene" uid="uid://bw6cyulus10px" path="res://Models/person_3.tscn" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3mxmt"]
 radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
+albedo_color = Color(0.94195384, 0.73337764, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fkybt"]
+material = SubResource("StandardMaterial3D_vgqql")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t5aa"]
+albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
+material = SubResource("StandardMaterial3D_6t5aa")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6t5aa"]
 
@@ -20,7 +30,7 @@ size = Vector3(1, 1.5, 2)
 collision_mask = 128
 script = ExtResource("1_cvnsp")
 speed = 20.0
-animations = [NodePath("NPC1/AnimationTree"), NodePath("NPC2/AnimationTree"), NodePath("NPC3/AnimationTree")]
+animations = [NodePath("NPC1/AnimationTree"), null, null]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3btnm")
@@ -33,6 +43,16 @@ collision_mask = 6
 
 [node name="Ghost" parent="." instance=ExtResource("2_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
+
+[node name="NPC2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_fkybt")
+skeleton = NodePath("")
+
+[node name="NPC3" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_vgqql")
+skeleton = NodePath("../NPC2")
 
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -51,17 +71,7 @@ collision_mask = 24
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5971966, 0)
 visible = false
 
-[node name="NPC2" parent="." instance=ExtResource("4_vgqql")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, -0.003686905, -0.5958599, 0)
-visible = false
-
-[node name="NPC3" parent="." instance=ExtResource("5_fkybt")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.57906175, 0)
-visible = false
-
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
 
 [editable path="NPC1"]
-[editable path="NPC2"]
-[editable path="NPC3"]

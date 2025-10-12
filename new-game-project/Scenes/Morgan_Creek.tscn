@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://b4ofsborfa3nu"]
 
-[ext_resource type="PackedScene" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
+[ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="1_nwwcc"]
 [ext_resource type="PackedScene" uid="uid://cy6f1magjjlh7" path="res://Models/street_lamp.tscn" id="2_agxrm"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_tbe3k"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_agxrm"]
 [ext_resource type="PackedScene" uid="uid://byl8exxqps1io" path="res://Models/house_3.tscn" id="4_o6ao1"]
 [ext_resource type="PackedScene" uid="uid://bm8nv7osb672r" path="res://Scenes/lake.tscn" id="5_t5uet"]
-[ext_resource type="PackedScene" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
+[ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="9_o6ao1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nwwcc"]
@@ -813,10 +813,11 @@ target = NodePath("../Ghost")
 y_distance = 1.0
 z_distance = 3.0
 
-[node name="Ghost" parent="." instance=ExtResource("3_agxrm")]
+[node name="Ghost" parent="." node_paths=PackedStringArray("animations") instance=ExtResource("3_agxrm")]
 transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.068660654, -28.551239, 0.90141976, 74.27136)
 collision_layer = 0
 speed = 5.0
+animations = [NodePath("NPC1/AnimationTree"), null, null]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.85264015, -0.52249855, 0, 0.52249855, 0.85264015, 0, 3.692, 0)
@@ -825,6 +826,21 @@ light_angular_distance = 88.14
 [node name="NPC1" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -30.695034, 0.44233212, 67.43328)
 my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPC1/Person1/Armature" index="0"]
+bones/0/position = Vector3(0, -2.019391, 0)
+bones/0/rotation = Quaternion(0, 0, 0.67548615, 0.7373727)
+bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.12644804, 0.7421436)
+bones/2/rotation = Quaternion(-0.4867152, -0.047064822, -0.012307599, 0.87220514)
+bones/4/rotation = Quaternion(0.2695977, -0.64499223, -0.39090613, 0.5987442)
+bones/6/rotation = Quaternion(0.3398026, -0.1468351, -0.023366464, 0.9286698)
+bones/7/position = Vector3(0, -2.0193908, -1.4901161e-08)
+bones/8/rotation = Quaternion(-0.46741998, -0.49044168, -0.53410524, 0.50568485)
+bones/9/position = Vector3(-5.6631955e-14, -2.0193913, 7.4505624e-09)
+bones/10/rotation = Quaternion(0.028193988, -0.01854615, 0.43833452, 0.89817816)
+
+[node name="AnimationTree" parent="NPC1/Person1" index="2"]
+parameters/stand_or_death/blend_position = 2.0833333
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8bufs")

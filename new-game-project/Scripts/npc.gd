@@ -19,7 +19,6 @@ var staring:bool = false # If curious sees body
 @export var my_door:door # NPC's house
 @export var animator:AnimationTree # Animation player
 
-var animations:AnimationPlayer
 var direction = Vector3.ZERO
 
 @export var debugRay:RayCast3D
@@ -29,7 +28,6 @@ func _ready() -> void:
 	ghost = get_tree().get_nodes_in_group("player")[0]
 	start = position
 	pick_new_target()
-	animations = get_node("Person1/AnimationPlayer")
 
 func _physics_process(delta: float) -> void:
 	#print(self, ":", self.position)
@@ -89,20 +87,16 @@ func _physics_process(delta: float) -> void:
 		velocity = newVel
 	
 	
-	# If the walking animation isn't playing, play it
-	if(animator.get("parameters/walker/active") == false):
-		animator.set("parameters/walker/request",1)
+	# Look down the path
 	var look_target = Vector3(nextPos.x, model.global_position.y, nextPos.z)
-	#var target_dir = (look_target - model.global_position).normalized()
-	#var current_dir = model.transform.basis.z.normalized() #*-1
-	#var new_dir = current_dir.slerp(target_dir, delta * 0.5) 
-	#print(new_dir)
-	#print(model.global_position)
-	#print(model.global_position + new_dir)
 	model.look_at(look_target, Vector3.UP)
 	model.rotate(basis.y.normalized(), 90.0)
 	debugRay.target_position = debugRay.to_local(look_target)
 	debugRay.force_raycast_update()
+	
+	# If the walking animation isn't playing, play it
+	if(animator.get("parameters/walker/active") == false):
+		animator.set("parameters/walker/request",1)
 	
 	# MOOOOOOOOOOOOOOOOOOVVEEEEEEE
 	move_and_slide()
