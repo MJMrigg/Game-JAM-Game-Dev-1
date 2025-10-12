@@ -9,9 +9,8 @@ func _ready() -> void:
 	#print("Current Score ", score)
 
 func _process(delta: float) -> void:
-	if (score >= 100):
+	if (score >= Global.difficulty):
 		get_node("../win_menu/ColorRect2").show()
-
 
 func stop() -> void:
 	update = false;
