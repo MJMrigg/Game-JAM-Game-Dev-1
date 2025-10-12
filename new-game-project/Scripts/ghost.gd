@@ -10,6 +10,7 @@ var interactor:ShapeCast3D # Detector for objects to interact with
 var knife:bool = false # If the player has the knife
 signal wrong_door
 signal menu
+signal points
 @export var target:NPC # The target
 @export var animations:Array[AnimationTree] = [] # Animation trees for models
 
@@ -23,7 +24,9 @@ func _ready() -> void:
 	collider = get_node("CollisionShape3D")
 	sound_area = get_node("SoundArea3D")
 	interactor = get_node("Interactor")
+	points.connect(get_node("../HUD_score").wrongTarget.bind())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Locks mouse in window
+	
 
 # Player key input
 func _unhandled_input(event: InputEvent) -> void:
@@ -218,6 +221,7 @@ func kill():
 		found.animator.set("parameters/walk_or_die/blend_position",1)
 		found.animator.set("parameters/stand_or_death/blend_position",1)
 		found.animator.set("parameters/walker/request",1)
+		emit_signal("points")
 	# If they were the target, win the game
 	if(found == target):
 		get_node("../win_menu").show()

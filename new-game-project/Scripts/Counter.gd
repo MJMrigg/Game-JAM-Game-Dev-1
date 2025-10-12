@@ -13,3 +13,8 @@ func updateScore():
 	score = score + 1
 	#print(score)
 	_ready()
+	
+func wrongTarget():
+	score = score + 15
+	#print(score)
+	_ready()
