@@ -14,6 +14,7 @@ signal points
 @export var target:NPC # The target
 @export var animations:Array[AnimationTree] = [] # Animation trees for models
 signal stop
+var end = false
 
 #@onready var ghost: CharacterBody3D = $Ghost
 var direction = Vector3.ZERO
@@ -33,6 +34,9 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_pressed("p_menu")):
 		menu.emit()
+		
+func _end() -> void:
+	end = true
 
 # Have mouse rotate camera
 func _input(event: InputEvent) -> void:
@@ -41,6 +45,9 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens)) # rotate cam along its Y (left to right)
 
 func _process(delta: float) -> void:
+	if(end):
+		return
+	
 	# Get translation and rotation
 	var forward = Input.get_axis("p_forward", "p_backward")
 	var right = Input.get_axis("p_right", "p_left")

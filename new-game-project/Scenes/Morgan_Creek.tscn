@@ -2993,6 +2993,7 @@ transform = Transform3D(-1.0713941e-09, 0, 0.5089371, 0, 0.0021482885, 0, -0.024
 mesh = SubResource("BoxMesh_agxrm")
 skeleton = NodePath("")
 
+[connection signal="end" from="HUD_score" to="Ghost" method="_end"]
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="stop" from="Ghost" to="HUD_score" method="stop"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]

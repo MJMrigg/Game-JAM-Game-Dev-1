@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var score = 0
 var update = true
+signal end
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (score >= Global.difficulty):
 		get_node("../win_menu/ColorRect2").show()
+		#end.emit()
+		update = true
 
 func stop() -> void:
 	update = false;

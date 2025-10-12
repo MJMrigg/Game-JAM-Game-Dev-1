@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dh141vcagdhc7"]
 
-[ext_resource type="Script" path="res://Scenes/win_menu.gd" id="1_k38nj"]
+[ext_resource type="Script" uid="uid://0ts11ghrokrg" path="res://Scenes/win_menu.gd" id="1_k38nj"]
 
 [node name="win_menu" type="Control"]
 layout_mode = 3
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_k38nj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21700001
@@ -59,6 +60,7 @@ theme_override_font_sizes/font_size = 30
 text = "Credits (Enter)"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21700001

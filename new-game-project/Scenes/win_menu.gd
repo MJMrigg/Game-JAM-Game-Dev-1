@@ -12,5 +12,5 @@ func credits() -> void:
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if(event.is_action_pressed("close") && self.visible):
+	if(event.is_action_pressed("close") && (get_node("ColorRect").visible || get_node("ColorRect2").visible)):
 		credits()
