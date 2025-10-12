@@ -70,10 +70,12 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
 		kill()
 		
-	if(Input.is_action_just_pressed("p_sound") && possesed != null):
-		#randomize()
-		#randi_range(0, len(houseSize) - 1)
-		get_node("spookNoise").play()
+	if(Input.is_action_just_pressed("p_sound") && possesed == null):
+		randomize()
+		if(randi_range(0,1) == 0):
+			get_node("spookNoise").play()
+		else:
+			get_node("spookNoise2").play()
 		
 	
 	'''

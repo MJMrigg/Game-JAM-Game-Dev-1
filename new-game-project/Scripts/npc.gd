@@ -51,9 +51,9 @@ func _physics_process(delta: float) -> void:
 	
 	# If the NPC is unconcious, do nothing
 	if(unconcious):
-		if(!deadBodySight):
-			for human in shapeCast.get_collision_count():
-				if(shapeCast.get_collider(human).is_in_group("NPCs")):
+		for human in shapeCast.get_collision_count():
+			if(shapeCast.get_collider(human).is_in_group("NPCs")):
+				if(!shapeCast.get_collider(human).unconcious):
 					#print("Found human in area")
 					rayCast.target_position = rayCast.to_local(shapeCast.get_collision_point(human))
 					rayCast.force_raycast_update()
@@ -65,9 +65,11 @@ func _physics_process(delta: float) -> void:
 					if(rayCast.is_colliding() && rayCast.get_collider() == shapeCast.get_collider(human)):
 						#print("Human can see me!")
 						#points.connect(get_node("../../HUD_score").updateScore.bind())
-						emit_signal("points")
-						deadBodySight = true
 						emit_signal("body_discovered", shapeCast.get_collider(human))
+						if(!deadBodySight):
+							print("I have been seen. Points given")
+							deadBodySight = true
+							emit_signal("points")
 		return
 	
 	#Does nothing if it is looking at body
@@ -159,8 +161,10 @@ func scared() -> void:
 func _on_body_discovered(human: Variant) -> void:
 	if(type == 1):
 		human.staring = true;
+		get_node("Scream").play()
 	elif(type == 3):
 		human.scared()
+		get_node("Scream").play()
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:

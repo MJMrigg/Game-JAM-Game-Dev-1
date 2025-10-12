@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=12 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qy0o4d2sfaqo" path="res://Models/person_2.tscn" id="4_vgqql"]
 [ext_resource type="PackedScene" uid="uid://bw6cyulus10px" path="res://Models/person_3.tscn" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://3v2ur5g77f02" path="res://noises/ghost-woo-135543.mp3" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://di3esqlfj36rf" path="res://noises/ghost-horror-sound-382709.mp3" id="7_3smsa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3btnm"]
 
@@ -66,6 +67,9 @@ visible = false
 
 [node name="spookNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_x3wgy")
+
+[node name="spookNoise2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3smsa")
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
