@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=15 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bu2xhual06jp3" path="res://Models/table.tscn" id="8_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://d0f6vgyce40m8" path="res://Models/knife.tscn" id="9_hptm8"]
 
 [sub_resource type="Environment" id="Environment_6bp64"]
 background_mode = 1
@@ -72,6 +74,12 @@ transform = Transform3D(1, 0, 0, 0, 0.612231, 0.79067886, 0, -0.79067886, 0.6122
 [node name="DoorMenu" parent="." instance=ExtResource("6_21xkr")]
 
 [node name="quit_menu" parent="." instance=ExtResource("4_6bp64")]
+
+[node name="Table" parent="." instance=ExtResource("8_ynf5e")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.3167357, 0.70781505, -1.2944422)
+
+[node name="Knife" parent="." instance=ExtResource("9_hptm8")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 2.308625, 1.068801, -1.0739467)
 
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
