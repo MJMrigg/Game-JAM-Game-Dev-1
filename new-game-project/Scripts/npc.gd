@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 	#if(abs(test.position.x - position.x) > 10 || abs(test.position.z - position.z) > 10):
 		#print("In range")
 	'''
-	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5) && test.possesed == null):
+	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5) && (test.possesed == null || test.knife)):
 		sightToPlayer.target_position = sightToPlayer.to_local(test.position)
 		sightToPlayer.force_raycast_update()
 		if(sightToPlayer.is_colliding() && sightToPlayer.get_collider() == test):
@@ -114,7 +114,7 @@ func _physics_process(delta: float) -> void:
 			#points.connect(get_node("../../HUD_score").updateScore.bind())
 			#emit_signal("points")
 			ghostSeen()
-		
+		#(test.possesed == null || test.knife)
 	# Set up velocity
 	#velocity = Vector3.ZERO
 	var nextPos = navigator.get_next_path_position()
