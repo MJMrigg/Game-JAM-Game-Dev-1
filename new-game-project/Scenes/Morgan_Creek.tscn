@@ -831,6 +831,69 @@ my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
 [node name="AnimationTree" parent="NPC1/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
+[node name="NPC4" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, 17.022404, 0.44233212, 60.85348)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC4/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC5" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, 62.601643, 0.44233212, -13.121853)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC5/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC6" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -59.32622, 0.44233975, 32.922226)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC6/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC7" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -51.742992, 0.44233975, 3.638382)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC7/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC8" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -24.351732, 0.44233975, -27.167244)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC8/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC9" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -20.206352, 0.44233975, -46.97234)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC9/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC10" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -64.78085, 0.44233975, -38.967197)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC10/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC11" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -50.610886, 0.44233975, -37.648403)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC11/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
+[node name="NPC12" parent="." node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
+transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -41.05484, 0.44233975, -59.598125)
+my_door = NodePath("../NavigationRegion3D/Houses/House24/Door")
+
+[node name="AnimationTree" parent="NPC12/Person1" index="2"]
+parameters/walk_or_die/blend_position = -1.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8bufs")
 
@@ -839,10 +902,76 @@ environment = SubResource("Environment_8bufs")
 [node name="quit_menu" parent="." instance=ExtResource("9_o6ao1")]
 
 [node name="NPC2" parent="." instance=ExtResource("12_phka7")]
-transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -31.55927, 0.442, 67.85679)
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -40.051872, 0.442, 61.534294)
+
+[node name="NPC30" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -5.6916428, 0.442, 65.89597)
+
+[node name="NPC31" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 33.16444, 0.442, 65.334435)
+
+[node name="NPC32" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 55.665512, 0.442, 58.49198)
+
+[node name="NPC33" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 72.63158, 0.4420019, 55.28553)
+
+[node name="NPC34" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 69.267235, 0.44200382, 67.82409)
+
+[node name="NPC35" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 72.63689, 0.44200382, 34.638737)
+
+[node name="NPC36" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 73.66984, 0.44200572, 20.892174)
+
+[node name="NPC37" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 71.51686, 0.44200572, -4.0909653)
+
+[node name="NPC38" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 26.451813, 0.44200572, 0.665802)
+
+[node name="NPC39" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 4.399357, 0.44200572, 41.27044)
+
+[node name="NPC40" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 7.399357, 0.44200572, -24.72956)
+
+[node name="NPC41" parent="." instance=ExtResource("12_phka7")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -20.183054, 0.44200572, -21.492203)
 
 [node name="NPC3" parent="." instance=ExtResource("13_vkx4o")]
 transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -47.387, 0.442, 66.135)
+
+[node name="NPC52" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -42.907345, 0.442, 44.54159)
+
+[node name="NPC53" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -67.95744, 0.442, 60.776146)
+
+[node name="NPC54" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -23.495102, 0.44200382, 21.776222)
+
+[node name="NPC55" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -1.8610649, 0.44200382, 26.396328)
+
+[node name="NPC56" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 21.98924, 0.44200382, 40.77856)
+
+[node name="NPC57" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 48.837852, 0.44200382, 1.6598434)
+
+[node name="NPC58" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 68.75195, 0.44200382, -18.010868)
+
+[node name="NPC59" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 73.327484, 0.44200382, 5.5688515)
+
+[node name="NPC60" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 60.34253, 0.442, -18.406475)
+
+[node name="NPC61" parent="." instance=ExtResource("13_vkx4o")]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 44.32213, 0.442, -23.4161)
 
 [connection signal="menu" from="Ghost" to="quit_menu" method="open"]
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
@@ -854,7 +983,69 @@ transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -47.387, 0.442, 66.1
 [editable path="Ghost/NPC3"]
 [editable path="NPC1"]
 [editable path="NPC1/Person1"]
+[editable path="NPC4"]
+[editable path="NPC4/Person1"]
+[editable path="NPC5"]
+[editable path="NPC5/Person1"]
+[editable path="NPC6"]
+[editable path="NPC6/Person1"]
+[editable path="NPC7"]
+[editable path="NPC7/Person1"]
+[editable path="NPC8"]
+[editable path="NPC8/Person1"]
+[editable path="NPC9"]
+[editable path="NPC9/Person1"]
+[editable path="NPC10"]
+[editable path="NPC10/Person1"]
+[editable path="NPC11"]
+[editable path="NPC11/Person1"]
+[editable path="NPC12"]
+[editable path="NPC12/Person1"]
 [editable path="NPC2"]
 [editable path="NPC2/Person1"]
+[editable path="NPC30"]
+[editable path="NPC30/Person1"]
+[editable path="NPC31"]
+[editable path="NPC31/Person1"]
+[editable path="NPC32"]
+[editable path="NPC32/Person1"]
+[editable path="NPC33"]
+[editable path="NPC33/Person1"]
+[editable path="NPC34"]
+[editable path="NPC34/Person1"]
+[editable path="NPC35"]
+[editable path="NPC35/Person1"]
+[editable path="NPC36"]
+[editable path="NPC36/Person1"]
+[editable path="NPC37"]
+[editable path="NPC37/Person1"]
+[editable path="NPC38"]
+[editable path="NPC38/Person1"]
+[editable path="NPC39"]
+[editable path="NPC39/Person1"]
+[editable path="NPC40"]
+[editable path="NPC40/Person1"]
+[editable path="NPC41"]
+[editable path="NPC41/Person1"]
 [editable path="NPC3"]
 [editable path="NPC3/Person1"]
+[editable path="NPC52"]
+[editable path="NPC52/Person1"]
+[editable path="NPC53"]
+[editable path="NPC53/Person1"]
+[editable path="NPC54"]
+[editable path="NPC54/Person1"]
+[editable path="NPC55"]
+[editable path="NPC55/Person1"]
+[editable path="NPC56"]
+[editable path="NPC56/Person1"]
+[editable path="NPC57"]
+[editable path="NPC57/Person1"]
+[editable path="NPC58"]
+[editable path="NPC58/Person1"]
+[editable path="NPC59"]
+[editable path="NPC59/Person1"]
+[editable path="NPC60"]
+[editable path="NPC60/Person1"]
+[editable path="NPC61"]
+[editable path="NPC61/Person1"]
