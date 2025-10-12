@@ -47,6 +47,11 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if(end):
 		return
+		
+	if(Input.is_action_pressed("p_sprint")):
+		speed = 10
+	else:
+		speed = 5
 	
 	# Get translation and rotation
 	var forward = Input.get_axis("p_forward", "p_backward")
