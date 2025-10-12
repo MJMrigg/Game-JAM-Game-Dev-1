@@ -57,7 +57,10 @@ Song2: Horror Playhouse by geoffharvey
 Credits Song: Ghost in the Foyer by ScoopskiMusic
 
 Sounds:
-"
+spookNoise1: Ghost Horror Sound by DRAGON STUDIO
+spookNoise2: Ghost Woo by Shut_Up_Ghost
+NPC1 scream:  Male Scream in Fear by Univerfield
+NPC3 scream: Female scream 1 by mariallinas"
 label_settings = SubResource("LabelSettings_gryuy")
 horizontal_alignment = 1
 
