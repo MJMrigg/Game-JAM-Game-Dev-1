@@ -11,6 +11,7 @@ var knife:bool = false # If the player has the knife
 signal wrong_door
 signal menu
 @export var target:NPC # The target
+@export var animations: Array[AnimationTree] = []
 
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
@@ -40,6 +41,10 @@ func _process(delta: float) -> void:
 	
 	# MOVE
 	move_and_slide()
+	
+	# Play the walking animation if the player moved
+	if(velocity.x != 0 || velocity.y != 0):
+		animate_walking()
 	
 	# If the player tries to posses someone
 	if(Input.is_action_just_pressed("p_posses")):
@@ -110,11 +115,15 @@ func unposses() -> void:
 	# Teleport possesed object to player and make visible
 	possesed.position = self.position
 	possesed.show()
-	#possesed.rotation.x = 90
-	possesed.unconcious = true
 	
 	# Move player to spot near possesed
 	self.position.z += 2
+	
+	# Knock them unconcious and play the death anination
+	possesed.unconcious = true
+	possesed.animator.set("parameters/stand_or_death/blend_position",1)
+	possesed.animator.set("parameters/walk_or_die/blend_position",1)
+	possesed.animator.set("parameters/walker/request",1)
 	
 	# Make the player's ghost mesh visible
 	get_node("Ghost").show()
@@ -160,3 +169,14 @@ func interact():
 		found.queue_free()
 		get_node("NPC1/blade").show()
 		knife = true # The player now has the knife
+
+# Play walking animation if possesing someone
+func animate_walking() -> void:
+	# If not possesing anyone, do nothing
+	if(possesed == null):
+		return
+	# Get proper animation tree
+	var animator:AnimationTree = animations[possesed.type-1]
+	# If the walking animation is not playing, play it
+	if(animator.get("parameters/walker/active") == false):
+		animator.set("parameters/walker/request",1)

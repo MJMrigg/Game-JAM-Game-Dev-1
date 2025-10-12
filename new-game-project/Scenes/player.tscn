@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=18 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
@@ -8,18 +8,6 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3mxmt"]
 radius = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
-albedo_color = Color(0.94195384, 0.73337764, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_fkybt"]
-material = SubResource("StandardMaterial3D_vgqql")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t5aa"]
-albedo_color = Color(0.56294864, 0.19966345, 0.29748532, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_vgqql"]
-material = SubResource("StandardMaterial3D_6t5aa")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6t5aa"]
 
@@ -72,10 +60,11 @@ nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
 nodes/attack/position = Vector2(680, 360)
 node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
 
-[node name="Ghost" type="CharacterBody3D" groups=["player"]]
+[node name="Ghost" type="CharacterBody3D" node_paths=PackedStringArray("animations") groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_cvnsp")
 speed = 20.0
+animations = [null, null, null]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3btnm")
@@ -88,16 +77,6 @@ collision_mask = 6
 
 [node name="Ghost" parent="." instance=ExtResource("2_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
-
-[node name="NPC2" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CylinderMesh_fkybt")
-skeleton = NodePath("")
-
-[node name="NPC3" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CylinderMesh_vgqql")
-skeleton = NodePath("../NPC2")
 
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -116,30 +95,8 @@ collision_mask = 24
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5971966, 0)
 visible = false
 
-[node name="Skeleton3D" parent="NPC1/Armature" index="0"]
-bones/0/position = Vector3(0, -0.38850927, 0)
-bones/0/rotation = Quaternion(0, 0, 0.0025748645, 0.99999666)
-bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.126448, 0.7421436)
-bones/2/rotation = Quaternion(-0.6666871, 0.07292281, 0.013485561, 0.74163926)
-bones/3/rotation = Quaternion(0.62989086, -0.11158317, -0.028384166, 0.7681022)
-bones/4/rotation = Quaternion(0.65195674, -0.042504236, -0.2732821, 0.70601887)
-bones/6/rotation = Quaternion(0.0014416542, -7.4168384e-13, -1.1642326e-10, 0.999999)
-bones/7/position = Vector3(6.2038546e-25, -0.38850927, -1.34599e-40)
-bones/8/rotation = Quaternion(-0.6787228, -0.008541877, -0.00930218, 0.73428595)
-bones/9/position = Vector3(1.4210855e-14, -0.38850927, 1.8576765e-09)
-bones/10/rotation = Quaternion(-0.6795573, 0.0029992205, 0.0032155046, 0.73360926)
-
 [node name="AnimationTree" parent="NPC1" index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_kagm2")
-anim_player = NodePath("../AnimationPlayer")
-parameters/stand_or_death/blend_position = -1.0
-parameters/walker/active = false
-parameters/walker/internal_active = false
-parameters/walker/request = 0
-parameters/walk_or_die/blend_position = -1.0
-parameters/attacker/active = false
-parameters/attacker/internal_active = false
-parameters/attacker/request = 0
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
