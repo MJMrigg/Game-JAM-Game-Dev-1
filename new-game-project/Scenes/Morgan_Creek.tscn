@@ -1,15 +1,15 @@
 [gd_scene load_steps=26 format=3 uid="uid://b4ofsborfa3nu"]
 
-[ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
+[ext_resource type="PackedScene" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="1_nwwcc"]
 [ext_resource type="PackedScene" uid="uid://cy6f1magjjlh7" path="res://Models/street_lamp.tscn" id="2_agxrm"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_tbe3k"]
 [ext_resource type="PackedScene" uid="uid://b45xmv5wmccsa" path="res://Models/house_2.tscn" id="2_tptmj"]
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="3_agxrm"]
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_agxrm"]
-[ext_resource type="PackedScene" uid="uid://r62r25ylpbo8" path="res://Models/house_3.tscn" id="4_o6ao1"]
+[ext_resource type="PackedScene" uid="uid://byl8exxqps1io" path="res://Models/house_3.tscn" id="4_o6ao1"]
 [ext_resource type="PackedScene" uid="uid://bm8nv7osb672r" path="res://Scenes/lake.tscn" id="5_t5uet"]
-[ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
+[ext_resource type="PackedScene" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="9_o6ao1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nwwcc"]
@@ -816,7 +816,6 @@ z_distance = 3.0
 [node name="Ghost" parent="." instance=ExtResource("3_agxrm")]
 transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.068660654, -28.551239, 0.90141976, 74.27136)
 collision_layer = 0
-collision_mask = 128
 speed = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
