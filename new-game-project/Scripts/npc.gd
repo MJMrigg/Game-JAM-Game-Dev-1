@@ -4,6 +4,7 @@ class_name NPC
 
 signal body_discovered(human)
 signal points
+signal deadBodyPoints
 @export var speed = 3
 @export var type:int # Type of NPC it is
 @export var navigator:NavigationAgent3D # Navigation agent
@@ -42,6 +43,7 @@ func _ready() -> void:
 		print("House Group Empty. :(")
 	start = position
 	points.connect(get_node("../../HUD_score").updateScore.bind())
+	deadBodyPoints.connect(get_node("../../HUD_score").deadBody.bind())
 	pick_new_target()
 
 func _physics_process(delta: float) -> void:
@@ -69,7 +71,7 @@ func _physics_process(delta: float) -> void:
 						if(!deadBodySight):
 							print("I have been seen. Points given")
 							deadBodySight = true
-							emit_signal("points")
+							emit_signal("deadBodyPoints")
 		return
 	
 	#Does nothing if it is looking at body

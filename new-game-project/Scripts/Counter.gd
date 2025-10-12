@@ -14,6 +14,11 @@ func updateScore():
 	#print(score)
 	_ready()
 	
+func deadBody():
+	score = score + 15
+	#print(score)
+	_ready()
+	
 func wrongTarget():
 	score = score + 15
 	#print(score)
