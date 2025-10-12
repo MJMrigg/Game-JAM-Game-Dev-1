@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwl180bmckj4l"]
+
+[ext_resource type="PackedScene" uid="uid://b85w4endnogpa" path="res://Models/blendFiles/nakedTree.blend" id="1_jj6dd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jj6dd"]
+height = 10.4375
+radius = 3.7436523
+
+[node name="nakedTree" instance=ExtResource("1_jj6dd")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6501746, 5.161133, -0.4125042)
+shape = SubResource("CylinderShape3D_jj6dd")
