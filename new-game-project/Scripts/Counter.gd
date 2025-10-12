@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (score >= Global.difficulty):
 		get_node("../win_menu/ColorRect2").show()
-		#end.emit()
+		end.emit()
 		update = true
 
 func stop() -> void:
