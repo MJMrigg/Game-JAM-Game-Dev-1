@@ -13,6 +13,7 @@ signal menu
 signal points
 @export var target:NPC # The target
 @export var animations:Array[AnimationTree] = [] # Animation trees for models
+signal stop
 
 #@onready var ghost: CharacterBody3D = $Ghost
 var direction = Vector3.ZERO
@@ -245,4 +246,5 @@ func kill():
 		emit_signal("points")
 	# If they were the target, win the game
 	if(found == target):
+		stop.emit() # Tell the score to stop increasing
 		get_node("../win_menu").show()
