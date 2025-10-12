@@ -114,6 +114,10 @@ func posses() -> void:
 	# Make the player's ghost mesh invisible
 	get_node("visuals/Ghost").hide()
 	
+	#Stop possessed from moving and their collision
+	possesed.youShouldNotBeHere = true
+	possesed.set_collision_layer_value(3,0)
+	
 	# Set collision masks
 	for i in range(1,7):
 		self.set_collision_mask_value(i,1)
@@ -152,6 +156,10 @@ func unposses() -> void:
 	possesed.animator.set("parameters/stand_or_death/blend_position",1)
 	possesed.animator.set("parameters/walker/request",1)
 	possesed.my_house.get_node("arrow").hide()
+	
+	#Not Stop possessed
+	possesed.youShouldNotBeHere = false
+	possesed.set_collision_layer_value(3,1)
 	
 	# Player no longer references possesed object
 	possesed = null
