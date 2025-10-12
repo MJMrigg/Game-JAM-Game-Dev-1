@@ -16,8 +16,8 @@ var deadBodySight:bool = false# test bool to see if line of sight is working
 var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
-@export var my_door:door # NPC's house door
-@export var my_house:StaticBody3D # NPC's House
+@export var my_door:door # NPC's house
+@export var my_house:StaticBody3D
 @export var animator:AnimationTree # Animation player
 
 var direction = Vector3.ZERO
@@ -27,15 +27,13 @@ var direction = Vector3.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ghost = get_tree().get_nodes_in_group("player")[0]
+	# Assign a door for the NPC to open
 	var houseSize = get_tree().get_nodes_in_group("Houses")
-	if (!(len(houseSize) == 0)):
+	if (houseSize.size() != 0):
 		randomize()
 		var doorNumber = randi_range(0, len(houseSize) - 1)
-		#var test = houseSize[doorNumber]
-		my_house = houseSize[doorNumber]
-		var test2 = houseSize[doorNumber].get_node("Door")
 		my_door = houseSize[doorNumber].get_node("Door")
-		print("I am, ", self, "and I belong to house: ", my_house, "; with door: ", test2)
+		my_house = houseSize[doorNumber]
 		houseSize[doorNumber].remove_from_group("Houses")
 	else:
 		print("House Group Empty. :(")

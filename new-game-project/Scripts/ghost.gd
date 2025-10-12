@@ -106,6 +106,8 @@ func posses() -> void:
 		return
 	# Make the NPC invisible
 	possesed.hide()
+	# Highlight NPC's house
+	possesed.my_house.get_node("arrow").show()
 	# Make the player's ghost mesh invisible
 	get_node("visuals/Ghost").hide()
 	
@@ -146,6 +148,7 @@ func unposses() -> void:
 	possesed.animator.set("parameters/walk_or_die/blend_position",1)
 	possesed.animator.set("parameters/stand_or_death/blend_position",1)
 	possesed.animator.set("parameters/walker/request",1)
+	possesed.my_house.get_node("arrow").hide()
 	
 	# Player no longer references possesed object
 	possesed = null
