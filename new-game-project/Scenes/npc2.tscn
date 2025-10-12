@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://wykvwpjkl1nq"]
 
 [ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_oyrmw"]
-[ext_resource type="PackedScene" uid="uid://qy0o4d2sfaqo" path="res://Models/person_2.tscn" id="2_yf78a"]
+[ext_resource type="PackedScene" path="res://Models/person_2.tscn" id="2_yf78a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lqs13"]
 radius = 1.5
@@ -10,13 +10,12 @@ height = 6.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_oyrmw"]
 radius = 15.0
 
-[node name="NPC2" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "animator", "debugRay") groups=["NPCs"]]
+[node name="NPC2" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "debugRay") groups=["NPCs"]]
 script = ExtResource("1_oyrmw")
 navigator = NodePath("NavigationAgent3D")
 rayCast = NodePath("RayCast3D")
 shapeCast = NodePath("ShapeCast3D")
 model = NodePath("Person1")
-animator = NodePath("Person1/AnimationTree")
 debugRay = NodePath("RayCast3D2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -46,5 +45,3 @@ collision_mask = 2
 transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
 debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
 debug_shape_thickness = 5
-
-[editable path="Person1"]

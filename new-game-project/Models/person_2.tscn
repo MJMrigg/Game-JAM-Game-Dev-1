@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://qy0o4d2sfaqo"]
+[gd_scene load_steps=24 format=4 uid="uid://qy0o4d2sfaqo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvfts"]
 resource_name = "Material.005"
@@ -777,52 +777,6 @@ _data = {
 &"Walk_001": SubResource("Animation_f186w")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdv0w"]
-animation = &"Attack"
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_myd0b"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4s2ki"]
-animation = &"Dead"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8vdy2"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ytody"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_4s2ki")
-blend_point_0/pos = 1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_8vdy2")
-blend_point_1/pos = -1.0
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_trfa1"]
-animation = &"Walk_001"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sjhnt"]
-animation = &"Die"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1m10e"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_trfa1")
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_sjhnt")
-blend_point_1/pos = 1.0
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eghqu"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_51blf"]
-graph_offset = Vector2(-165.09976, -87.98973)
-nodes/output/position = Vector2(1120, 160)
-nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_ytody")
-nodes/stand_or_death/position = Vector2(440, 20)
-nodes/walker/node = SubResource("AnimationNodeOneShot_eghqu")
-nodes/walker/position = Vector2(680, 60)
-nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_1m10e")
-nodes/walk_or_die/position = Vector2(440, 240)
-nodes/attacker/node = SubResource("AnimationNodeOneShot_myd0b")
-nodes/attacker/position = Vector2(900, 100)
-nodes/attack/node = SubResource("AnimationNodeAnimation_wdv0w")
-nodes/attack/position = Vector2(680, 360)
-node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die", &"attacker", 0, &"walker", &"attacker", 1, &"attack"]
-
 [node name="Person2" type="CharacterBody3D"]
 
 [node name="Armature" type="Node3D" parent="."]
@@ -848,7 +802,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.97712344, 0.2126701, -0.0011022, -0.21249394, 0.97650045, 0.035961352, 0.008724204, -0.034904473, 0.9993525, 6.7055225e-08, 0.9802412, 5.7742e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(6.7055225e-08, 0.9802412, 5.7742e-07)
-bones/2/rotation = Quaternion(-0.6625739, 0.07866235, 0.014780142, 0.7447078)
+bones/2/rotation = Quaternion(-0.5737876, 0.079773225, -0.006364598, 0.815085)
 bones/2/scale = Vector3(1, 1, 0.99999994)
 bones/3/name = "Bone.003"
 bones/3/parent = 0
@@ -862,7 +816,7 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(0.98037696, 0.18404093, -0.07064147, -0.19311066, 0.9686121, -0.15652108, 0.0396179, 0.16709124, 0.98514515, -4.4703484e-08, 0.8730717, -3.3900142e-07)
 bones/4/enabled = true
 bones/4/position = Vector3(-4.4703484e-08, 0.8730717, -3.3900142e-07)
-bones/4/rotation = Quaternion(0.64963377, -0.04164487, -0.27330753, 0.70819825)
+bones/4/rotation = Quaternion(0.5799102, -0.04764057, -0.2607587, 0.77035016)
 bones/4/scale = Vector3(1.0000001, 0.99999994, 1)
 bones/5/name = "Bone.005"
 bones/5/parent = 0
@@ -916,7 +870,6 @@ mesh = SubResource("ArrayMesh_wcnhm")
 skin = SubResource("Skin_0dfkm")
 
 [node name="blade" type="MeshInstance3D" parent="Armature/Skeleton3D"]
-visible = false
 mesh = SubResource("ArrayMesh_7xxrw")
 skin = SubResource("Skin_0dfkm")
 
@@ -945,15 +898,3 @@ skin = SubResource("Skin_0dfkm")
 libraries = {
 &"": SubResource("AnimationLibrary_fpr8j")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_51blf")
-anim_player = NodePath("../AnimationPlayer")
-parameters/stand_or_death/blend_position = -1.0
-parameters/walker/active = false
-parameters/walker/internal_active = false
-parameters/walker/request = 0
-parameters/walk_or_die/blend_position = -1.0
-parameters/attacker/active = false
-parameters/attacker/internal_active = false
-parameters/attacker/request = 0
