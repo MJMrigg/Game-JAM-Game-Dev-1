@@ -17,6 +17,7 @@ var ghost:CharacterBody3D #Player
 var start:Vector3 # Starting coordinates of NPC
 var staring:bool = false # If curious sees body
 @export var my_door:door # NPC's house
+@export var my_house:StaticBody3D
 @export var animator:AnimationTree # Animation player
 
 var direction = Vector3.ZERO
@@ -32,6 +33,7 @@ func _ready() -> void:
 		randomize()
 		var doorNumber = randi_range(0, len(houseSize) - 1)
 		my_door = houseSize[doorNumber].get_node("Door")
+		my_house = houseSize[doorNumber]
 		houseSize[doorNumber].remove_from_group("Houses")
 	else:
 		print("House Group Empty. :(")
