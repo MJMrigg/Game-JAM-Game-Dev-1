@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b72mh1wwacpvy"]
+
+[ext_resource type="Script" uid="uid://bo3u55fkwpif3" path="res://Scripts/npc.gd" id="1_pk7tc"]
+[ext_resource type="PackedScene" uid="uid://dwn3pvpan265b" path="res://Models/target.tscn" id="2_r62bm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pk7tc"]
+radius = 1.5
+height = 6.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pk7tc"]
+radius = 10.0
+
+[node name="Target" type="CharacterBody3D" node_paths=PackedStringArray("navigator", "rayCast", "shapeCast", "model", "animator", "debugRay")]
+script = ExtResource("1_pk7tc")
+navigator = NodePath("NavigationAgent3D")
+rayCast = NodePath("RayCast3D")
+shapeCast = NodePath("ShapeCast3D")
+model = NodePath("target")
+animator = NodePath("target/AnimationTree")
+debugRay = NodePath("RayCast3D2")
+
+[node name="target" parent="." instance=ExtResource("2_r62bm")]
+
+[node name="Skeleton3D" parent="target/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6123721, -0.035779946, 0.12435383, 0.77990794)
+bones/2/rotation = Quaternion(-0.67673415, 0.07268313, 0.01609619, 0.7324542)
+bones/3/rotation = Quaternion(0.59203535, -0.11263317, -0.023116348, 0.7976676)
+bones/4/rotation = Quaternion(0.6675915, -0.041033823, -0.2759047, 0.6903003)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
+shape = SubResource("CapsuleShape3D_pk7tc")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.551221, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(0.72621274, 0, 0.2528976, 1)
+debug_shape_thickness = 5
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0042577, 0)
+shape = SubResource("SphereShape3D_pk7tc")
+collision_mask = 2
+
+[node name="RayCast3D2" type="RayCast3D" parent="."]
+transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
+debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
+debug_shape_thickness = 5
+
+[editable path="target"]

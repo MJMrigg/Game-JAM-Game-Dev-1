@@ -176,6 +176,8 @@ func interact():
 	elif(found is knife): # If it's the knife, make the knife show on all the models
 		found.queue_free()
 		get_node("visuals/NPC1/blade").show()
+		get_node("visuals/NPC2/blade").show()
+		get_node("visuals/NPC3/blade").show()
 		knife = true # The player now has the knife
 
 # Play aniations of possesed model
