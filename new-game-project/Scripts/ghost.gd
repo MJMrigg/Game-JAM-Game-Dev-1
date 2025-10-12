@@ -64,6 +64,10 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("p_interact") && possesed != null):
 		interact()
 	
+	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
+		print("KILL! KILL!")
+		kill()
+	
 	'''
 	# Alternet sound check - David T
 	if(Input.is_action_just_pressed("p_sound")):
@@ -175,9 +179,9 @@ func interact():
 			wrong_door.emit()
 	elif(found is knife): # If it's the knife, make the knife show on all the models
 		found.queue_free()
-		get_node("visuals/NPC1/blade").show()
-		get_node("visuals/NPC2/blade").show()
-		get_node("visuals/NPC3/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
 		knife = true # The player now has the knife
 
 # Play aniations of possesed model
@@ -190,3 +194,19 @@ func move_animation() -> void:
 	# Play animation
 	if(animator.get("parameters/walker/active") == false):
 		animator.set("parameters/walker/request",1)
+
+
+func kill():
+	# If the player isn't possesing anyone, do nothing
+	if(possesed == null):
+		return
+		
+	#var found = interactor.get_collider(0)
+	var found = possessor.get_collider(0)
+	
+	if(found == null): # If there was no NPC, return
+		return
+	
+	if(found is NPC):
+		found.queue_free()
+		
