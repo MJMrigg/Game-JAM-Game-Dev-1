@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ban0sreibkrh"]
+
+[ext_resource type="Script" uid="uid://cdu754yt5sybg" path="res://music.gd" id="1_t8mnw"]
+[ext_resource type="AudioStream" uid="uid://bdgv3lf55yg0c" path="res://Music/horror-playhouse-404813.mp3" id="2_85q38"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_t8mnw")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_85q38")

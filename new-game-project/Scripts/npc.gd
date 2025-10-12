@@ -23,6 +23,7 @@ var staring:bool = false # If curious sees body
 
 var direction = Vector3.ZERO
 var losPoints = true
+var youShouldNotBeHere = false
 
 @export var debugRay:RayCast3D
 
@@ -44,8 +45,10 @@ func _ready() -> void:
 	pick_new_target()
 
 func _physics_process(delta: float) -> void:
-	#print(self, ":", self.position)
-	#print(staring, deadBodySight)
+	# If possessed do nothing
+	if(youShouldNotBeHere):
+		return
+	
 	# If the NPC is unconcious, do nothing
 	if(unconcious):
 		if(!deadBodySight):
