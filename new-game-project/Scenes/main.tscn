@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b6rrimmh2yx4h" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="4_6bp64"]
+[ext_resource type="PackedScene" path="res://Scenes/quit_menu.tscn" id="4_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cv3dnijdbylgv" path="res://Scenes/npc1.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="6_21xkr"]
@@ -59,10 +59,10 @@ shape = SubResource("BoxShape3D_8gbba")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.988657, 0, 5.443239)
 
 [node name="NPC1" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, -37.844643)
 
 [node name="NPC2" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.091707, 0.510542, 0.63510704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.091707, 0.510542, 28.295904)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.612231, 0.79067886, 0, -0.79067886, 0.612231, 0, 26.477474, -70.07822)
@@ -77,5 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 0.612231, 0.79067886, 0, -0.79067886, 0.6122
 [connection signal="wrong_door" from="Ghost" to="DoorMenu" method="open"]
 
 [editable path="Ghost"]
-[editable path="Ghost/NPC1"]
+[editable path="Ghost/visuals/NPC1"]
+[editable path="Ghost/visuals/NPC3"]
+[editable path="Ghost/visuals/NPC2"]
 [editable path="NavigationRegion3D/House1"]

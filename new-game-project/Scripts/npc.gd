@@ -78,13 +78,14 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Set up velocity
-	velocity = Vector3.ZERO
+	#velocity = Vector3.ZERO
 	var nextPos = navigator.get_next_path_position()
 	var newVel = global_position.direction_to(nextPos) * speed
 	if(navigator.avoidance_enabled):
 		navigator.velocity = newVel
 	else:
-		velocity = newVel
+		#velocity = newVel
+		_on_navigation_agent_3d_velocity_computed(newVel)
 	
 	
 	# Look down the path
@@ -119,3 +120,8 @@ func _on_body_discovered(human: Variant) -> void:
 		human.staring = true;
 	elif(type == 3):
 		human.scared()
+
+
+func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
+	velocity = safe_velocity
+	
