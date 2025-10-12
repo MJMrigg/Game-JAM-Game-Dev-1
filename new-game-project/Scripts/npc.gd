@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 					#print(rayCast.is_colliding())
 					if(rayCast.is_colliding() && rayCast.get_collider() == shapeCast.get_collider(human)):
 						print("Human can see me!")
-						points.connect(get_node("../HUD_score").updateScore.bind())
+						points.connect(get_node("../../HUD_score").updateScore.bind())
 						emit_signal("points")
 						deadBodySight = true
 						emit_signal("body_discovered", shapeCast.get_collider(human))

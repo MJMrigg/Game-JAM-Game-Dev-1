@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://8cbc8hhlgjcx"]
+[gd_scene load_steps=34 format=4 uid="uid://8cbc8hhlgjcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sksk"]
 resource_name = "Material.003"
@@ -706,10 +706,8 @@ _data = {
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4s1d"]
 animation = &"Attack"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_j4s1d"]
-filters = ["Armature/Skeleton3D:Bone.001", "Armature/Skeleton3D:Bone.002", "Armature/Skeleton3D:Bone.003", "Armature/Skeleton3D:Bone.004"]
-
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_qtpom"]
+filters = ["Armature/Skeleton3D:Bone.008", "Armature/Skeleton3D:Bone.009", "Armature/Skeleton3D:Bone.010", "Armature/Skeleton3D:Bone.011"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d0yyd"]
 animation = &"Idle"
@@ -743,8 +741,8 @@ blend_point_1/pos = 1.0
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ouc0a"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kagm2"]
-graph_offset = Vector2(-162.12863, -22.51561)
-nodes/output/position = Vector2(1120, 160)
+graph_offset = Vector2(-18.23529, 32.486374)
+nodes/output/position = Vector2(1000, 80)
 nodes/attacker/node = SubResource("AnimationNodeOneShot_qtpom")
 nodes/attacker/position = Vector2(840, 60)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_j4s1d")
@@ -755,8 +753,6 @@ nodes/walk_or_die/node = SubResource("AnimationNodeBlendSpace1D_shxvx")
 nodes/walk_or_die/position = Vector2(340.07388, 202.05072)
 nodes/stand_or_death/node = SubResource("AnimationNodeBlendSpace1D_kagm2")
 nodes/stand_or_death/position = Vector2(340, -60)
-nodes/Blend2/node = SubResource("AnimationNodeBlend2_j4s1d")
-nodes/Blend2/position = Vector2(1240, 60)
 node_connections = [&"output", 0, &"attacker", &"attacker", 0, &"walker", &"attacker", 1, &"Animation", &"walker", 0, &"stand_or_death", &"walker", 1, &"walk_or_die"]
 
 [node name="Person1" type="CharacterBody3D"]
@@ -897,4 +893,3 @@ parameters/walker/internal_active = false
 parameters/walker/request = 0
 parameters/walk_or_die/blend_position = -1.0
 parameters/stand_or_death/blend_position = -1.0
-parameters/Blend2/blend_amount = 0.0
