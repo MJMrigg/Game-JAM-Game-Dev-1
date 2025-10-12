@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2i07lwd47njq"]
+[gd_scene load_steps=4 format=3 uid="uid://c2i07lwd47njq"]
 
 [ext_resource type="Script" uid="uid://bpgoic7nxaxiy" path="res://Scripts/tutorial.gd" id="1_kuky2"]
 [ext_resource type="Texture2D" uid="uid://i8x3dm16ukt5" path="res://Images/Tutorial 3.png" id="2_n2y8d"]
+[ext_resource type="Texture2D" uid="uid://dvbv27qckmlb7" path="res://Images/Shift.png" id="3_n2y8d"]
 
 [node name="Tutorial3" type="Control"]
 layout_mode = 3
@@ -49,6 +50,19 @@ offset_right = -0.16001892
 offset_bottom = 7.2559814
 theme_override_font_sizes/font_size = 40
 text = "Prev"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.78700006
+anchor_right = 0.669
+anchor_bottom = 0.99700004
+offset_left = -0.42401123
+offset_top = 0.023956299
+offset_right = 0.31195068
+offset_bottom = -0.056030273
+texture = ExtResource("3_n2y8d")
 
 [connection signal="pressed" from="Next" to="." method="next"]
 [connection signal="pressed" from="Prev" to="." method="prev"]
