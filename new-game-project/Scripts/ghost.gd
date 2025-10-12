@@ -70,10 +70,12 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
 		kill()
 		
-	if(Input.is_action_just_pressed("p_sound") && possesed != null):
-		#randomize()
-		#randi_range(0, len(houseSize) - 1)
-		get_node("spookNoise").play()
+	if(Input.is_action_just_pressed("p_sound") && possesed == null):
+		randomize()
+		if(randi_range(0,1) == 0):
+			get_node("spookNoise").play()
+		else:
+			get_node("spookNoise2").play()
 		
 	
 	'''
@@ -103,7 +105,10 @@ func posses() -> void:
 	if(possesed.unconcious):
 		possesed = null
 		return
-	
+		
+	if(possesed == target):
+		possesed = null
+		return
 	# Make the player's NPC mesh visible
 	if(possesed.type == 1):
 		get_node("visuals/NPC1").show()
@@ -161,6 +166,7 @@ func unposses() -> void:
 	possesed.animator.set("parameters/walk_or_die/blend_position",1)
 	possesed.animator.set("parameters/stand_or_death/blend_position",1)
 	possesed.animator.set("parameters/walker/request",1)
+	possesed.global_position[1] = 0
 	possesed.my_house.get_node("arrow").hide()
 	
 	#Not Stop possessed
@@ -235,6 +241,7 @@ func kill():
 		found.animator.set("parameters/walk_or_die/blend_position",1)
 		found.animator.set("parameters/stand_or_death/blend_position",1)
 		found.animator.set("parameters/walker/request",1)
+		found.global_position[1] = 0
 		emit_signal("points")
 	# If they were the target, win the game
 	if(found == target):
