@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://nj342uk326m6"]
+[gd_scene load_steps=5 format=3 uid="uid://nj342uk326m6"]
 
 [ext_resource type="Script" uid="uid://de60uglfmiit1" path="res://Scripts/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://dwp4cde0xqxmk" path="res://Images/Menu.png" id="2_cayip"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="2_xhh6f"]
+[ext_resource type="PackedScene" uid="uid://bnjl4cypa5qbs" path="res://Scenes/difficulty_menu.tscn" id="4_158mb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -86,6 +87,10 @@ text = "Quit"
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="ColorRect/PlayButton" to="." method="play"]
+[node name="difficulty_menu" parent="." instance=ExtResource("4_158mb")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="ColorRect/PlayButton" to="difficulty_menu" method="open"]
 [connection signal="pressed" from="ColorRect/Tutorial" to="." method="tutorial"]
 [connection signal="pressed" from="ColorRect/QuitButton" to="quit_menu" method="open"]

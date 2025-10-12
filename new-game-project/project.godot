@@ -14,6 +14,10 @@ config/name="GameJam"
 run/main_scene="uid://nj342uk326m6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
