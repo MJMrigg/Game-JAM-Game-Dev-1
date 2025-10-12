@@ -13,6 +13,11 @@ signal menu
 @export var target:NPC # The target
 @export var animations:Array[AnimationTree] = [] # Animation trees for models
 
+#@onready var ghost: CharacterBody3D = $Ghost
+var direction = Vector3.ZERO
+@onready var visuals: Node3D = $visuals
+
+
 func _ready() -> void:
 	possessor = get_node("PossessionArea")
 	collider = get_node("CollisionShape3D")
@@ -41,10 +46,13 @@ func _process(delta: float) -> void:
 	
 	# MOVE
 	move_and_slide()
+	#ghost.look_at(position)
 	
 	# Play animations for models
 	if(velocity.x != 0 || velocity.z != 0):
 		move_animation()
+		direction = (transform.basis * Vector3(right*-1,0,forward)).normalized()
+		visuals.look_at(position + direction)
 	
 	# If the player tries to posses someone
 	if(Input.is_action_just_pressed("p_posses")):
@@ -86,17 +94,17 @@ func posses() -> void:
 	
 	# Make the player's NPC mesh visible
 	if(possesed.type == 1):
-		get_node("NPC1").show()
+		get_node("visuals/NPC1").show()
 	elif(possesed.type == 2):
-		get_node("NPC2").show()
+		get_node("visuals/NPC2").show()
 	elif(possesed.type == 3):
-		get_node("NPC3").show()
+		get_node("visuals/NPC3").show()
 	else:
 		return
 	# Make the NPC invisible
 	possesed.hide()
 	# Make the player's ghost mesh invisible
-	get_node("Ghost").hide()
+	get_node("visuals/Ghost").hide()
 	
 	# Set collision masks
 	for i in range(1,7):
@@ -120,13 +128,13 @@ func unposses() -> void:
 	self.position.z += 2
 	
 	# Make the player's ghost mesh visible
-	get_node("Ghost").show()
+	get_node("visuals/Ghost").show()
 	if(possesed.type == 1):
-		get_node("NPC1").hide()
+		get_node("visuals/NPC1").hide()
 	elif(possesed.type == 2):
-		get_node("NPC2").hide()
+		get_node("visuals/NPC2").hide()
 	elif(possesed.type == 3):
-		get_node("NPC3").hide()
+		get_node("visuals/NPC3").hide()
 	else:
 		return
 	
@@ -167,7 +175,7 @@ func interact():
 			wrong_door.emit()
 	elif(found is knife): # If it's the knife, make the knife show on all the models
 		found.queue_free()
-		get_node("NPC1/blade").show()
+		get_node("visuals/NPC1/blade").show()
 		knife = true # The player now has the knife
 
 # Play aniations of possesed model

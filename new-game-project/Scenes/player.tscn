@@ -20,7 +20,7 @@ size = Vector3(1, 1.5, 2)
 collision_mask = 128
 script = ExtResource("1_cvnsp")
 speed = 20.0
-animations = [NodePath("NPC1/AnimationTree"), NodePath("NPC2/AnimationTree"), NodePath("NPC3/AnimationTree")]
+animations = [NodePath("visuals/NPC1/AnimationTree"), NodePath("visuals/NPC2/AnimationTree"), NodePath("visuals/NPC3/AnimationTree")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3btnm")
@@ -30,9 +30,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_3mxmt")
 target_position = Vector3(0, 0, 0)
 collision_mask = 6
-
-[node name="Ghost" parent="." instance=ExtResource("2_6t5aa")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
 
 [node name="SoundArea3D" type="Area3D" parent="."]
 collision_layer = 2
@@ -47,21 +44,26 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 shape = SubResource("BoxShape3D_6t5aa")
 collision_mask = 24
 
-[node name="NPC1" parent="." instance=ExtResource("3_6t5aa")]
+[node name="visuals" type="Node3D" parent="."]
+
+[node name="Ghost" parent="visuals" instance=ExtResource("2_6t5aa")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.6375389, 0)
+
+[node name="NPC1" parent="visuals" instance=ExtResource("3_6t5aa")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.5971966, 0)
 visible = false
 
-[node name="NPC2" parent="." instance=ExtResource("4_vgqql")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, -0.003686905, -0.5958599, 0)
+[node name="NPC3" parent="visuals" instance=ExtResource("5_fkybt")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.57906175, 0)
 visible = false
 
-[node name="NPC3" parent="." instance=ExtResource("5_fkybt")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, -0.57906175, 0)
+[node name="NPC2" parent="visuals" instance=ExtResource("4_vgqql")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, -0.003686905, -0.5958599, 0)
 visible = false
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
 
-[editable path="NPC1"]
-[editable path="NPC2"]
-[editable path="NPC3"]
+[editable path="visuals/NPC1"]
+[editable path="visuals/NPC3"]
+[editable path="visuals/NPC2"]
