@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpb04xftbbxt2"]
+[gd_scene load_steps=7 format=3 uid="uid://bpb04xftbbxt2"]
 
 [ext_resource type="Script" uid="uid://df1pfo0g34vmy" path="res://Scripts/credits.gd" id="1_ccovl"]
 [ext_resource type="AudioStream" uid="uid://dck8e2w18tjpj" path="res://Music/ghost-in-the-foyer-scoopski-168612.mp3" id="1_gryuy"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://dopag1amws00w" path="res://Images/Win.png" id="2_1bamb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gryuy"]
 font_size = 30
@@ -68,16 +69,30 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.90700006
+anchor_bottom = 0.31
 offset_right = -2.0
-offset_bottom = 0.047973633
+offset_bottom = 0.11973572
 text = "There's Something Strange in the Neighborhood"
 label_settings = SubResource("LabelSettings_ccovl")
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Photo" type="TextureRect" parent="ColorRect/Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.294
+anchor_top = 1.3290001
+anchor_right = 0.69200003
+anchor_bottom = 1.8440001
+offset_left = 10.312012
+offset_top = -0.1932373
+offset_right = -0.184021
+offset_bottom = 0.08679199
+texture = ExtResource("2_1bamb")
+
 [node name="Credits Song" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_gryuy")
 
 [node name="quit_menu" parent="." instance=ExtResource("1_r18jl")]
+visible = false
 layout_mode = 1

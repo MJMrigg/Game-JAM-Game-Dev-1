@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 	if(!credits_song.playing):
 		get_node("quit_menu").quit()
 	# Roll the credits
-	get_node("ColorRect/Credits").position.y -= 1
+	if(get_node("ColorRect/Credits").position.y > -950):
+		get_node("ColorRect/Credits").position.y -= 1

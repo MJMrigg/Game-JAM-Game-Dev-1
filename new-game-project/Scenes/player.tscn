@@ -74,6 +74,7 @@ stream = ExtResource("7_3smsa")
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
 
+[editable path="visuals/Ghost"]
 [editable path="visuals/NPC1"]
 [editable path="visuals/NPC3"]
 [editable path="visuals/NPC2"]

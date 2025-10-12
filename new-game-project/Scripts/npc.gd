@@ -69,7 +69,6 @@ func _physics_process(delta: float) -> void:
 						#points.connect(get_node("../../HUD_score").updateScore.bind())
 						emit_signal("body_discovered", shapeCast.get_collider(human))
 						if(!deadBodySight):
-							print("I have been seen. Points given")
 							deadBodySight = true
 							emit_signal("deadBodyPoints")
 		return
