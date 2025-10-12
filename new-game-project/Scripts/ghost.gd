@@ -64,6 +64,9 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("p_interact") && possesed != null):
 		interact()
 	
+	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
+		kill()
+	
 	'''
 	# Alternet sound check - David T
 	if(Input.is_action_just_pressed("p_sound")):
@@ -175,7 +178,9 @@ func interact():
 			wrong_door.emit()
 	elif(found is knife): # If it's the knife, make the knife show on all the models
 		found.queue_free()
-		get_node("visuals/NPC1/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
+		get_node("visuals/NPC1/Armature/Skeleton3D/blade").show()
 		knife = true # The player now has the knife
 
 # Play aniations of possesed model
@@ -188,3 +193,26 @@ func move_animation() -> void:
 	# Play animation
 	if(animator.get("parameters/walker/active") == false):
 		animator.set("parameters/walker/request",1)
+
+
+func kill():	
+	# If the player isn't possesing anyone or doesn't have the knife, do nothing
+	if(possesed == null || knife == false):
+		return
+	
+	# Play attack animation
+	var animator:AnimationTree = animations[possesed.type-1]
+	animator.set("parameters/attacker/request",1)
+	
+	#var found = interactor.get_collider(0)
+	var found = possessor.get_collider(0)
+	
+	if(found == null): # If there was no NPC, return
+		return
+	
+	if(found is NPC):
+		found.unconcious = true
+		found.animator.set("parameters/walk_or_die/blend_position",1)
+		found.animator.set("parameters/stand_or_death/blend_position",1)
+		found.animator.set("parameters/walker/request",1)
+		

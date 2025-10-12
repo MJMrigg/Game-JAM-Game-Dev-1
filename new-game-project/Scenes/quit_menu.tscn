@@ -73,3 +73,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "No (N)"
+
+[connection signal="pressed" from="ColorRect/Yes" to="." method="quit"]
+[connection signal="pressed" from="ColorRect/No" to="." method="close"]

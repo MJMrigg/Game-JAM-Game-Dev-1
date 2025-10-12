@@ -1298,6 +1298,12 @@ transform = Transform3D(0.068660654, 0, -0.6966245, 0, 0.7, 0, 0.6966245, 0, 0.0
 collision_layer = 0
 speed = 15.0
 
+[node name="Skeleton3D" parent="Ghost/visuals/NPC1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.85264015, -0.52249855, 0, 0.52249855, 0.85264015, 0, 3.692, 0)
 light_angular_distance = 88.14
@@ -1387,12 +1393,24 @@ transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 44.32213, 0.442, -23
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -30.695034, 0.44233212, 67.43328)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
 
+[node name="Skeleton3D" parent="NPCs/NPC1/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="AnimationTree" parent="NPCs/NPC1/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="NPC4" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, 17.022404, 0.44233212, 60.85348)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPCs/NPC4/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
 
 [node name="AnimationTree" parent="NPCs/NPC4/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
@@ -1401,12 +1419,24 @@ parameters/walk_or_die/blend_position = -1.0
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, 62.601643, 0.44233212, -13.121853)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
 
+[node name="Skeleton3D" parent="NPCs/NPC5/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="AnimationTree" parent="NPCs/NPC5/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="NPC6" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -59.32622, 0.44233975, 32.922226)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPCs/NPC6/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
 
 [node name="AnimationTree" parent="NPCs/NPC6/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
@@ -1415,12 +1445,24 @@ parameters/walk_or_die/blend_position = -1.0
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -51.742992, 0.44233975, 3.638382)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
 
+[node name="Skeleton3D" parent="NPCs/NPC7/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="AnimationTree" parent="NPCs/NPC7/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="NPC8" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -24.351732, 0.44233975, -27.167244)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPCs/NPC8/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
 
 [node name="AnimationTree" parent="NPCs/NPC8/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
@@ -1429,12 +1471,24 @@ parameters/walk_or_die/blend_position = -1.0
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -20.206352, 0.44233975, -46.97234)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
 
+[node name="Skeleton3D" parent="NPCs/NPC9/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="AnimationTree" parent="NPCs/NPC9/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="NPC10" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -64.78085, 0.44233975, -38.967197)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPCs/NPC10/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
 
 [node name="AnimationTree" parent="NPCs/NPC10/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
@@ -1443,12 +1497,24 @@ parameters/walk_or_die/blend_position = -1.0
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -50.610886, 0.44233975, -37.648403)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
 
+[node name="Skeleton3D" parent="NPCs/NPC11/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
+
 [node name="AnimationTree" parent="NPCs/NPC11/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
 
 [node name="NPC12" parent="NPCs" node_paths=PackedStringArray("my_door") instance=ExtResource("4_agxrm")]
 transform = Transform3D(0.7303877, 0, 0, 0, 0.7303877, 0, 0, 0, 0.7303877, -41.05484, 0.44233975, -59.598125)
 my_door = NodePath("../../NavigationRegion3D/Houses/House24/Door")
+
+[node name="Skeleton3D" parent="NPCs/NPC12/Person1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6223927, -0.034117825, 0.12484665, 0.77193046)
+bones/2/rotation = Quaternion(-0.6725755, 0.07278441, 0.015011901, 0.73628753)
+bones/3/rotation = Quaternion(0.6130992, -0.11208622, -0.026030375, 0.78158075)
+bones/4/rotation = Quaternion(0.65013415, -0.0426723, -0.2729711, 0.70780754)
 
 [node name="AnimationTree" parent="NPCs/NPC12/Person1" index="2"]
 parameters/walk_or_die/blend_position = -1.0
