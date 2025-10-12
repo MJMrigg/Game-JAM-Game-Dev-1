@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=4 uid="uid://bs5b3o5owcnke"]
+[gd_scene load_steps=41 format=4 uid="uid://bs5b3o5owcnke"]
 
-[ext_resource type="Script" uid="uid://cc0c4a6msk7tk" path="res://Scripts/door.gd" id="1_xbs4e"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_xbs4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmfd0"]
 resource_name = "Material.002"
@@ -401,6 +401,15 @@ shadow_mesh = SubResource("ArrayMesh_i2cb0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ywpp"]
 size = Vector3(0.5, 4.275, 2.385)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbs4e"]
+albedo_color = Color(1, 0.02745098, 0.05490196, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_3t67f"]
+material = SubResource("StandardMaterial3D_xbs4e")
+text = "|
+V"
+font_size = 27
+
 [node name="House3" type="StaticBody3D" groups=["Houses"]]
 collision_layer = 32
 collision_mask = 0
@@ -541,3 +550,8 @@ skeleton = NodePath("")
 [node name="doorCollision" type="CollisionShape3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2908754, 2.2198863, 0.44125462)
 shape = SubResource("BoxShape3D_4ywpp")
+
+[node name="arrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.5974023e-06, 0, 20.000002, 0, 26.779041, 0, -59.421635, 0, -8.742279e-07, 0, 24.77224, 0)
+visible = false
+mesh = SubResource("TextMesh_3t67f")
