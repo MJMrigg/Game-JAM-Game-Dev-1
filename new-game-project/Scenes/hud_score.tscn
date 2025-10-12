@@ -7,19 +7,22 @@ script = ExtResource("1_vporn")
 
 [node name="Score" type="Label" parent="."]
 anchors_preset = -1
-anchor_right = 0.042000003
-anchor_bottom = 0.035
-offset_right = -8.384003
-offset_bottom = 0.3199997
-text = "Score:"
+anchor_right = 0.12200001
+anchor_bottom = 0.065000005
+offset_right = -0.54400635
+offset_bottom = -0.12000275
+theme_override_font_sizes/font_size = 30
+text = "Suspicion"
 
 [node name="Number" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.047000002
-anchor_right = 0.082
-anchor_bottom = 0.037
-offset_left = -0.144001
-offset_top = 1.0
-offset_right = -0.46400452
-offset_bottom = 0.024000168
-text = "5"
+anchor_left = 0.124000005
+anchor_top = 0.003
+anchor_right = 0.16100001
+anchor_bottom = 0.068
+offset_left = 0.1519928
+offset_top = 0.055999994
+offset_right = -0.47201538
+offset_bottom = -0.06400299
+theme_override_font_sizes/font_size = 30
+text = "0"

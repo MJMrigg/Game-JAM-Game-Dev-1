@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://c87g7xtrx1svd"]
+
+[ext_resource type="Script" uid="uid://bpgoic7nxaxiy" path="res://Scripts/tutorial.gd" id="1_gjaxk"]
+[ext_resource type="Texture2D" uid="uid://c7vromwpg3b4h" path="res://Images/Tutorial 1.png" id="2_ccwba"]
+
+[node name="Tutorial2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjaxk")
+scene = 2
+
+[node name="Tutorial" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ccwba")
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.786
+anchor_top = 0.731
+anchor_right = 0.9620001
+anchor_bottom = 0.85800004
+offset_left = -0.4720459
+offset_top = 0.3119812
+offset_right = -0.2241211
+offset_bottom = 3.0159912
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="Prev" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.049000002
+anchor_top = 0.73300004
+anchor_right = 0.20500001
+anchor_bottom = 0.85300004
+offset_left = 0.55199814
+offset_top = 0.015960693
+offset_right = -0.16001892
+offset_bottom = 7.2559814
+theme_override_font_sizes/font_size = 40
+text = "Prev"
+
+[connection signal="pressed" from="Next" to="." method="next"]
+[connection signal="pressed" from="Prev" to="." method="prev"]
