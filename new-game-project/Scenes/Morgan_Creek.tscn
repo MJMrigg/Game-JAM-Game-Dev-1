@@ -62,7 +62,7 @@ albedo_color = Color(0.6872149, 0.68721503, 0.6872149, 1)
 material = SubResource("StandardMaterial3D_agxrm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6ao1"]
-size = Vector3(2.380371, 9.111328, 161.64496)
+size = Vector3(10.216553, 9.111328, 161.64496)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8bufs"]
 energy_multiplier = 5.0
@@ -924,7 +924,7 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Barrier4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5581, 4.055664, -0.2503357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.64001, 4.055664, -0.2503357)
 shape = SubResource("BoxShape3D_o6ao1")
 
 [node name="Foliage" type="Node" parent="NavigationRegion3D"]
