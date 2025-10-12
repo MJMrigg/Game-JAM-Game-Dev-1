@@ -248,4 +248,4 @@ func kill():
 	# If they were the target, win the game
 	if(found == target):
 		stop.emit() # Tell the score to stop increasing
-		get_node("../win_menu").show()
+		get_node("../win_menu/ColorRect").show()

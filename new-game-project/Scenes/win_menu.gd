@@ -3,7 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.hide()
+	#self.hide()
+	get_node("ColorRect").hide()
+	get_node("ColorRect2").hide()
 
 # Go to credits scene
 func credits() -> void:
