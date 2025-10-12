@@ -105,7 +105,7 @@ func _physics_process(delta: float) -> void:
 	#if(abs(test.position.x - position.x) > 10 || abs(test.position.z - position.z) > 10):
 		#print("In range")
 	'''
-	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5)):
+	if(test != null && (abs(test.position.x - position.x) < 5 && abs(test.position.z - position.z) < 5) && test.possesed == null):
 		sightToPlayer.target_position = sightToPlayer.to_local(test.position)
 		sightToPlayer.force_raycast_update()
 		if(sightToPlayer.is_colliding() && sightToPlayer.get_collider() == test):
