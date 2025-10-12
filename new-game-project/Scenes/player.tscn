@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6rrimmh2yx4h"]
+[gd_scene load_steps=12 format=3 uid="uid://b6rrimmh2yx4h"]
 
 [ext_resource type="Script" uid="uid://cf8v46g8ar7fm" path="res://Scripts/ghost.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://co4jehrdhndax" path="res://Models/ghost.tscn" id="2_6t5aa"]
@@ -62,6 +62,8 @@ node_connections = [&"output", 0, &"attacker", &"walker", 0, &"stand_or_death", 
 
 [node name="Ghost" type="CharacterBody3D" node_paths=PackedStringArray("animations") groups=["player"]]
 collision_mask = 0
+[node name="Ghost" type="CharacterBody3D" groups=["player"]]
+collision_mask = 128
 script = ExtResource("1_cvnsp")
 speed = 20.0
 animations = [null, null, null]
@@ -97,6 +99,13 @@ visible = false
 
 [node name="AnimationTree" parent="NPC1" index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_kagm2")
+[node name="Skeleton3D" parent="NPC1/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.6576055, -0.028086988, 0.126448, 0.7421436)
+bones/2/rotation = Quaternion(-0.6666871, 0.07292281, 0.013485561, 0.74163926)
+bones/3/rotation = Quaternion(0.62989086, -0.11158317, -0.028384166, 0.7681022)
+bones/4/rotation = Quaternion(0.65195674, -0.042504236, -0.2732821, 0.70601887)
+bones/8/rotation = Quaternion(-0.6787228, -0.008541877, -0.00930218, 0.73428595)
+bones/10/rotation = Quaternion(-0.6795573, 0.0029992205, 0.0032155046, 0.73360926)
 
 [connection signal="body_entered" from="SoundArea3D" to="." method="earshot_entered"]
 [connection signal="body_exited" from="SoundArea3D" to="." method="earshot_exited"]
