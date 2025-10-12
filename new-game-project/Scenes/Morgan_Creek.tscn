@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://b4ofsborfa3nu"]
 
-[ext_resource type="PackedScene" uid="uid://dvdmuo0n7o4qy" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
+[ext_resource type="PackedScene" path="res://Scenes/hud_score.tscn" id="1_6a3o0"]
 [ext_resource type="PackedScene" uid="uid://bopcd5rtyokfc" path="res://Models/house_1.tscn" id="1_nwwcc"]
 [ext_resource type="PackedScene" uid="uid://cy6f1magjjlh7" path="res://Models/street_lamp.tscn" id="2_agxrm"]
 [ext_resource type="Script" uid="uid://bclye1ybvev1g" path="res://Scripts/player_cam.gd" id="2_tbe3k"]
@@ -11,15 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://bm8nv7osb672r" path="res://Scenes/lake.tscn" id="5_t5uet"]
 [ext_resource type="PackedScene" uid="uid://bu2xhual06jp3" path="res://Models/table.tscn" id="5_uqowl"]
 [ext_resource type="PackedScene" uid="uid://d0f6vgyce40m8" path="res://Models/knife.tscn" id="6_oyw14"]
-[ext_resource type="PackedScene" uid="uid://cic5uf4k2sedj" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
+[ext_resource type="PackedScene" path="res://Scenes/door_menu.tscn" id="8_t5uet"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="9_o6ao1"]
 [ext_resource type="PackedScene" uid="uid://wykvwpjkl1nq" path="res://Scenes/npc2.tscn" id="12_phka7"]
 [ext_resource type="PackedScene" uid="uid://bvwdlhxmecwle" path="res://Scenes/npc3.tscn" id="13_vkx4o"]
 [ext_resource type="PackedScene" uid="uid://bsgl1w4wr0ogk" path="res://Models/dead_tree.tscn" id="14_nsy3f"]
-[ext_resource type="PackedScene" path="res://Models/naked_tree.tscn" id="15_7sk78"]
+[ext_resource type="PackedScene" uid="uid://bwl180bmckj4l" path="res://Models/naked_tree.tscn" id="15_7sk78"]
 [ext_resource type="PackedScene" uid="uid://n8j5wbaljyj4" path="res://Models/moon.tscn" id="15_m46ud"]
 [ext_resource type="PackedScene" uid="uid://dwujm2khq3fn8" path="res://Models/tree.tscn" id="16_04i0b"]
-[ext_resource type="PackedScene" path="res://Models/tree_stump.tscn" id="17_npi2v"]
+[ext_resource type="PackedScene" uid="uid://lukxce8vgtpi" path="res://Models/tree_stump.tscn" id="17_npi2v"]
 [ext_resource type="PackedScene" path="res://Models/fence.tscn" id="19_04i0b"]
 [ext_resource type="PackedScene" uid="uid://b72mh1wwacpvy" path="res://Scenes/the_target.tscn" id="20_npi2v"]
 [ext_resource type="PackedScene" uid="uid://dh141vcagdhc7" path="res://Scenes/win_menu.tscn" id="23_oyw14"]
@@ -828,7 +828,7 @@ vertices = PackedVector3Array(31.533638, 0, -15.239319, 16.820925, 0, -15.348606
 affect_navigation_mesh = true
 
 [node name="NavigationObstacle3D6" type="NavigationObstacle3D" parent="NavigationRegion3D/Roads"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.903677, 1.1746054, -1.5049331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.903677, 0.17460537, -1.5049331)
 vertices = PackedVector3Array(-21.665754, 0, -1.2538788, -17.678741, 0, -1.656923, -17.915754, 0, 9.440586, -21.87382, 0, 9.592242)
 affect_navigation_mesh = true
 
