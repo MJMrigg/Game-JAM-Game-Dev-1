@@ -22,13 +22,10 @@ debugRay = NodePath("RayCast3D2")
 [node name="target" parent="." instance=ExtResource("2_r62bm")]
 
 [node name="Skeleton3D" parent="target/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.6123721, -0.035779946, 0.12435383, 0.77990794)
-bones/2/rotation = Quaternion(-0.67673415, 0.07268313, 0.01609619, 0.7324542)
-bones/3/rotation = Quaternion(0.59203535, -0.11263317, -0.023116348, 0.7976676)
-bones/4/rotation = Quaternion(0.6675915, -0.041033823, -0.2759047, 0.6903003)
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-avoidance_enabled = true
+bones/1/rotation = Quaternion(-0.61336076, -0.035616964, 0.12440314, 0.7791302)
+bones/2/rotation = Quaternion(-0.6764765, 0.07268947, 0.01602885, 0.73269296)
+bones/3/rotation = Quaternion(0.5928582, -0.1126135, -0.023229389, 0.7970558)
+bones/4/rotation = Quaternion(0.6673092, -0.041060846, -0.27585807, 0.69059026)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.8210671, 0)
@@ -49,5 +46,12 @@ collision_mask = 2
 transform = Transform3D(0.021640357, -0.9997658, 0, 0.9997658, 0.021640357, 0, 0, 0, 1, -0.12494397, 1.4875546, 0)
 debug_shape_custom_color = Color(0.49148375, 0.24768713, 0, 1)
 debug_shape_thickness = 5
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+debug_enabled = true
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 
 [editable path="target"]

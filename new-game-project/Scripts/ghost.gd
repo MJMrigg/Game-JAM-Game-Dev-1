@@ -65,7 +65,6 @@ func _process(delta: float) -> void:
 		interact()
 	
 	if(Input.is_action_just_pressed("p_attack") && possesed != null && knife):
-		print("KILL! KILL!")
 		kill()
 	
 	'''
@@ -196,11 +195,15 @@ func move_animation() -> void:
 		animator.set("parameters/walker/request",1)
 
 
-func kill():
-	# If the player isn't possesing anyone, do nothing
-	if(possesed == null):
+func kill():	
+	# If the player isn't possesing anyone or doesn't have the knife, do nothing
+	if(possesed == null || knife == false):
 		return
-		
+	
+	# Play attack animation
+	var animator:AnimationTree = animations[possesed.type-1]
+	animator.set("parameters/attacker/request",1)
+	
 	#var found = interactor.get_collider(0)
 	var found = possessor.get_collider(0)
 	
@@ -208,5 +211,8 @@ func kill():
 		return
 	
 	if(found is NPC):
-		found.queue_free()
+		found.unconcious = true
+		found.animator.set("parameters/walk_or_die/blend_position",1)
+		found.animator.set("parameters/stand_or_death/blend_position",1)
+		found.animator.set("parameters/walker/request",1)
 		
