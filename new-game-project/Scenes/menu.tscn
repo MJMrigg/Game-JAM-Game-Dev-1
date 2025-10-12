@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://nj342uk326m6"]
+[gd_scene load_steps=4 format=3 uid="uid://nj342uk326m6"]
 
 [ext_resource type="Script" uid="uid://de60uglfmiit1" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://dwp4cde0xqxmk" path="res://Images/Menu.png" id="2_cayip"]
 [ext_resource type="PackedScene" uid="uid://biyyk528h54ur" path="res://Scenes/quit_menu.tscn" id="2_xhh6f"]
 
 [node name="Menu" type="Control"]
@@ -12,14 +13,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1rerr")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1.2032687e-07, 0.14120358, 0.3496048, 1)
+texture = ExtResource("2_cayip")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -43,32 +44,48 @@ autowrap_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.39800003
-anchor_top = 0.5
+anchor_top = 0.634
 anchor_right = 0.591
-anchor_bottom = 0.61700004
+anchor_bottom = 0.753
 offset_left = 0.5039673
-offset_top = 46.0
+offset_top = 0.16799927
 offset_right = 0.16796875
-offset_bottom = 47.18396
+offset_bottom = 0.055999756
 theme_override_font_sizes/font_size = 40
 text = "Play"
+
+[node name="Tutorial" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.47400004
+anchor_right = 0.591
+anchor_bottom = 0.59300005
+offset_left = 0.5039673
+offset_top = -0.15203857
+offset_right = 0.16796875
+offset_bottom = -0.2640381
+theme_override_font_sizes/font_size = 40
+text = "Tutorial"
 
 [node name="QuitButton" type="Button" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.39800003
-anchor_top = 0.65400004
+anchor_top = 0.79
 anchor_right = 0.591
-anchor_bottom = 0.77300006
+anchor_bottom = 0.90900004
 offset_left = 0.5039673
-offset_top = 47.207977
+offset_top = 0.07998657
 offset_right = 0.16796875
-offset_bottom = 47.095947
+offset_bottom = -0.032043457
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="quit_menu" parent="." instance=ExtResource("2_xhh6f")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="ColorRect/PlayButton" to="." method="play"]
+[connection signal="pressed" from="ColorRect/Tutorial" to="." method="tutorial"]
 [connection signal="pressed" from="ColorRect/QuitButton" to="quit_menu" method="open"]

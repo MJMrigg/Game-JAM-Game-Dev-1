@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c87g7xtrx1svd"]
+[gd_scene load_steps=3 format=3 uid="uid://c2i07lwd47njq"]
 
-[ext_resource type="Script" uid="uid://bpgoic7nxaxiy" path="res://Scripts/tutorial.gd" id="1_gjaxk"]
-[ext_resource type="Texture2D" uid="uid://ggssjyynww16" path="res://Images/Tutorial 2.png" id="2_gjaxk"]
+[ext_resource type="Script" uid="uid://bpgoic7nxaxiy" path="res://Scripts/tutorial.gd" id="1_kuky2"]
+[ext_resource type="Texture2D" uid="uid://i8x3dm16ukt5" path="res://Images/Tutorial 3.png" id="2_n2y8d"]
 
-[node name="Tutorial2" type="Control"]
+[node name="Tutorial3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gjaxk")
-scene = 2
+script = ExtResource("1_kuky2")
+scene = 3
 
 [node name="Tutorial" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gjaxk")
+texture = ExtResource("2_n2y8d")
 
 [node name="Next" type="Button" parent="."]
 layout_mode = 1
@@ -34,7 +34,7 @@ offset_top = 0.3119812
 offset_right = -0.2241211
 offset_bottom = 3.0159912
 theme_override_font_sizes/font_size = 40
-text = "Next"
+text = "Continue"
 
 [node name="Prev" type="Button" parent="."]
 layout_mode = 1
