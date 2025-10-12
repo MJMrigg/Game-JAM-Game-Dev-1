@@ -243,7 +243,8 @@ func kill():
 		found.animator.set("parameters/stand_or_death/blend_position",1)
 		found.animator.set("parameters/walker/request",1)
 		found.global_position[1] = 0
-		emit_signal("points")
+		if(found != target):
+			emit_signal("points")
 	# If they were the target, win the game
 	if(found == target):
 		stop.emit() # Tell the score to stop increasing
